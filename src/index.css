@@ -1,9 +1,17 @@
+html,
 body {
-  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
-  margin: 0;
-  padding: 50px;
+  height: 100%;
 }
 
-a {
-  color: #00b7ff;
+body {
+  font-family: 'Lucida Grande', Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+#game {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }

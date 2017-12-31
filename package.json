@@ -1,8 +1,8 @@
 {
-  "name": "web-app-template",
+  "name": "phaser-template",
   "version": "0.0.1",
-  "description": "A template for framework-agnostic web apps.",
-  "author": "Mark <mark@remarkablemark.org>",
+  "description": "A template for building Phaser games.",
+  "author": "Mark <mark@remarkablegames.org>",
   "scripts": {
     "build": "node scripts/build",
     "clean": "rm -rf build",
@@ -14,17 +14,16 @@
     "release": "standard-version --no-verify",
     "start": "node scripts/start"
   },
-  "homepage": "https://remarkablemark.github.io/web-app-template/",
+  "homepage": "https://remarkablegames.github.io/phaser-template/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/remarkablemark/web-app-template"
+    "url": "https://github.com/remarkablegames/phaser-template"
   },
   "bugs": {
-    "url": "https://github.com/remarkablemark/web-app-template/issues"
+    "url": "https://github.com/remarkablegames/phaser-template/issues"
   },
   "keywords": [
-    "web",
-    "app",
+    "phaser",
     "template",
     "boilerplate"
   ],

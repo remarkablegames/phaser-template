@@ -1,16 +1,16 @@
-# web-app-template
+# phaser-template
 
-A framework-agnostic web app template. It's a stripped down version of [create-react-app](https://github.com/facebookincubator/create-react-app) in which dependencies like React are removed.
+A template for building Phaser games. The template is based off of [web-app-template](https://github.com/remarkablemark/web-app-template).
 
-[Demo](https://remarkablemark.github.io/web-app-template/)
+[Demo](https://remarkablegames.github.io/phaser-template/)
 
 ## Installation
 
 Clone repository:
 
 ```sh
-git clone https://github.com/remarkablemark/web-app-template.git myapp
-cd myapp
+git clone https://github.com/remarkablegames/phaser-template.git mygame
+cd mygame
 rm -rf .git
 git init
 ```

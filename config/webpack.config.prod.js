@@ -334,4 +334,9 @@ module.exports = {
     tls: 'empty',
     child_process: 'empty',
   },
+
+  // The Phaser library will be available as a global variable.
+  externals: {
+    phaser: 'Phaser',
+  },
 };
