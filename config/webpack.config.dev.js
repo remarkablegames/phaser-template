@@ -113,6 +113,11 @@ module.exports = {
             options: {
               eslintPath: 'eslint',
               formatter: eslintFormatter,
+              // The following rules are turned off for easier debugging.
+              rules: {
+                'no-console': 0,
+                'no-debugger': 0,
+              },
             },
           },
         ],
