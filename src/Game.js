@@ -1,5 +1,5 @@
 import Phaser from 'phaser';
-import { Boot, Load } from './states';
+import { Boot, Load, Main } from './states';
 
 export default class Game extends Phaser.Game {
   constructor() {
@@ -8,6 +8,7 @@ export default class Game extends Phaser.Game {
 
     this.state.add(Boot.key, Boot, false);
     this.state.add(Load.key, Load, false);
+    this.state.add(Main.key, Main, false);
 
     this.state.start(Boot.key);
   }
