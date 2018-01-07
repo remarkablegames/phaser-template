@@ -17,6 +17,9 @@ export default class Star extends Sprite {
     // Add sprite to the game.
     game.add.existing(this);
 
+    // Then add sprite to the group.
+    groups.stars.add(this);
+
     // Enable physics for sprite.
     game.physics.arcade.enable(this);
 

@@ -1,5 +1,5 @@
 import { Physics, State } from 'phaser';
-import { Dude, Ground, Sky } from '../sprites';
+import { Dude, Ground, Sky, Star } from '../sprites';
 import { groups, sprites } from '../shared';
 
 export default class Main extends State {
@@ -33,5 +33,13 @@ export default class Main extends State {
 
     // The player and its settings.
     sprites.player = new Dude(game, 32, this.world.height - 150);
+
+    // Create stars group.
+    groups.stars = this.add.group();
+
+    // Here we'll create 12 of them evenly spaced apart.
+    for (let i = 0; i < 12; i++) {
+      new Star(game, i * 70, 0);
+    }
   }
 }
