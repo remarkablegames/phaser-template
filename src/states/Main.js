@@ -1,6 +1,7 @@
 import { Physics, State } from 'phaser';
 import { Dude, Ground, Sky, Star } from '../sprites';
-import { groups, sprites } from '../shared';
+import { Score } from '../texts';
+import { data, groups, sprites, texts } from '../shared';
 
 export default class Main extends State {
   static key = 'main';
@@ -41,5 +42,12 @@ export default class Main extends State {
     for (let i = 0; i < 12; i++) {
       new Star(game, i * 70, 0);
     }
+
+    // Display score.
+    data.score = 0;
+    texts.score = new Score(game, 16, 16, data.score, {
+      fill: 'white',
+      font: '32px "Lucida Grande"',
+    });
   }
 }
