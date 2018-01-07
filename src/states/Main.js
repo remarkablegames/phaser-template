@@ -1,9 +1,8 @@
 import { Physics, State } from 'phaser';
-import { Ground, Sky } from '../sprites';
-import { groups } from '../shared';
+import { Dude, Ground, Sky } from '../sprites';
+import { groups, sprites } from '../shared';
 
 export default class Main extends State {
-  /** State key. */
   static key = 'main';
 
   create() {
@@ -31,5 +30,8 @@ export default class Main extends State {
     [[400, 400], [-150, 250]].forEach(coordinates => {
       new Ground(game, ...coordinates);
     });
+
+    // The player and its settings.
+    sprites.player = new Dude(game, 32, this.world.height - 150);
   }
 }
