@@ -1,4 +1,5 @@
 import { Sprite } from 'phaser';
+import { groups } from '../shared';
 
 const spriteKey = 'dude';
 const leftAnimationKey = 'left';
@@ -29,5 +30,10 @@ export default class Dude extends Sprite {
     // Our two animations, walking left and right.
     this.animations.add(leftAnimationKey, [0, 1, 2, 3], 10, true);
     this.animations.add(rightAnimationKey, [5, 6, 7, 8], 10, true);
+  }
+
+  update() {
+    // Collide the player with the platform or else the player will fall through.
+    this.game.physics.arcade.collide(this, groups.platforms);
   }
 }
