@@ -1,6 +1,6 @@
 # phaser-template
 
-A template for building Phaser games. The template is based off of [web-app-template](https://github.com/remarkablemark/web-app-template).
+A template for building Phaser games. The template is built off of [web-app-template](https://github.com/remarkablemark/web-app-template) and inspired by the tutorial '[Making your first Phaser game](https://phaser.io/tutorials/making-your-first-phaser-game)'.
 
 [Demo](https://remarkablegames.github.io/phaser-template/)
 
@@ -103,7 +103,7 @@ Feel free to add a [testing framework](https://github.com/sorrycc/awesome-javasc
 
 ## Layout
 
-Directory structure (with files like `README.md` and `package.json` omitted):
+Directory structure (with files like `LICENSE` and dotfiles omitted):
 
 ```
 .
@@ -114,15 +114,37 @@ Directory structure (with files like `README.md` and `package.json` omitted):
 │   ├── webpack.config.prod.js
 │   └── webpackDevServer.config.js
 ├── public
-│   ├── index.html # html template
+│   ├── index.html
 │   └── manifest.json
 ├── scripts
 │   ├── build.js
 │   └── start.js
 └── src
+    ├── Game.js
+    ├── assets
+    │   ├── dude.png
+    │   ├── platform.png
+    │   ├── sky.png
+    │   └── star.png
     ├── index.css
-    ├── index.js  # entry js file
-    └── registerServiceWorker.js
+    ├── index.js
+    ├── registerServiceWorker.js
+    ├── shared
+    │   └── index.js
+    ├── sprites
+    │   ├── Dude.js
+    │   ├── Ground.js
+    │   ├── Sky.js
+    │   ├── Star.js
+    │   └── index.js
+    ├── states
+    │   ├── Boot.js
+    │   ├── Load.js
+    │   ├── Main.js
+    │   └── index.js
+    └── texts
+        ├── Score.js
+        └── index.js
 ```
 
 ## License
