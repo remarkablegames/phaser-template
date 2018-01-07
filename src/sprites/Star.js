@@ -1,5 +1,5 @@
 import { Sprite } from 'phaser';
-import { groups, sprites } from '../shared';
+import { data, groups, sprites, texts } from '../shared';
 
 const spriteKey = 'star';
 
@@ -33,6 +33,10 @@ export default class Star extends Sprite {
   collectStar(star, player) {
     // Removes the star from the screen.
     star.kill();
+
+    // Add to score and update text.
+    data.score += 10;
+    texts.score.setScore(data.score);
   }
 
   update() {
