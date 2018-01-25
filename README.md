@@ -11,6 +11,25 @@ Clone repository:
 ```sh
 git clone https://github.com/remarkablegames/phaser-template.git mygame
 cd mygame
+```
+
+Rename project:
+
+```sh
+git grep -l phaser-template | xargs sed -i '' -e 's/phaser-template/mygame/g'
+git grep -l 'Phaser Template' | xargs sed -i '' -e 's/Phaser Template/mygame/g'
+```
+
+The following files need to be manually updated:
+
+* README.md
+* package.json
+* public/index.html
+* public/manifest.json
+
+Initialize new repository:
+
+```sh
 rm -rf .git
 git init
 ```
@@ -25,7 +44,7 @@ npm install
 yarn
 ```
 
-Make initial commit (but make sure to modify files like `package.json` beforehand):
+Make initial commit:
 
 ```sh
 git add .
