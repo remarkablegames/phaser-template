@@ -2,7 +2,7 @@
   "name": "phaser-template",
   "version": "0.0.1",
   "description": "A template for building Phaser games.",
-  "author": "Mark <mark@remarkablegames.org>",
+  "author": "Mark <mark@remarkablemark.org>",
   "scripts": {
     "build": "node scripts/build",
     "clean": "rm -rf build",
