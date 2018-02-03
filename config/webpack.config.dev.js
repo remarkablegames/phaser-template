@@ -267,9 +267,4 @@ module.exports = {
   performance: {
     hints: false,
   },
-
-  // The Phaser library will be available as a global variable.
-  externals: {
-    phaser: 'Phaser',
-  },
 };
