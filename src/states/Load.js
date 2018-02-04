@@ -10,7 +10,12 @@ export default class Load extends State {
     load.image(Ground.key, require('../assets/platform.png'));
     load.image(Sky.key, require('../assets/sky.png'));
     load.image(Star.key, require('../assets/star.png'));
-    load.spritesheet(Dude.key, require('../assets/dude.png'), 32, 48);
+    load.atlas(
+      Dude.key,
+      require('../assets/dude.png'),
+      null,
+      require('../assets/dude.json')
+    );
   }
 
   create() {

@@ -28,8 +28,8 @@ export default class Dude extends Sprite {
     this.body.collideWorldBounds = true;
 
     // Our two animations, walking left and right.
-    this.animations.add(leftAnimationKey, [0, 1, 2, 3], 10, true);
-    this.animations.add(rightAnimationKey, [5, 6, 7, 8], 10, true);
+    this.animations.add(leftAnimationKey, [0, 1, 0, 2], 10, true);
+    this.animations.add(rightAnimationKey, [4, 5, 4, 6], 10, true);
 
     // Create cursor keys for movement.
     this.cursors = game.input.keyboard.createCursorKeys();
@@ -58,7 +58,7 @@ export default class Dude extends Sprite {
     } else {
       // Stand still.
       animations.stop();
-      this.frame = 4;
+      this.frame = 3;
     }
 
     // Allow player to jump if sprite is touching the ground.
