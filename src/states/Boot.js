@@ -5,7 +5,11 @@ export default class Boot extends State {
   static key = 'boot';
 
   init() {
-    this.scale.scaleMode = ScaleManager.SHOW_ALL;
+    const { scale } = this;
+    scale.scaleMode = ScaleManager.SHOW_ALL;
+    scale.pageAlignHorizontally = true;
+    scale.pageAlignVertically = true;
+
     this.state.start(Load.key);
   }
 }
