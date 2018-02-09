@@ -1,10 +1,9 @@
 import { Sprite } from 'phaser';
 import { data, groups, sprites, texts } from '../shared';
 
-const spriteKey = 'star';
-
 export default class Star extends Sprite {
-  static key = spriteKey;
+  /** @const {String} */
+  static key = 'star';
 
   /**
    * @param {Phaser.Game} game
@@ -12,7 +11,7 @@ export default class Star extends Sprite {
    * @param {Number}      y
    */
   constructor(game, x, y) {
-    super(game, x, y, spriteKey);
+    super(game, x, y, Star.key);
 
     // Add sprite to the game.
     game.add.existing(this);
@@ -27,7 +26,7 @@ export default class Star extends Sprite {
     this.body.gravity.y = 100;
 
     // This just gives each star a slightly random bounce value.
-    this.body.bounce.y = 0.4 + Math.random() * 0.2;
+    this.body.bounce.y = game.rnd.realInRange(0.4, 0.6);
   }
 
   collectStar(star, player) {

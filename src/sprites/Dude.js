@@ -1,12 +1,14 @@
 import { Sprite } from 'phaser';
 import { groups } from '../shared';
 
-const spriteKey = 'dude';
-const leftAnimationKey = 'left';
-const rightAnimationKey = 'right';
+const animationKey = {
+  left: 'left',
+  right: 'right',
+};
 
 export default class Dude extends Sprite {
-  static key = spriteKey;
+  /** @const {String} */
+  static key = 'dude';
 
   /**
    * @param {Phaser.Game} game
@@ -14,7 +16,7 @@ export default class Dude extends Sprite {
    * @param {Number}      y
    */
   constructor(game, x, y) {
-    super(game, x, y, spriteKey);
+    super(game, x, y, Dude.key);
 
     // Add sprite to the game.
     game.add.existing(this);
@@ -28,8 +30,8 @@ export default class Dude extends Sprite {
     this.body.collideWorldBounds = true;
 
     // Our two animations, walking left and right.
-    this.animations.add(leftAnimationKey, [0, 1, 0, 2], 10, true);
-    this.animations.add(rightAnimationKey, [4, 5, 4, 6], 10, true);
+    this.animations.add(animationKey.left, [0, 1, 0, 2], 10, true);
+    this.animations.add(animationKey.right, [4, 5, 4, 6], 10, true);
 
     // Create cursor keys for movement.
     this.cursors = game.input.keyboard.createCursorKeys();
@@ -50,11 +52,11 @@ export default class Dude extends Sprite {
     if (cursors.left.isDown) {
       // Move to the left.
       body.velocity.x = -150;
-      animations.play(leftAnimationKey);
+      animations.play(animationKey.left);
     } else if (cursors.right.isDown) {
       // Move to the right.
       body.velocity.x = 150;
-      animations.play(rightAnimationKey);
+      animations.play(animationKey.right);
     } else {
       // Stand still.
       animations.stop();

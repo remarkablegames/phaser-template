@@ -1,9 +1,8 @@
 import { Sprite } from 'phaser';
 
-const spriteKey = 'sky';
-
 export default class Sky extends Sprite {
-  static key = spriteKey;
+  /** @const {String} */
+  static key = 'sky';
 
   /**
    * @param {Phaser.Game} game
@@ -11,7 +10,7 @@ export default class Sky extends Sprite {
    * @param {Number}      y
    */
   constructor(game, x, y) {
-    super(game, x, y, spriteKey);
+    super(game, x, y, Sky.key);
 
     // Add sprite to the game.
     game.add.existing(this);
