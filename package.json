@@ -1,6 +1,6 @@
 {
   "name": "phaser-template",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "description": "A template for building Phaser games.",
   "author": "Mark <mark@remarkablemark.org>",
   "scripts": {
@@ -14,7 +14,7 @@
     "release": "standard-version --no-verify",
     "start": "node scripts/start"
   },
-  "homepage": "https://remarkablegames.github.io/phaser-template/",
+  "homepage": "https://remarkablegames.org/phaser-template/",
   "repository": {
     "type": "git",
     "url": "https://github.com/remarkablegames/phaser-template"
