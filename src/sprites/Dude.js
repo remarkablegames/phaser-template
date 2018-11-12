@@ -5,18 +5,16 @@ const animationKey = {
   left: 'left',
   right: 'right',
 };
+import { TEXTURES } from '../constants';
 
 export default class Dude extends Sprite {
-  /** @const {String} */
-  static key = 'dude';
-
   /**
    * @param {Phaser.Game} game
    * @param {Number}      x
    * @param {Number}      y
    */
   constructor(game, x, y) {
-    super(game, x, y, Dude.key);
+    super(game, x, y, TEXTURES.DUDE);
 
     // Add sprite to the game.
     game.add.existing(this);

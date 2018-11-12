@@ -1,17 +1,15 @@
 import { Sprite } from 'phaser';
 import { data, groups, sprites, texts } from '../shared';
+import { TEXTURES } from '../constants';
 
 export default class Star extends Sprite {
-  /** @const {String} */
-  static key = 'star';
-
   /**
    * @param {Phaser.Game} game
    * @param {Number}      x
    * @param {Number}      y
    */
   constructor(game, x, y) {
-    super(game, x, y, Star.key);
+    super(game, x, y, TEXTURES.STAR);
 
     // Add sprite to the game.
     game.add.existing(this);
