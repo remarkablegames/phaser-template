@@ -1,11 +1,6 @@
 import { Sprite } from 'phaser';
 import { groups } from '../shared';
-
-const animationKey = {
-  left: 'left',
-  right: 'right',
-};
-import { TEXTURES } from '../constants';
+import { ANIMATION_KEYS, TEXTURES } from '../constants';
 
 export default class Dude extends Sprite {
   /**
@@ -28,8 +23,8 @@ export default class Dude extends Sprite {
     this.body.collideWorldBounds = true;
 
     // Our two animations, walking left and right.
-    this.animations.add(animationKey.left, [0, 1, 0, 2], 10, true);
-    this.animations.add(animationKey.right, [4, 5, 4, 6], 10, true);
+    this.animations.add(ANIMATION_KEYS.LEFT, [0, 1, 0, 2], 10, true);
+    this.animations.add(ANIMATION_KEYS.RIGHT, [4, 5, 4, 6], 10, true);
 
     // Create cursor keys for movement.
     this.cursors = game.input.keyboard.createCursorKeys();
@@ -50,11 +45,11 @@ export default class Dude extends Sprite {
     if (cursors.left.isDown) {
       // Move to the left.
       body.velocity.x = -150;
-      animations.play(animationKey.left);
+      animations.play(ANIMATION_KEYS.LEFT);
     } else if (cursors.right.isDown) {
       // Move to the right.
       body.velocity.x = 150;
-      animations.play(animationKey.right);
+      animations.play(ANIMATION_KEYS.RIGHT);
     } else {
       // Stand still.
       animations.stop();
