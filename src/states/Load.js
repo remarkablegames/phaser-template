@@ -1,10 +1,7 @@
 import { State } from 'phaser';
-import Main from './Main';
-import { TEXTURES } from '../constants';
+import { STATES, TEXTURES } from '../constants';
 
 export default class Load extends State {
-  static key = 'load';
-
   preload() {
     const { load } = this;
     load.image(TEXTURES.GROUND, require('../assets/platform.png'));
@@ -19,6 +16,6 @@ export default class Load extends State {
   }
 
   create() {
-    this.state.start(Main.key);
+    this.state.start(STATES.MAIN);
   }
 }

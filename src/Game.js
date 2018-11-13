@@ -1,5 +1,6 @@
 import Phaser from 'phaser';
 import { Boot, Load, Main } from './states';
+import { STATES } from './constants';
 
 export default class Game extends Phaser.Game {
   /**
@@ -12,10 +13,10 @@ export default class Game extends Phaser.Game {
     super(width, height, renderer, parent);
     const { state } = this;
 
-    state.add(Boot.key, Boot, false);
-    state.add(Load.key, Load, false);
-    state.add(Main.key, Main, false);
+    state.add(STATES.BOOT, Boot, false);
+    state.add(STATES.LOAD, Load, false);
+    state.add(STATES.MAIN, Main, false);
 
-    state.start(Boot.key);
+    state.start(STATES.BOOT);
   }
 }

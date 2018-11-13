@@ -4,8 +4,6 @@ import { Score } from '../texts';
 import { data, groups, sprites, texts } from '../shared';
 
 export default class Main extends State {
-  static key = 'main';
-
   create() {
     const { add, game } = this;
 
