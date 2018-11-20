@@ -1,124 +1,129 @@
 # phaser-template
 
-A template for building Phaser games. The template is built off of [web-app-template](https://github.com/remarkablemark/web-app-template) and inspired by the tutorial '[Making your first Phaser game](https://phaser.io/tutorials/making-your-first-phaser-game)'.
+A template for building [Phaser](https://phaser.io/) games.
 
-[Demo](https://remarkablegames.github.io/phaser-template/)
+The template is scaffolded from [web-app-template](https://github.com/remarkablemark/web-app-template) and inspired by “[Making your first Phaser game](https://phaser.io/tutorials/making-your-first-phaser-game)” tutorial.
+
+See [demo](https://remarkablegames.github.io/phaser-template/).
 
 ## Installation
 
 Clone repository:
 
 ```sh
-git clone https://github.com/remarkablegames/phaser-template.git mygame
-cd mygame
+$ git clone https://github.com/remarkablegames/phaser-template.git
 ```
 
 Rename project:
 
 ```sh
-git grep -l phaser-template | xargs sed -i '' -e 's/phaser-template/mygame/g'
-git grep -l 'Phaser Template' | xargs sed -i '' -e 's/Phaser Template/mygame/g'
+$ mv phaser-template my-game
+$ cd my-game
+$ git grep -l phaser-template | xargs sed -i '' -e 's/phaser-template/mygame/g'
+$ git grep -l 'Phaser Template' | xargs sed -i '' -e 's/Phaser Template/mygame/g'
 ```
 
 The following files need to be manually updated:
 
-* README.md
-* package.json
-* public/index.html
-* public/manifest.json
+- README.md
+- package.json
+- public/index.html
+- public/manifest.json
 
 Initialize new repository:
 
 ```sh
-rm -rf .git
-git init
+$ rm -rf .git
+$ git init
 ```
 
 Install dependencies:
 
 ```sh
 # with npm
-npm install
+$ npm install
 
-# with yarn
-yarn
+# or with yarn
+$ yarn
 ```
 
 Make initial commit:
 
 ```sh
-git add .
-git commit -m "chore: first commit"
+$ git add .
+$ git commit -m "chore: first commit"
 ```
 
 Notice that the commit message follows the [Conventional Commits](https://conventionalcommits.org) format. This will help with releasing.
 
-[Push to GitHub](https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/) or another remote:
+[Push to GitHub](https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/) or to another remote:
 
 ```sh
-git remote add origin <remote-repository-url>
-git push origin -u origin master
+$ git remote add origin <remote-repository-url>
+$ git push origin -u origin master
 ```
 
 ## Scripts
 
-Start development server:
+Run development server:
 
 ```sh
 # with npm
-npm start
+$ npm start
 
 # with yarn
-yarn start
+$ yarn start
 ```
 
-Create production build:
+Build for production:
 
 ```sh
 # with npm
-npm run build
+$ npm run build
 
-# with yarn
-yarn build
+# or with yarn
+$ yarn build
 ```
 
-Release:
+Release with [standard-version](https://github.com/conventional-changelog/standard-version):
 
 ```sh
 # with npm
-npm run build
+$ npm run build
 
-# with yarn
-yarn build
+# or with yarn
+$ yarn build
 ```
 
-Deploy:
+Deploy to `gh-pages`:
 
-Before deploying, make sure the `deploy` script and the `homepage` field in `package.json` are correct. The current setup deploys to [GitHub Pages](https://pages.github.com) by pushing the `build/` directory to the remote's `gh-pages` branch.
+Before deploying, make sure the `deploy` script and the `homepage` field in `package.json` are correct.
+
+The current setup deploys to [GitHub Pages](https://pages.github.com) by pushing the `build` directory to the remote repository's `gh-pages` branch.
 
 ```sh
 # with npm
-npm run deploy
+$ npm run deploy
 
-# with yarn
-yarn deploy
+# or with yarn
+$ yarn deploy
 ```
 
 ## Test
 
-There are no tests in the template, just linting:
+There are no tests in the template, only linting:
 
 ```sh
 # with npm
-npm run lint
-npm run lint:fix
+$ npm run lint
+$ npm run lint:fix
 
-# with yarn
-yarn lint
-yarn lint:fix
+# or with yarn
+$ yarn lint
+$ yarn lint:fix
 ```
 
-Feel free to add a [testing framework](https://github.com/sorrycc/awesome-javascript#testing-frameworks).
+Feel free to add a [testing framework](https://github.com/sorrycc/awesome-javascript#testing-frameworks) of your choice.
 
 ## Layout
 
@@ -141,6 +146,7 @@ Directory structure (with files like `LICENSE` and dotfiles omitted):
 └── src
     ├── Game.js
     ├── assets
+    │   ├── dude.json
     │   ├── dude.png
     │   ├── platform.png
     │   ├── sky.png
@@ -153,7 +159,6 @@ Directory structure (with files like `LICENSE` and dotfiles omitted):
     ├── sprites
     │   ├── Dude.js
     │   ├── Ground.js
-    │   ├── Sky.js
     │   ├── Star.js
     │   └── index.js
     ├── states
