@@ -1,7 +1,8 @@
 import { Physics, State } from 'phaser';
-import { Dude, Ground, Sky, Star } from '../sprites';
+import { Dude, Ground, Star } from '../sprites';
 import { Score } from '../texts';
 import { data, groups, sprites, texts } from '../shared';
+import { TEXTURES } from '../constants';
 
 export default class Main extends State {
   create() {
@@ -11,7 +12,7 @@ export default class Main extends State {
     this.physics.startSystem(Physics.ARCADE);
 
     // A simple background for our game.
-    new Sky(game, 0, 0);
+    add.image(0, 0, TEXTURES.SKY);
 
     // The platforms group contains the ground and the 2 ledges we can jump on.
     // It's created after the background so the order of layers (z-depth) is
