@@ -2,7 +2,7 @@ import { Sprite } from 'phaser';
 import { groups } from '../shared';
 import { ANIMATION_KEYS, TEXTURES } from '../constants';
 
-export default class Dude extends Sprite {
+export default class Player extends Sprite {
   /**
    * @param {Phaser.Game} game
    * @param {Number}      x

@@ -157,8 +157,8 @@ Directory structure (with files like `LICENSE` and dotfiles omitted):
     ├── shared
     │   └── index.js
     ├── sprites
-    │   ├── Dude.js
     │   ├── Ground.js
+    │   ├── Player.js
     │   ├── Star.js
     │   └── index.js
     ├── states

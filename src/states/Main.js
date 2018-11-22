@@ -1,5 +1,5 @@
 import { Physics, State } from 'phaser';
-import { Dude, Ground, Star } from '../sprites';
+import { Ground, Player, Star } from '../sprites';
 import { Score } from '../texts';
 import { data, groups, sprites, texts } from '../shared';
 import { TEXTURES } from '../constants';
@@ -32,7 +32,7 @@ export default class Main extends State {
     });
 
     // The player and its settings.
-    sprites.player = new Dude(game, 32, this.world.height - 150);
+    sprites.player = new Player(game, 32, this.world.height - 150);
 
     // Create stars group.
     groups.stars = add.group();
