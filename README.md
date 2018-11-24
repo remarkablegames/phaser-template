@@ -2,7 +2,7 @@
 
 A template for building [Phaser](https://phaser.io/) games.
 
-The template is scaffolded from [web-app-template](https://github.com/remarkablemark/web-app-template) and inspired by “[Making your first Phaser game](https://phaser.io/tutorials/making-your-first-phaser-game)” tutorial.
+The template is scaffolded from [web-app-template](https://github.com/remarkablemark/web-app-template) and inspired by “[Making your first Phaser 3 game](https://phaser.io/tutorials/making-your-first-phaser-3-game)” tutorial.
 
 See [demo](https://remarkablegames.github.io/phaser-template/).
 
@@ -144,9 +144,7 @@ Directory structure (with files like `LICENSE` and dotfiles omitted):
 │   ├── build.js
 │   └── start.js
 └── src
-    ├── Game.js
     ├── assets
-    │   ├── dude.json
     │   ├── dude.png
     │   ├── platform.png
     │   ├── sky.png
@@ -161,7 +159,7 @@ Directory structure (with files like `LICENSE` and dotfiles omitted):
     │   ├── Player.js
     │   ├── Star.js
     │   └── index.js
-    ├── states
+    ├── scenes
     │   ├── Boot.js
     │   ├── Load.js
     │   ├── Main.js

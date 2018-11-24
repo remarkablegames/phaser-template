@@ -53,7 +53,7 @@
     "html-webpack-plugin": "3.2.0",
     "husky": "0.14.3",
     "lint-staged": "8.0.4",
-    "phaser": "2.6.2",
+    "phaser": "3.15.1",
     "postcss-flexbugs-fixes": "4.1.0",
     "postcss-loader": "3.0.0",
     "prettier": "1.14.3",

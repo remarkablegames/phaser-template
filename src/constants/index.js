@@ -1,9 +1,10 @@
 export const ANIMATION_KEYS = {
   LEFT: 'LEFT',
   RIGHT: 'RIGHT',
+  TURN: 'TURN',
 };
 
-export const STATES = {
+export const SCENES = {
   BOOT: 'BOOT',
   LOAD: 'LOAD',
   MAIN: 'MAIN',
@@ -18,6 +19,6 @@ export const TEXTURES = {
 
 export default {
   ANIMATION_KEYS,
-  STATES,
+  SCENES,
   TEXTURES,
 };

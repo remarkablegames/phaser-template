@@ -1,4 +1,4 @@
-import { Text } from 'phaser';
+import { GameObjects } from 'phaser';
 
 /**
  * String template for displaying score.
@@ -8,7 +8,7 @@ import { Text } from 'phaser';
  */
 const scoreTemplate = score => `Score: ${score}`;
 
-export default class Score extends Text {
+export default class Score extends GameObjects.Text {
   /**
    * @param {Phaser.Game} game
    * @param {Number}      x
