@@ -1,55 +1,25 @@
-import { Sprite } from 'phaser';
-import { data, groups, sprites, texts } from '../shared';
+import { Math, Physics } from 'phaser';
+import { groups } from '../shared';
 import { TEXTURES } from '../constants';
 
-export default class Star extends Sprite {
-  /**
-   * @param {Phaser.Game} game
-   * @param {Number}      x
-   * @param {Number}      y
-   */
-  constructor(game, x, y) {
-    super(game, x, y, TEXTURES.STAR);
+export default class Star extends Physics.Arcade.Sprite {
+  constructor(scene, x, y, texture, frame) {
+    super(scene, x, y, TEXTURES.STAR);
+    groups.stars.add(this, scene);
 
-    // Add sprite to the game.
-    game.add.existing(this);
+    // Add the sprite to the scene.
+    scene.add.existing(this);
 
-    // Then add sprite to the group.
-    groups.stars.add(this);
+    // Reset the drawing position of the image to the top-left.
+    this.setOrigin(0);
 
     // Enable physics for sprite.
-    game.physics.arcade.enable(this);
+    scene.physics.world.enable(this);
 
-    // Let gravity do its thing.
-    this.body.gravity.y = 100;
+    // Sprite physics properties.
+    this.body.setBounceY(Math.FloatBetween(0.4, 0.8));
 
-    // This just gives each star a slightly random bounce value.
-    this.body.bounce.y = game.rnd.realInRange(0.4, 0.6);
-  }
-
-  collectStar(star, player) {
-    // Removes the star from the screen.
-    star.kill();
-
-    // Add to score and update text.
-    data.score += 10;
-    texts.score.setScore(data.score);
-  }
-
-  update() {
-    const { game } = this;
-
-    // Check for collision against the platforms so the stars won't fall
-    // through to the bottom of the game.
-    game.physics.arcade.collide(this, groups.platforms);
-
-    // Check for an overlap between the player and star.
-    game.physics.arcade.overlap(
-      this,
-      sprites.player,
-      this.collectStar,
-      null,
-      this
-    );
+    // Collide the star with the platform or else the star will fall through.
+    scene.physics.add.collider(this, groups.platforms);
   }
 }

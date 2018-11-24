@@ -1,15 +1,21 @@
-require('./index.css');
+import Phaser from 'phaser';
+import { Boot, Load, Main } from './scenes';
+import './index.css';
+import registerServiceWorker from './registerServiceWorker';
+registerServiceWorker();
 
-// Because development uses the local version of Phaser 2,
-// make sure to expose the global vars so the library can work properly
-// https://github.com/photonstorm/phaser#browserify--cjs
-if (process.env.NODE_ENV === 'development') {
-  window.PIXI = require('phaser/build/custom/pixi');
-  window.p2 = require('phaser/build/custom/p2');
-  window.Phaser = require('phaser/build/custom/phaser-split');
-}
+const config = {
+  // type: Phaser.AUTO,
+  width: 800,
+  height: 600,
+  physics: {
+    default: 'arcade',
+    arcade: {
+      gravity: { y: 300 },
+      debug: process.env.NODE_ENV === 'development',
+    },
+  },
+  scene: [Boot, Load, Main],
+};
 
-const Game = require('./Game').default;
-new Game();
-
-require('./registerServiceWorker').default();
+new Phaser.Game(config);
