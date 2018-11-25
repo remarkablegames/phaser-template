@@ -1,6 +1,6 @@
-import { GameObjects } from 'phaser';
-import { data, groups, sprites, texts } from '../shared';
 import { ANIMATION_KEYS, TEXTURES } from '../constants';
+import { data, groups, sprites, texts } from '../shared';
+import { GameObjects } from 'phaser';
 
 export default class Player extends GameObjects.Sprite {
   constructor(scene, x, y, texture, frame) {

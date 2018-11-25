@@ -1,5 +1,5 @@
-import { Scene } from 'phaser';
 import { SCENES, TEXTURES } from '../constants';
+import { Scene } from 'phaser';
 
 export default class Load extends Scene {
   constructor() {

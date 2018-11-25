@@ -1,8 +1,8 @@
-import { Scene } from 'phaser';
 import { Ground, Player, Star } from '../sprites';
-import { Score } from '../texts';
-import { data, groups, sprites, texts } from '../shared';
 import { SCENES, TEXTURES } from '../constants';
+import { data, groups, sprites, texts } from '../shared';
+import { Scene } from 'phaser';
+import { Score } from '../texts';
 
 export default class Main extends Scene {
   constructor() {

@@ -1,6 +1,6 @@
-import Phaser from 'phaser';
-import { Boot, Load, Main } from './scenes';
 import './index.css';
+import { Boot, Load, Main } from './scenes';
+import Phaser from 'phaser';
 import registerServiceWorker from './registerServiceWorker';
 registerServiceWorker();
 
