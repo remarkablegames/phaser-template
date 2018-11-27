@@ -6,7 +6,6 @@ export const ANIMATION_KEYS = {
 
 export const SCENES = {
   BOOT: 'BOOT',
-  LOAD: 'LOAD',
   MAIN: 'MAIN',
 };
 

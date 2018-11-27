@@ -161,7 +161,6 @@ Directory structure (with files like `LICENSE` and dotfiles omitted):
     │   └── index.js
     ├── scenes
     │   ├── Boot.js
-    │   ├── Load.js
     │   ├── Main.js
     │   └── index.js
     └── texts
