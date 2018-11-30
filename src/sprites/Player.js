@@ -1,4 +1,4 @@
-import { ANIMATION_KEYS, TEXTURES } from '../constants';
+import { ANIMATIONS, TEXTURES } from '../constants';
 import { data, groups, sprites, texts } from '../shared';
 import { GameObjects } from 'phaser';
 
@@ -37,7 +37,7 @@ export default class Player extends GameObjects.Sprite {
 
     // Create left animation.
     anims.create({
-      key: ANIMATION_KEYS.LEFT,
+      key: ANIMATIONS.LEFT,
       frames: anims.generateFrameNumbers(TEXTURES.DUDE, {
         start: 0,
         end: 3,
@@ -48,14 +48,14 @@ export default class Player extends GameObjects.Sprite {
 
     // Create turn animation.
     anims.create({
-      key: ANIMATION_KEYS.TURN,
+      key: ANIMATIONS.TURN,
       frames: [{ key: TEXTURES.DUDE, frame: 4 }],
       frameRate: 20,
     });
 
     // Create right animation.
     anims.create({
-      key: ANIMATION_KEYS.RIGHT,
+      key: ANIMATIONS.RIGHT,
       frames: anims.generateFrameNumbers(TEXTURES.DUDE, {
         start: 5,
         end: 8,
@@ -76,17 +76,17 @@ export default class Player extends GameObjects.Sprite {
       // Move to the left.
       case cursors.left.isDown:
         body.setVelocityX(-160);
-        anims.play(ANIMATION_KEYS.LEFT, true);
+        anims.play(ANIMATIONS.LEFT, true);
         break;
       // Move to the right.
       case cursors.right.isDown:
         body.setVelocityX(160);
-        anims.play(ANIMATION_KEYS.RIGHT, true);
+        anims.play(ANIMATIONS.RIGHT, true);
         break;
       // Stand still.
       default:
         body.setVelocityX(0);
-        anims.play(ANIMATION_KEYS.TURN);
+        anims.play(ANIMATIONS.TURN);
         break;
     }
 

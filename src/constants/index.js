@@ -1,4 +1,4 @@
-export const ANIMATION_KEYS = {
+export const ANIMATIONS = {
   LEFT: 'LEFT',
   RIGHT: 'RIGHT',
   TURN: 'TURN',
@@ -17,7 +17,7 @@ export const TEXTURES = {
 };
 
 export default {
-  ANIMATION_KEYS,
+  ANIMATIONS,
   SCENES,
   TEXTURES,
 };
