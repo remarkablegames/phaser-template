@@ -6,6 +6,11 @@ The template is scaffolded from [web-app-template](https://github.com/remarkable
 
 See [demo](https://remarkablegames.github.io/phaser-template/).
 
+## Prerequisites
+
+- [Node.js 8+](https://nodejs.org/en/download/)
+- [npm 5.3+](https://www.npmjs.com/get-npm) or [yarn 1+](https://nodejs.cior://yarnpkg.com/)
+
 ## Installation
 
 Clone repository:
@@ -19,23 +24,16 @@ Rename project:
 ```sh
 $ mv phaser-template my-game
 $ cd my-game
-$ git grep -l phaser-template | xargs sed -i '' -e 's/phaser-template/mygame/g'
-$ git grep -l 'Phaser Template' | xargs sed -i '' -e 's/Phaser Template/mygame/g'
+$ git grep -l phaser-template | xargs sed -i '' -e 's/phaser-template/my-game/g'
+$ git grep -l 'Phaser Template' | xargs sed -i '' -e 's/Phaser Template/My Game/g'
 ```
 
-The following files need to be manually updated:
+You should also update the files:
 
 - README.md
 - package.json
 - public/index.html
 - public/manifest.json
-
-Initialize new repository:
-
-```sh
-$ rm -rf .git
-$ git init
-```
 
 Install dependencies:
 
@@ -47,16 +45,23 @@ $ npm install
 $ yarn
 ```
 
-Make initial commit:
+Initialize new repository:
+
+```sh
+$ rm -rf .git
+$ git init
+```
+
+Make first commit:
 
 ```sh
 $ git add .
-$ git commit -m "chore: first commit"
+$ git commit -m "feat: initialize project from phaser-template"
 ```
 
-Notice that the commit message follows the [Conventional Commits](https://conventionalcommits.org) format. This will help with releasing.
+> The commit message should follow the [Conventional Commits](https://conventionalcommits.org) format. (It becomes useful during a release.)
 
-[Push to GitHub](https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/) or to another remote:
+Don't forget to [push the local repository to GitHub](https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/) or another remote:
 
 ```sh
 $ git remote add origin <remote-repository-url>
@@ -65,17 +70,17 @@ $ git push origin -u origin master
 
 ## Scripts
 
-Run development server:
+Start development server:
 
 ```sh
 # with npm
 $ npm start
 
-# with yarn
+# or with yarn
 $ yarn start
 ```
 
-Build for production:
+Build production artifacts:
 
 ```sh
 # with npm
@@ -85,21 +90,19 @@ $ npm run build
 $ yarn build
 ```
 
-Release with [standard-version](https://github.com/conventional-changelog/standard-version):
+> **Note**: Make sure the `"homepage"` field in `package.json` is correct.
+
+Create a release using [standard-version](https://github.com/conventional-changelog/standard-version):
 
 ```sh
 # with npm
-$ npm run build
+$ npm run release
 
 # or with yarn
-$ yarn build
+$ yarn release
 ```
 
-Deploy to `gh-pages`:
-
-Before deploying, make sure the `deploy` script and the `homepage` field in `package.json` are correct.
-
-The current setup deploys to [GitHub Pages](https://pages.github.com) by pushing the `build` directory to the remote repository's `gh-pages` branch.
+Deploy to [GitHub Pages](https://pages.github.com):
 
 ```sh
 # with npm
@@ -108,6 +111,8 @@ $ npm run deploy
 # or with yarn
 $ yarn deploy
 ```
+
+It pushes the `./build/` directory to the remote repository's `gh-pages` branch.
 
 ## Test
 
