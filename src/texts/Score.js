@@ -1,7 +1,7 @@
 import { GameObjects } from 'phaser';
 
 /**
- * String template for displaying score.
+ * Template for displaying the score.
  *
  * @param  {Number} score
  * @return {String}
@@ -9,21 +9,15 @@ import { GameObjects } from 'phaser';
 const scoreTemplate = score => `Score: ${score}`;
 
 export default class Score extends GameObjects.Text {
-  /**
-   * @param {Phaser.Game} game
-   * @param {Number}      x
-   * @param {Number}      y
-   * @param {String}      text
-   * @param {Object}      [style]
-   */
-  constructor(game, x, y, text, style) {
-    super(game, x, y, scoreTemplate(text), style);
-    // Add text to the game.
-    game.add.existing(this);
+  constructor(scene, x, y, text, style) {
+    super(scene, x, y, scoreTemplate(text), style);
+
+    // Add text to the scene.
+    scene.add.existing(this);
   }
 
   /**
-   * Updates score text.
+   * Updates the score text.
    *
    * @param {Number} score
    */
