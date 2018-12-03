@@ -4,10 +4,16 @@ import Phaser from 'phaser';
 import registerServiceWorker from './registerServiceWorker';
 registerServiceWorker();
 
+/**
+ * @see {@link https://photonstorm.github.io/phaser3-docs/global.html#GameConfig}
+ */
 const config = {
-  // type: Phaser.AUTO,
   width: 800,
   height: 600,
+  title: 'Phaser Template',
+  url: 'https://remarkablegames.org/phaser-template/',
+  version: '0.0.0',
+  scene: [Boot, Main],
   physics: {
     default: 'arcade',
     arcade: {
@@ -15,7 +21,6 @@ const config = {
       debug: process.env.NODE_ENV === 'development',
     },
   },
-  scene: [Boot, Main],
 };
 
 new Phaser.Game(config);
