@@ -28,12 +28,13 @@ $ git grep -l phaser-template | xargs sed -i '' -e 's/phaser-template/my-game/g'
 $ git grep -l 'Phaser Template' | xargs sed -i '' -e 's/Phaser Template/My Game/g'
 ```
 
-You should also update the files:
+You should also update the following files:
 
-- README.md
-- package.json
-- public/index.html
-- public/manifest.json
+- [ ] README.md
+- [ ] package.json
+- [ ] public/index.html
+- [ ] public/manifest.json
+- [ ] src/index.js
 
 Install dependencies:
 
