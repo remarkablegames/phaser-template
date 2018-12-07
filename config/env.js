@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const pkg = require('../package');
 const paths = require('./paths');
 
 // Make sure that including paths.js after env.js will read .env variables.
@@ -53,6 +54,10 @@ process.env.NODE_PATH = (process.env.NODE_PATH || '')
 // injected into the application via DefinePlugin in Webpack configuration.
 const APP = /^APP_/i;
 
+/**
+ * @param {String} publicUrl
+ * @return {Object}
+ */
 function getClientEnvironment(publicUrl) {
   const raw = Object.keys(process.env)
     .filter(key => APP.test(key))
@@ -70,8 +75,12 @@ function getClientEnvironment(publicUrl) {
         // This should only be used as an escape hatch. Normally you would put
         // images into the `src` and `import` them in code to get their paths.
         PUBLIC_URL: publicUrl,
+        // Expose useful package fields as environment variables for the game.
+        VERSION: pkg.version,
+        HOMEPAGE: pkg.homepage,
       }
     );
+
   // Stringify all values so we can feed into Webpack DefinePlugin
   const stringified = {
     'process.env': Object.keys(raw).reduce((env, key) => {
