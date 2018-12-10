@@ -1,4 +1,4 @@
-import { Ground, Player, Star } from '../sprites';
+import { Player, Star } from '../sprites';
 import { SCENES, TEXTURES } from '../constants';
 import { data, groups, sprites, texts } from '../shared';
 import { Scene } from 'phaser';
@@ -23,19 +23,22 @@ export default class Main extends Scene {
     // The platforms group contains the ground and the 2 ledges we can jump on.
     // It's created after the background so the order of layers (z-depth) is
     // maintained (otherwise, the platforms will be hidden by the background).
-    groups.platforms = physics.add.staticGroup();
+    const platforms = this.physics.add.staticGroup({
+      defaultKey: TEXTURES.GROUND,
+    });
+    groups.platforms = platforms;
 
-    // Here we create the ground.
-    // Scale it to fit the width of the game.
-    // (The original sprite is 400x32 in size.)
-    new Ground(this, 0, height - 64)
+    // Create the ground (scale it to fit the widt of the game and scale it to
+    // fit the width of the game). The original sprite is 400x32 in size.
+    platforms
+      .get(0, height - 64)
       .setOrigin(0)
       .setScale(2)
       .refreshBody();
 
     // Now let's create three ledges.
     [[600, 400], [50, 250], [750, 220]].forEach(coordinates => {
-      new Ground(this, ...coordinates);
+      platforms.get(...coordinates);
     });
 
     // Create stars group.
