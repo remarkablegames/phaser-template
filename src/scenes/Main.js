@@ -42,12 +42,18 @@ export default class Main extends Scene {
     });
 
     // Create stars group.
-    groups.stars = physics.add.group();
+    const stars = physics.add.group({
+      classType: Star,
+    });
+    groups.stars = stars;
 
     // Here we'll create 12 of them evenly spaced apart.
     for (let i = 0; i < 12; i++) {
-      new Star(this, i * 70, 0);
+      stars.get(i * 70, 0).init();
     }
+
+    // Collide the star with the platform or else the star will fall through.
+    physics.add.collider(stars, platforms);
 
     // Create player.
     new Player(this, 32, height - 150).create();
