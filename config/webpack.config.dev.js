@@ -120,6 +120,7 @@ module.exports = {
                 'no-debugger': 0,
                 'no-unused-vars': 0,
                 'prettier/prettier': 0,
+                'sort-imports': 0,
               },
             },
           },
