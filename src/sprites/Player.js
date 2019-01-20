@@ -5,8 +5,8 @@ const HORIZONTAL_SPEED = 160;
 const VERTICAL_SPEED = 330;
 
 export default class Player extends GameObjects.Sprite {
-  constructor(scene, x, y, texture = TEXTURES.DUDE, frame) {
-    super(scene, x, y, texture, frame);
+  constructor(scene, x, y, texture, frame) {
+    super(scene, x, y, TEXTURES.DUDE);
 
     // Add the sprite to the scene.
     scene.add.existing(this);
