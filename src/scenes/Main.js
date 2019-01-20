@@ -2,7 +2,6 @@ import { Player, Star } from '../sprites';
 import { SCENES, TEXTURES } from '../constants';
 import { Scene } from 'phaser';
 import { Score } from '../texts';
-import { groups } from '../shared';
 
 export default class Main extends Scene {
   constructor() {
@@ -26,7 +25,6 @@ export default class Main extends Scene {
     const platforms = physics.add.staticGroup({
       defaultKey: TEXTURES.GROUND,
     });
-    groups.platforms = platforms;
 
     // Create the ground (scale it to fit the widt of the game and scale it to
     // fit the width of the game). The original sprite is 400x32 in size.
@@ -45,7 +43,6 @@ export default class Main extends Scene {
     const stars = physics.add.group({
       classType: Star,
     });
-    groups.stars = stars;
 
     // Here we'll create 12 of them evenly spaced apart.
     for (let i = 0; i < 12; i++) {
