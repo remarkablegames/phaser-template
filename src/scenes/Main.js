@@ -1,6 +1,6 @@
 import { Player, Star } from '../sprites';
 import { SCENES, TEXTURES } from '../constants';
-import { data, groups, texts } from '../shared';
+import { groups, texts } from '../shared';
 import { Scene } from 'phaser';
 import { Score } from '../texts';
 
@@ -63,11 +63,11 @@ export default class Main extends Scene {
     physics.add.collider(player, platforms);
 
     // Check for overlap between the player and the star.
-    physics.add.overlap(player, stars, this.collectStar);
+    physics.add.overlap(player, stars, this.collectStar, null, this);
 
     // Display score.
-    data.score = 0;
-    texts.score = new Score(this, 16, 16, data.score, {
+    this.score = 0;
+    texts.score = new Score(this, 16, 16, this.score, {
       fill: 'white',
       font: '32px "Lucida Grande", Helvetica, Arial, sans-serif',
     });
@@ -78,8 +78,8 @@ export default class Main extends Scene {
     star.disableBody(true, true);
 
     // Add to the score and update the text.
-    data.score += 10;
-    texts.score.setScore(data.score);
+    this.score += 10;
+    texts.score.setScore(this.score);
   }
 
   update(time, delta) {
