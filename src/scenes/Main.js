@@ -1,8 +1,8 @@
 import { Player, Star } from '../sprites';
 import { SCENES, TEXTURES } from '../constants';
-import { groups, texts } from '../shared';
 import { Scene } from 'phaser';
 import { Score } from '../texts';
+import { groups } from '../shared';
 
 export default class Main extends Scene {
   constructor() {
@@ -67,7 +67,7 @@ export default class Main extends Scene {
 
     // Display score.
     this.score = 0;
-    texts.score = new Score(this, 16, 16, this.score, {
+    this.scoreText = new Score(this, 16, 16, this.score, {
       fill: 'white',
       font: '32px "Lucida Grande", Helvetica, Arial, sans-serif',
     });
@@ -79,7 +79,7 @@ export default class Main extends Scene {
 
     // Add to the score and update the text.
     this.score += 10;
-    texts.score.setScore(this.score);
+    this.scoreText.setScore(this.score);
   }
 
   update(time, delta) {
