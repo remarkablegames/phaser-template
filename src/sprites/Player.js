@@ -1,14 +1,13 @@
 import { ANIMATIONS, TEXTURES } from '../constants';
-import { data, groups, sprites, texts } from '../shared';
+import { data, groups, texts } from '../shared';
 import { GameObjects } from 'phaser';
 
 const HORIZONTAL_SPEED = 160;
 const VERTICAL_SPEED = 330;
 
 export default class Player extends GameObjects.Sprite {
-  constructor(scene, x, y, texture, frame) {
-    super(scene, x, y, TEXTURES.DUDE);
-    sprites.player = this;
+  constructor(scene, x, y, texture = TEXTURES.DUDE, frame) {
+    super(scene, x, y, texture, frame);
 
     // Add the sprite to the scene.
     scene.add.existing(this);
@@ -21,9 +20,6 @@ export default class Player extends GameObjects.Sprite {
 
     // Add cursor keys.
     this.cursors = scene.input.keyboard.createCursorKeys();
-
-    // Collide the player with the platform or else the player will fall through.
-    scene.physics.add.collider(this, groups.platforms);
 
     // Check for overlap between the player and the star.
     scene.physics.add.overlap(this, groups.stars, this.collectStar, null, this);

@@ -1,6 +1,6 @@
 import { Player, Star } from '../sprites';
 import { SCENES, TEXTURES } from '../constants';
-import { data, groups, sprites, texts } from '../shared';
+import { data, groups, texts } from '../shared';
 import { Scene } from 'phaser';
 import { Score } from '../texts';
 
@@ -23,7 +23,7 @@ export default class Main extends Scene {
     // The platforms group contains the ground and the 2 ledges we can jump on.
     // It's created after the background so the order of layers (z-depth) is
     // maintained (otherwise, the platforms will be hidden by the background).
-    const platforms = this.physics.add.staticGroup({
+    const platforms = physics.add.staticGroup({
       defaultKey: TEXTURES.GROUND,
     });
     groups.platforms = platforms;
@@ -56,7 +56,11 @@ export default class Main extends Scene {
     physics.add.collider(stars, platforms);
 
     // Create player.
-    new Player(this, 32, height - 150).init();
+    const player = new Player(this, 32, height - 150).init();
+    this.player = player;
+
+    // Collide the player with the platform or else the player will fall through.
+    physics.add.collider(player, platforms);
 
     // Display score.
     data.score = 0;
@@ -67,6 +71,6 @@ export default class Main extends Scene {
   }
 
   update() {
-    sprites.player.update();
+    this.player.update();
   }
 }
