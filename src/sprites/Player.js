@@ -2,6 +2,9 @@ import { ANIMATIONS, TEXTURES } from '../constants';
 import { data, groups, sprites, texts } from '../shared';
 import { GameObjects } from 'phaser';
 
+const HORIZONTAL_SPEED = 160;
+const VERTICAL_SPEED = 330;
+
 export default class Player extends GameObjects.Sprite {
   constructor(scene, x, y, texture, frame) {
     super(scene, x, y, TEXTURES.DUDE);
@@ -74,12 +77,12 @@ export default class Player extends GameObjects.Sprite {
     switch (true) {
       // Move to the left.
       case cursors.left.isDown:
-        body.setVelocityX(-160);
+        body.setVelocityX(-HORIZONTAL_SPEED);
         anims.play(ANIMATIONS.LEFT, true);
         break;
       // Move to the right.
       case cursors.right.isDown:
-        body.setVelocityX(160);
+        body.setVelocityX(HORIZONTAL_SPEED);
         anims.play(ANIMATIONS.RIGHT, true);
         break;
       // Stand still.
@@ -91,7 +94,7 @@ export default class Player extends GameObjects.Sprite {
 
     // Allow player to jump if sprite is touching the ground.
     if (cursors.up.isDown && body.touching.down) {
-      body.setVelocityY(-330);
+      body.setVelocityY(-VERTICAL_SPEED);
     }
   }
 }
