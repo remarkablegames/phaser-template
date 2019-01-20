@@ -56,7 +56,7 @@ export default class Main extends Scene {
     physics.add.collider(stars, platforms);
 
     // Create player.
-    new Player(this, 32, height - 150).create();
+    new Player(this, 32, height - 150).init();
 
     // Display score.
     data.score = 0;

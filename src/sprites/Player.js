@@ -38,7 +38,7 @@ export default class Player extends GameObjects.Sprite {
     texts.score.setScore(data.score);
   }
 
-  create() {
+  init() {
     const { anims } = this.scene;
 
     // Create left animation.
@@ -69,6 +69,8 @@ export default class Player extends GameObjects.Sprite {
       frameRate: 10,
       repeat: -1,
     });
+
+    return this;
   }
 
   update() {
