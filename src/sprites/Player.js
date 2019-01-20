@@ -16,6 +16,9 @@ export default class Player extends GameObjects.Sprite {
     // Player physics properties. Give the little guy some bounce.
     this.body.setBounceY(0.2).setCollideWorldBounds(true);
 
+    // Add cursor keys.
+    this.cursors = scene.input.keyboard.createCursorKeys();
+
     // Collide the player with the platform or else the player will fall through.
     scene.physics.add.collider(this, groups.platforms);
 
@@ -66,11 +69,7 @@ export default class Player extends GameObjects.Sprite {
   }
 
   update() {
-    const {
-      anims,
-      body,
-      scene: { cursors },
-    } = this;
+    const { anims, body, cursors } = this;
 
     switch (true) {
       // Move to the left.

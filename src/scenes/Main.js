@@ -64,9 +64,6 @@ export default class Main extends Scene {
       fill: 'white',
       font: '32px "Lucida Grande", Helvetica, Arial, sans-serif',
     });
-
-    // Input events.
-    this.cursors = this.input.keyboard.createCursorKeys();
   }
 
   update() {
