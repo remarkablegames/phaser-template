@@ -1,5 +1,4 @@
 import { ANIMATIONS, TEXTURES } from '../constants';
-import { data, groups, texts } from '../shared';
 import { GameObjects } from 'phaser';
 
 const HORIZONTAL_SPEED = 160;
@@ -20,18 +19,6 @@ export default class Player extends GameObjects.Sprite {
 
     // Add cursor keys.
     this.cursors = scene.input.keyboard.createCursorKeys();
-
-    // Check for overlap between the player and the star.
-    scene.physics.add.overlap(this, groups.stars, this.collectStar, null, this);
-  }
-
-  collectStar(player, star) {
-    // Make the star inactive and invisible.
-    star.disableBody(true, true);
-
-    // Add to the score and update the text.
-    data.score += 10;
-    texts.score.setScore(data.score);
   }
 
   init() {

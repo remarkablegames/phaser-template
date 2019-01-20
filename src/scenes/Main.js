@@ -62,6 +62,9 @@ export default class Main extends Scene {
     // Collide the player with the platform or else the player will fall through.
     physics.add.collider(player, platforms);
 
+    // Check for overlap between the player and the star.
+    physics.add.overlap(player, stars, this.collectStar);
+
     // Display score.
     data.score = 0;
     texts.score = new Score(this, 16, 16, data.score, {
@@ -70,7 +73,16 @@ export default class Main extends Scene {
     });
   }
 
-  update() {
+  collectStar(player, star) {
+    // Make the star inactive and invisible.
+    star.disableBody(true, true);
+
+    // Add to the score and update the text.
+    data.score += 10;
+    texts.score.setScore(data.score);
+  }
+
+  update(time, delta) {
     this.player.update();
   }
 }
