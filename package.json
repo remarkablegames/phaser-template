@@ -6,11 +6,9 @@
   "scripts": {
     "build": "node scripts/build",
     "clean": "rm -rf build",
-    "commitmsg": "commitlint -e $GIT_PARAMS",
     "deploy": "npm run clean && npm run build && gitploy build gh-pages",
     "lint": "eslint --ignore-path .gitignore .",
     "lint:fix": "npm run lint -- --fix",
-    "precommit": "lint-staged",
     "release": "standard-version --no-verify",
     "start": "node scripts/start"
   },
