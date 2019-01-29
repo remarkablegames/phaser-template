@@ -1,15 +1,15 @@
 # phaser-template
 
-A template for building [Phaser](https://phaser.io/) games.
+A template for building [Phaser 3](https://phaser.io/) games.
 
 The template is scaffolded from [web-app-template](https://github.com/remarkablemark/web-app-template) and inspired by “[Making your first Phaser 3 game](https://phaser.io/tutorials/making-your-first-phaser-3-game)” tutorial.
 
-See [demo](https://remarkablegames.github.io/phaser-template/).
+Play [demo](https://remarkablegames.github.io/phaser-template/).
 
 ## Prerequisites
 
-- [Node.js 8+](https://nodejs.org/en/download/)
-- [npm 5.3+](https://www.npmjs.com/get-npm) or [yarn 1+](https://nodejs.cior://yarnpkg.com/)
+- [Node.js 8.6+](https://nodejs.org/en/download/)
+- [npm 5.3+](https://www.npmjs.com/get-npm) or [Yarn 1+](https://yarnpkg.com/lang/en/docs/install/)
 
 ## Installation
 
@@ -60,9 +60,9 @@ $ git add .
 $ git commit -m "feat: initialize project from phaser-template"
 ```
 
-> The commit message should follow the [Conventional Commits](https://conventionalcommits.org) format. (It becomes useful during a release.)
+> Commit messages follow the [Conventional Commits](https://conventionalcommits.org/) format. (Used when releasing a new version.)
 
-Don't forget to [push the local repository to GitHub](https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/) or another remote:
+Don't forget to [push the local repository to GitHub](https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/) or to another remote repository:
 
 ```sh
 $ git remote add origin <remote-repository-url>
@@ -113,11 +113,11 @@ $ npm run deploy
 $ yarn deploy
 ```
 
-It pushes the `./build/` directory to the remote repository's `gh-pages` branch.
+It force pushes the `./build/` directory to the remote repository's `gh-pages` branch.
 
 ## Test
 
-There are no tests in the template, only linting:
+There are no tests, but there is linting:
 
 ```sh
 # with npm
@@ -133,7 +133,7 @@ Feel free to add a [testing framework](https://github.com/sorrycc/awesome-javasc
 
 ## Layout
 
-Directory structure (with files like `LICENSE` and dotfiles omitted):
+Directory structure (but trivial files like `LICENSE` and dotfiles are omitted):
 
 ```
 .
@@ -155,19 +155,18 @@ Directory structure (with files like `LICENSE` and dotfiles omitted):
     │   ├── platform.png
     │   ├── sky.png
     │   └── star.png
+    ├── constants
+    │   └── index.js
     ├── index.css
     ├── index.js
     ├── registerServiceWorker.js
-    ├── shared
-    │   └── index.js
-    ├── sprites
-    │   ├── Ground.js
-    │   ├── Player.js
-    │   ├── Star.js
-    │   └── index.js
     ├── scenes
     │   ├── Boot.js
     │   ├── Main.js
+    │   └── index.js
+    ├── sprites
+    │   ├── Player.js
+    │   ├── Star.js
     │   └── index.js
     └── texts
         ├── Score.js
