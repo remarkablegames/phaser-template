@@ -24,3 +24,9 @@ body {
 .github-corner:hover > svg {
   opacity: 1;
 }
+
+@media (max-width: 991px) {
+  .github-corner {
+    display: none;
+  }
+}
