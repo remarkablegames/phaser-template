@@ -2,9 +2,9 @@
 
 A template for building [Phaser 3](https://phaser.io/) games.
 
-The template is scaffolded from [web-app-template](https://github.com/remarkablemark/web-app-template) and inspired by “[Making your first Phaser 3 game](https://phaser.io/tutorials/making-your-first-phaser-3-game)” tutorial.
+The base boilerplate is from [`web-app-template`](https://github.com/remarkablemark/web-app-template) and the game is inspired by the tutorial “[Making your first Phaser 3 game](https://phaser.io/tutorials/making-your-first-phaser-3-game)”.
 
-Play [demo](https://remarkablegames.github.io/phaser-template/).
+<kbd>[Play Demo](https://remarkablegames.github.io/phaser-template/)</kbd>
 
 ## Prerequisites
 
@@ -133,16 +133,20 @@ Feel free to add a [testing framework](https://github.com/sorrycc/awesome-javasc
 
 ## Layout
 
-Directory structure (but trivial files like `LICENSE` and dotfiles are omitted):
+Directory structure (dotfiles are omitted):
 
-```
+```sh
+$ tree -I 'build|node_modules'
 .
+├── LICENSE
+├── README.md
 ├── config
 │   ├── env.js
 │   ├── paths.js
 │   ├── webpack.config.dev.js
 │   ├── webpack.config.prod.js
 │   └── webpackDevServer.config.js
+├── package.json
 ├── public
 │   ├── index.html
 │   └── manifest.json
@@ -150,27 +154,29 @@ Directory structure (but trivial files like `LICENSE` and dotfiles are omitted):
 │   ├── build.js
 │   └── start.js
 └── src
-    ├── assets
-    │   ├── dude.png
-    │   ├── platform.png
-    │   ├── sky.png
-    │   └── star.png
+    ├── assets
+    │   ├── dude.png
+    │   ├── platform.png
+    │   ├── sky.png
+    │   └── star.png
     ├── constants
     │   └── index.js
-    ├── index.css
-    ├── index.js
-    ├── registerServiceWorker.js
-    ├── scenes
-    │   ├── Boot.js
-    │   ├── Main.js
-    │   └── index.js
-    ├── sprites
-    │   ├── Player.js
-    │   ├── Star.js
-    │   └── index.js
-    └── texts
-        ├── Score.js
-        └── index.js
+    ├── index.css
+    ├── index.js
+    ├── registerServiceWorker.js
+    ├── scenes
+    │   ├── Boot.js
+    │   ├── Main.js
+    │   └── index.js
+    ├── sprites
+    │   ├── Player.js
+    │   ├── Star.js
+    │   └── index.js
+    └── texts
+        ├── Score.js
+        └── index.js
+
+9 directories, 28 files
 ```
 
 ## License
