@@ -11,7 +11,7 @@ const config = {
   width: 800,
   height: 600,
   title: 'Phaser Template',
-  // the following two values are exposed from `package.json`
+  // the following 2 values are from `package.json`
   url: process.env.HOMEPAGE,
   version: process.env.VERSION,
   scene: [Boot, Main],
@@ -25,4 +25,45 @@ const config = {
   disableContextMenu: true,
 };
 
-new Phaser.Game(config);
+const game = new Phaser.Game(config);
+
+document.addEventListener('DOMContentLoaded', () => {
+  resize();
+  window.addEventListener('resize', resize);
+});
+
+function resize() {
+  const { canvas } = game;
+
+  let width;
+  let height;
+
+  if (window.innerWidth) {
+    // use browser dimensions
+    width = window.innerWidth;
+    height = window.innerHeight;
+  } else {
+    // otherwise fallback to device dimensions
+    width = window.screen.width;
+    height = window.screen.height;
+  }
+
+  // calculate aspect ratios
+  const windowRatio = width / height;
+  const gameRatio = canvas.width / canvas.height;
+
+  let newWidth;
+  let newHeight;
+
+  // resize depending on aspect ratio
+  if (windowRatio < gameRatio) {
+    newWidth = width;
+    newHeight = width / gameRatio;
+  } else {
+    newWidth = height * gameRatio;
+    newHeight = height;
+  }
+
+  canvas.style.width = newWidth + 'px';
+  canvas.style.height = newHeight + 'px';
+}
