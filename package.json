@@ -59,16 +59,6 @@
     "webpack-dev-server": "2.11.3",
     "webpack-manifest-plugin": "2.0.4"
   },
-  "lint-staged": {
-    "*.js": [
-      "npm run lint:fix",
-      "git add"
-    ],
-    "*.{json,css,md}": [
-      "prettier --write",
-      "git add"
-    ]
-  },
   "private": true,
   "license": "MIT"
 }
