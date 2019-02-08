@@ -1,6 +1,7 @@
 import './index.css';
 import { Boot, Main } from './scenes';
 import Phaser from 'phaser';
+import { addResizeListener } from './helpers/resize';
 import registerServiceWorker from './registerServiceWorker';
 registerServiceWorker();
 
@@ -27,44 +28,4 @@ const config = {
 };
 
 const game = new Phaser.Game(config);
-
-document.addEventListener('DOMContentLoaded', () => {
-  resize();
-  window.addEventListener('resize', resize);
-});
-
-function resize() {
-  const { canvas } = game;
-
-  let width;
-  let height;
-
-  if (window.innerWidth) {
-    // use browser dimensions
-    width = window.innerWidth;
-    height = window.innerHeight;
-  } else {
-    // otherwise fallback to device dimensions
-    width = window.screen.width;
-    height = window.screen.height;
-  }
-
-  // calculate aspect ratios
-  const windowRatio = width / height;
-  const gameRatio = canvas.width / canvas.height;
-
-  let newWidth;
-  let newHeight;
-
-  // resize depending on aspect ratio
-  if (windowRatio < gameRatio) {
-    newWidth = width;
-    newHeight = width / gameRatio;
-  } else {
-    newWidth = height * gameRatio;
-    newHeight = height;
-  }
-
-  canvas.style.width = newWidth + 'px';
-  canvas.style.height = newHeight + 'px';
-}
+addResizeListener(game);
