@@ -1,6 +1,12 @@
 html,
 body {
+  background: #000;
   height: 100%;
+}
+
+body,
+a {
+  color: #fff;
 }
 
 body {
