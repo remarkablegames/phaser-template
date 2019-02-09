@@ -6,5 +6,6 @@
   "*.{json,css,md}": [
     "prettier --write",
     "git add"
-  ]
+  ],
+  ".*{rc,json}": "jsonlint"
 }
