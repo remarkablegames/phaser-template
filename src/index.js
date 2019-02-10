@@ -2,8 +2,8 @@ import './index.css';
 import { Boot, Main } from './scenes';
 import Phaser from 'phaser';
 import { addResizeListener } from './helpers/resize';
-import registerServiceWorker from './registerServiceWorker';
-registerServiceWorker();
+// import registerServiceWorker from './registerServiceWorker';
+// registerServiceWorker();
 
 /**
  * @see {@link https://photonstorm.github.io/phaser3-docs/global.html#GameConfig}
