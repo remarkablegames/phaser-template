@@ -117,7 +117,7 @@ It force pushes the `./build/` directory to the remote repository's `gh-pages` b
 
 ## Test
 
-There are no tests, but there is linting:
+There are no tests, just linting:
 
 ```sh
 # with npm
@@ -130,6 +130,30 @@ $ yarn lint:fix
 ```
 
 Feel free to add a [testing framework](https://github.com/sorrycc/awesome-javascript#testing-frameworks) of your choice.
+
+For manual testing, you can build the (production) game locally:
+
+```sh
+# git stash
+$ sed -i '' '/homepage/d' package.json
+$ npm run build # yarn build
+# git checkout -- package.json
+# git stash pop
+```
+
+Start a local server:
+
+```sh
+$ cd build
+$ python -m SimpleHTTPServer
+# press `Ctrl + C` to stop the server
+```
+
+And access it on `localhost:8000`:
+
+```sh
+$ open http://localhost:8000
+```
 
 ## Layout
 
