@@ -65,8 +65,9 @@ export default class Main extends Scene {
     // Display score.
     this.score = 0;
     this.scoreText = new Score(this, 16, 16, this.score, {
-      fill: 'white',
-      font: '32px "Lucida Grande", Helvetica, Arial, sans-serif',
+      fill: '#fff',
+      fontFamily: '"Lucida Grande", Helvetica, Arial, sans-serif',
+      fontSize: 32,
     });
   }
 
