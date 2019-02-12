@@ -1,7 +1,6 @@
 import './index.css';
 import { Boot, Main } from './scenes';
 import Phaser from 'phaser';
-import { addResizeListener } from './helpers/resize';
 // import registerServiceWorker from './registerServiceWorker';
 // registerServiceWorker();
 
@@ -9,7 +8,6 @@ import { addResizeListener } from './helpers/resize';
  * @see {@link https://photonstorm.github.io/phaser3-docs/global.html#GameConfig}
  */
 const config = {
-  backgroundColor: '#000',
   width: 800,
   height: 600,
   title: 'Phaser Template',
@@ -25,7 +23,11 @@ const config = {
     },
   },
   disableContextMenu: true,
+  backgroundColor: '#000',
+  scale: {
+    mode: Phaser.Scale.FIT,
+    autoCenter: Phaser.Scale.CENTER_BOTH,
+  },
 };
 
-const game = new Phaser.Game(config);
-addResizeListener(game);
+new Phaser.Game(config);

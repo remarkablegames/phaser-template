@@ -1,24 +1,16 @@
 html,
 body {
   background: #000;
-  height: 100%;
-}
-
-body,
-a {
-  color: #fff;
-}
-
-body {
-  /* center */
-  align-items: center;
-  display: flex;
-  justify-content: center;
 
   /* reset */
   font-family: 'Lucida Grande', Helvetica, Arial, sans-serif;
   margin: 0;
   padding: 0;
+}
+
+body,
+a {
+  color: #fff;
 }
 
 /* github-corners */
