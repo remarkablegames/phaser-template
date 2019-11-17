@@ -1,8 +1,7 @@
 import './index.css';
 import { Boot, Main } from './scenes';
 import Phaser from 'phaser';
-// import registerServiceWorker from './registerServiceWorker';
-// registerServiceWorker();
+// import * as serviceWorker from './serviceWorker';
 
 /**
  * @see {@link https://photonstorm.github.io/phaser3-docs/global.html#GameConfig}
@@ -31,3 +30,8 @@ const config = {
 };
 
 new Phaser.Game(config);
+
+// If you want your app to work offline and load faster, you can change
+// unregister() to register() below. Note this comes with some pitfalls.
+// Learn more about service workers: https://bit.ly/CRA-PWA
+// serviceWorker.unregister();

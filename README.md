@@ -1,8 +1,10 @@
 # phaser-template
 
-A template for building [Phaser 3](https://phaser.io/) games.
+A template for creating [Phaser 3](https://phaser.io/) games.
 
-The base boilerplate is from [`web-app-template`](https://github.com/remarkablemark/web-app-template) and the game is inspired by the tutorial “[Making your first Phaser 3 game](https://phaser.io/tutorials/making-your-first-phaser-3-game)”.
+This project was bootstrapped with [`web-app-template`](https://github.com/remarkablemark/web-app-template).
+
+The example game is inspired by the tutorial “[Making your first Phaser 3 game](https://phaser.io/tutorials/making-your-first-phaser-3-game)”.
 
 <kbd>[Play Demo](https://remarkablegames.github.io/phaser-template/)</kbd>
 
@@ -28,7 +30,7 @@ $ git grep -l phaser-template | xargs sed -i '' -e 's/phaser-template/my-game/g'
 $ git grep -l 'Phaser Template' | xargs sed -i '' -e 's/Phaser Template/My Game/g'
 ```
 
-You should also update the following files:
+Update additional files:
 
 - [ ] README.md
 - [ ] package.json
@@ -39,11 +41,7 @@ You should also update the following files:
 Install dependencies:
 
 ```sh
-# with npm
 $ npm install
-
-# or with yarn
-$ yarn
 ```
 
 Initialize new repository:
@@ -60,7 +58,7 @@ $ git add .
 $ git commit -m "feat: initialize project from phaser-template"
 ```
 
-> Commit messages follow the [Conventional Commits](https://conventionalcommits.org/) format. (Used when releasing a new version.)
+> Commit messages follow the [Conventional Commits](https://conventionalcommits.org/) format, which is used when releasing a new version.
 
 Don't forget to [push the local repository to GitHub](https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/) or to another remote repository:
 
@@ -69,74 +67,61 @@ $ git remote add origin <remote-repository-url>
 $ git push origin -u origin master
 ```
 
-## Scripts
+## Available Scripts
 
-Start development server:
+In the project directory, you can run:
 
-```sh
-# with npm
-$ npm start
+### `npm start`
 
-# or with yarn
-$ yarn start
-```
+Runs the app in the development mode.
 
-Build production artifacts:
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-```sh
-# with npm
-$ npm run build
+The page will reload if you make edits.
 
-# or with yarn
-$ yarn build
-```
+You will also see any lint errors in the console.
 
-> **Note**: Make sure the `"homepage"` field in `package.json` is correct.
+### `npm run build`
 
-Create a release using [standard-version](https://github.com/conventional-changelog/standard-version):
+Builds the app for production to the `build` folder.
 
-```sh
-# with npm
-$ npm run release
+It correctly bundles in production mode and optimizes the build for the best performance.
 
-# or with yarn
-$ yarn release
-```
+The build is minified and the filenames include the hashes.
 
-Deploy to [GitHub Pages](https://pages.github.com):
+Your app is ready to be deployed!
 
-```sh
-# with npm
-$ npm run deploy
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-# or with yarn
-$ yarn deploy
-```
+### `npm run release`
 
-It force pushes the `./build/` directory to the remote repository's `gh-pages` branch.
+Bumps the `package.json` using [standard-version](https://github.com/conventional-changelog/standard-version).
+
+### `npm run deploy`
+
+Deploys the app to [GitHub Pages](https://pages.github.com/) by force pushing the `build` folder to the remote repository's `gh-pages` branch.
+
+## Environment Variables
+
+Environment variables work the same as [create-react-app](https://facebook.github.io/create-react-app/docs/adding-custom-environment-variables) except the custom environment variables begin with `APP_` instead of `REACT_APP_`.
 
 ## Test
 
 There are no tests, just linting:
 
 ```sh
-# with npm
 $ npm run lint
 $ npm run lint:fix
-
-# or with yarn
-$ yarn lint
-$ yarn lint:fix
 ```
 
 Feel free to add a [testing framework](https://github.com/sorrycc/awesome-javascript#testing-frameworks) of your choice.
 
-For manual testing, you can build the (production) game locally:
+You can locally build and test the production app before deploying it:
 
 ```sh
 # git stash
 $ sed -i '' '/homepage/d' package.json
-$ npm run build # yarn build
+$ npm run build
 # git checkout -- package.json
 # git stash pop
 ```
@@ -149,7 +134,7 @@ $ python -m SimpleHTTPServer
 # press `Ctrl + C` to stop the server
 ```
 
-And access it on `localhost:8000`:
+View static page:
 
 ```sh
 $ open http://localhost:8000
@@ -166,14 +151,16 @@ $ tree -I 'build|node_modules'
 ├── README.md
 ├── config
 │   ├── env.js
+│   ├── modules.js
 │   ├── paths.js
-│   ├── webpack.config.dev.js
-│   ├── webpack.config.prod.js
+│   ├── pnpTs.js
+│   ├── webpack.config.js
 │   └── webpackDevServer.config.js
 ├── package.json
 ├── public
 │   ├── index.html
-│   └── manifest.json
+│   ├── manifest.json
+│   └── robots.txt
 ├── scripts
 │   ├── build.js
 │   └── start.js
@@ -187,11 +174,11 @@ $ tree -I 'build|node_modules'
     │   └── index.js
     ├── index.css
     ├── index.js
-    ├── registerServiceWorker.js
     ├── scenes
     │   ├── Boot.js
     │   ├── Main.js
     │   └── index.js
+    ├── serviceWorker.js
     ├── sprites
     │   ├── Player.js
     │   ├── Star.js
@@ -200,8 +187,14 @@ $ tree -I 'build|node_modules'
         ├── Score.js
         └── index.js
 
-9 directories, 28 files
+9 directories, 30 files
 ```
+
+## Diff
+
+Compared to [`web-app-template`](https://github.com/remarkablemark/web-app-template), the additional dependencies saved to `package.json` are:
+
+- [@babel/plugin-proposal-class-properties](https://babeljs.io/docs/en/babel-preset-env)
 
 ## License
 

@@ -35,7 +35,11 @@ export default class Main extends Scene {
       .refreshBody();
 
     // Now let's create three ledges.
-    [[600, 400], [50, 250], [750, 220]].forEach(coordinates => {
+    [
+      [600, 400],
+      [50, 250],
+      [750, 220],
+    ].forEach(coordinates => {
       platforms.get(...coordinates);
     });
 

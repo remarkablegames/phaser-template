@@ -7,5 +7,5 @@
     "prettier --write",
     "git add"
   ],
-  ".*{rc,json}": "jsonlint"
+  ".*{rc,json},!.browserslistrc": "jsonlint"
 }
