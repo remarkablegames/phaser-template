@@ -6,7 +6,7 @@
   "scripts": {
     "build": "node scripts/build",
     "clean": "rm -rf build",
-    "deploy": "npm run clean && npm run build && gitploy build gh-pages",
+    "deploy": "scripts/deploy.sh",
     "lint": "eslint --ignore-path .gitignore .",
     "lint:fix": "npm run lint -- --fix",
     "release": "standard-version --no-verify",
