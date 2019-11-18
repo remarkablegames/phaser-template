@@ -158,11 +158,13 @@ $ tree -I 'build|node_modules'
 │   └── webpackDevServer.config.js
 ├── package.json
 ├── public
+│   ├── favicon.ico
 │   ├── index.html
 │   ├── manifest.json
 │   └── robots.txt
 ├── scripts
 │   ├── build.js
+│   ├── deploy.sh
 │   └── start.js
 └── src
     ├── assets
@@ -187,7 +189,7 @@ $ tree -I 'build|node_modules'
         ├── Score.js
         └── index.js
 
-9 directories, 30 files
+9 directories, 32 files
 ```
 
 ## Diff
