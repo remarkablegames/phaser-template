@@ -116,7 +116,7 @@ $ npm run lint:fix
 
 Feel free to add a [testing framework](https://github.com/sorrycc/awesome-javascript#testing-frameworks) of your choice.
 
-You can locally build and test the production app before deploying it:
+You can build the production game (to test locally before deploying):
 
 ```sh
 # git stash
@@ -126,7 +126,7 @@ $ npm run build
 # git stash pop
 ```
 
-Start a local server:
+Start a server:
 
 ```sh
 $ cd build
@@ -134,7 +134,7 @@ $ python -m SimpleHTTPServer
 # press `Ctrl + C` to stop the server
 ```
 
-View static page:
+Play the game:
 
 ```sh
 $ open http://localhost:8000
