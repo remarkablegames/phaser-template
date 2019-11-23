@@ -79,6 +79,10 @@
     "webpack-manifest-plugin": "2.2.0",
     "workbox-webpack-plugin": "4.3.1"
   },
+  "engines": {
+    "node": ">=8.6",
+    "npm": ">=5.3"
+  },
   "private": true,
   "license": "MIT"
 }
