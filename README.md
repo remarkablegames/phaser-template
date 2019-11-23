@@ -1,17 +1,17 @@
 # phaser-template
 
-A template for creating [Phaser 3](https://phaser.io/) games.
+<kbd>phaser-template</kbd> is a template for creating [Phaser 3](https://phaser.io/) games. It's written in HTML, CSS, and JavaScript.
 
 This project was bootstrapped with [`web-app-template`](https://github.com/remarkablemark/web-app-template).
 
-The example game is inspired by the tutorial “[Making your first Phaser 3 game](https://phaser.io/tutorials/making-your-first-phaser-3-game)”.
+The [game](https://remarkablegames.org/phaser-template/) is inspired by the tutorial [Making your first Phaser 3 game](https://phaser.io/tutorials/making-your-first-phaser-3-game).
 
-<kbd>[Play Demo](https://remarkablegames.github.io/phaser-template/)</kbd>
+This project can also be found on [Repl.it](https://repl.it/talk/share/Phaser-Template/22850).
 
 ## Prerequisites
 
-- [Node.js 8.6+](https://nodejs.org/en/download/)
-- [npm 5.3+](https://www.npmjs.com/get-npm) or [Yarn 1+](https://yarnpkg.com/lang/en/docs/install/)
+- [Node.js](https://nodejs.org/en/download/)
+- [npm](https://www.npmjs.com/get-npm) or [Yarn](https://yarnpkg.com/lang/en/docs/install/)
 
 ## Installation
 
