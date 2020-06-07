@@ -1,6 +1,6 @@
 {
   "name": "phaser-template",
-  "version": "0.0.0",
+  "version": "1.0.0-alpha",
   "description": "A template for building Phaser games.",
   "author": "Mark <mark@remarkablemark.org>",
   "scripts": {
@@ -13,13 +13,6 @@
     "start": "node scripts/start"
   },
   "homepage": "https://remarkablegames.org/phaser-template/",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/remarkablegames/phaser-template"
-  },
-  "bugs": {
-    "url": "https://github.com/remarkablegames/phaser-template/issues"
-  },
   "devDependencies": {
     "@babel/core": "7.7.2",
     "@babel/plugin-proposal-class-properties": "7.7.0",
