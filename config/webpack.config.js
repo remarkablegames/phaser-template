@@ -36,11 +36,9 @@ const shouldUseSourceMap = process.env.GENERATE_SOURCEMAP !== 'false';
 // makes for a smoother build process.
 const shouldInlineRuntimeChunk = process.env.INLINE_RUNTIME_CHUNK !== 'false';
 
-// phaser-template: Local data URIs are not supported in Phaser 3.
-const imageInlineSizeLimit = 0;
-// const imageInlineSizeLimit = parseInt(
-//   process.env.IMAGE_INLINE_SIZE_LIMIT || '10000'
-// );
+const imageInlineSizeLimit = parseInt(
+  process.env.IMAGE_INLINE_SIZE_LIMIT || '10000'
+);
 
 // Check if TypeScript is setup
 const useTypeScript = fs.existsSync(paths.appTsConfig);
