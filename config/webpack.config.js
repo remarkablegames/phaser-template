@@ -676,5 +676,7 @@ module.exports = function (webpackEnv) {
     // Turn off performance processing because we utilize
     // our own hints via the FileSizeReporter
     performance: false,
+    // The Phaser library will be available as a global variable.
+    externals: isEnvProduction ? { phaser: 'Phaser' } : undefined,
   };
 };
