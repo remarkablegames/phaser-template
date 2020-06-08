@@ -101,7 +101,7 @@ Deploys the app to [GitHub Pages](https://pages.github.com/) by force pushing th
 
 ## Environment Variables
 
-Environment variables work the same as [create-react-app](https://facebook.github.io/create-react-app/docs/adding-custom-environment-variables) except the custom environment variables begin with `APP_` instead of `REACT_APP_`.
+Environment variables work the same as [create-react-app](https://facebook.github.io/create-react-app/docs/adding-custom-environment-variables) except the custom environment variables begin with `WEB_APP_` instead of `REACT_APP_`.
 
 ## Test
 
