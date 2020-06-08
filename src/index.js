@@ -10,9 +10,9 @@ const config = {
   width: 800,
   height: 600,
   title: 'Phaser Template',
-  // the following 2 values are from `package.json`
-  url: process.env.HOMEPAGE,
-  version: process.env.VERSION,
+  // see `.env` and `package.json`
+  url: process.env.APP_HOMEPAGE,
+  version: process.env.APP_VERSION,
   scene: [Boot, Main],
   physics: {
     default: 'arcade',
