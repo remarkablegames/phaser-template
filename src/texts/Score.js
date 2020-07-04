@@ -1,4 +1,4 @@
-import { GameObjects } from 'phaser';
+const { GameObjects } = window.Phaser;
 
 /**
  * Template for displaying the score.

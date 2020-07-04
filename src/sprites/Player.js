@@ -1,5 +1,6 @@
 import { ANIMATIONS, TEXTURES } from '../constants';
-import { GameObjects } from 'phaser';
+
+const { GameObjects } = window.Phaser;
 
 const HORIZONTAL_SPEED = 160;
 const VERTICAL_SPEED = 330;

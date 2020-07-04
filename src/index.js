@@ -1,7 +1,8 @@
 import './index.css';
 import { Boot, Main } from './scenes';
-import Phaser from 'phaser';
 // import * as serviceWorker from './serviceWorker';
+
+const { Game, Scale } = window.Phaser;
 
 /**
  * @see {@link https://photonstorm.github.io/phaser3-docs/global.html#GameConfig}
@@ -24,12 +25,12 @@ const config = {
   disableContextMenu: true,
   backgroundColor: '#000',
   scale: {
-    mode: Phaser.Scale.FIT,
-    autoCenter: Phaser.Scale.CENTER_BOTH,
+    mode: Scale.FIT,
+    autoCenter: Scale.CENTER_BOTH,
   },
 };
 
-new Phaser.Game(config);
+new Game(config);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

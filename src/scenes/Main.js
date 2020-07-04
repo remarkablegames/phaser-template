@@ -1,7 +1,8 @@
 import { Player, Star } from '../sprites';
 import { SCENES, TEXTURES } from '../constants';
-import { Scene } from 'phaser';
 import { Score } from '../texts';
+
+const { Scene } = window.Phaser;
 
 export default class Main extends Scene {
   constructor() {

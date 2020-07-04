@@ -1,5 +1,6 @@
 import { SCENES, TEXTURES } from '../constants';
-import { Scene } from 'phaser';
+
+const { Scene } = window.Phaser;
 
 export default class Boot extends Scene {
   constructor() {
