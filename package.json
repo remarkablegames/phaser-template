@@ -16,17 +16,17 @@
   },
   "homepage": "https://remarkablegames.org/phaser-template/",
   "devDependencies": {
-    "@commitlint/cli": "8.2.0",
-    "@commitlint/config-conventional": "8.2.0",
+    "@commitlint/cli": "^9.0.1",
+    "@commitlint/config-conventional": "^9.0.1",
     "@descriptive/web-scripts": "1.1.1",
-    "eslint-plugin-prettier": "3.1.1",
+    "eslint-plugin-prettier": "^3.1.4",
     "gitploy": "0.1.0",
     "husky": "^4.2.5",
     "jsonlint": "1.6.3",
     "lint-staged": "^10.2.9",
-    "phaser": "3.20.1",
+    "phaser": "3.23.0",
     "prettier": "^2.0.5",
-    "standard-version": "6"
+    "standard-version": "^8.0.0"
   },
   "engines": {
     "node": ">=8.6",
