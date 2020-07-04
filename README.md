@@ -18,15 +18,15 @@ The template game is inspired by the tutorial '[Making your first Phaser 3 game]
 Clone the repository:
 
 ```sh
-$ git clone https://github.com/remarkablegames/phaser-template.git
+git clone https://github.com/remarkablegames/phaser-template.git
 ```
 
 Rename the project (replace `phaser-template` and `Phaser Template` with your game name):
 
 ```sh
-$ mv phaser-template my-game && cd $_
-$ git grep -l phaser-template | xargs sed -i '' -e 's/phaser-template/my-game/g'
-$ git grep -l 'Phaser Template' | xargs sed -i '' -e 's/Phaser Template/My Game/g'
+mv phaser-template my-game && cd $_
+git grep -l phaser-template | xargs sed -i '' -e 's/phaser-template/my-game/g'
+git grep -l 'Phaser Template' | xargs sed -i '' -e 's/Phaser Template/My Game/g'
 ```
 
 Update the files:
@@ -40,21 +40,21 @@ Update the files:
 Install the dependencies:
 
 ```sh
-$ npm install
+npm install
 ```
 
 Initialize a new repository:
 
 ```sh
-$ rm -rf .git
-$ git init
+rm -rf .git
+git init
 ```
 
 Make your first commit:
 
 ```sh
-$ git add .
-$ git commit -m "feat: initialize project from phaser-template"
+git add .
+git commit -m "feat: initialize project from phaser-template"
 ```
 
 > Commit messages follow the [Conventional Commits](https://conventionalcommits.org/) format, which is used during release.
@@ -62,8 +62,8 @@ $ git commit -m "feat: initialize project from phaser-template"
 Once you're ready, [push the local repository to GitHub](https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/) (or another remote repository):
 
 ```sh
-$ git remote add origin <remote-repository-url>
-$ git push origin -u origin master
+git remote add origin <remote-repository-url>
+git push origin -u origin master
 ```
 
 ## Migration
