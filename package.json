@@ -22,7 +22,6 @@
     "eslint-plugin-prettier": "^3.1.4",
     "gitploy": "0.1.0",
     "husky": "^4.2.5",
-    "jsonlint": "1.6.3",
     "lint-staged": "^10.2.9",
     "phaser": "3.23.0",
     "prettier": "^2.0.5",
