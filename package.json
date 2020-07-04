@@ -28,8 +28,9 @@
     "standard-version": "^8.0.0"
   },
   "engines": {
-    "node": ">=8.6",
-    "npm": ">=5.3"
+    "node": ">=10",
+    "npm": ">=5.6",
+    "yarn": ">=1"
   },
   "private": true,
   "license": "MIT"
