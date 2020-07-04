@@ -74,6 +74,20 @@ Migrate your phaser game to use [@descriptive/web-scripts](https://www.npmjs.com
 npx web-scripts-migration --phaser
 ```
 
+Make sure to replace:
+
+```js
+import Phaser from 'phaser';
+```
+
+With:
+
+```js
+const Phaser = window.Phaser;
+```
+
+Since `@descriptive/web-scripts` does not exclude `phaser` from the build so the library is getting loaded twice (bundle and CDN).
+
 ## Available Scripts
 
 In the project directory, you can run:
