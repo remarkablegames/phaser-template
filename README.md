@@ -4,65 +4,74 @@
 
 The template was bootstrapped with [`web-app-template`](https://github.com/remarkablemark/web-app-template).
 
-The [game](https://remarkablegames.org/phaser-template/) is inspired by the tutorial '[Making your first Phaser 3 game](https://phaser.io/tutorials/making-your-first-phaser-3-game)'. The template can also be found on [Repl.it](https://repl.it/talk/share/Phaser-Template/22850).
+The template game is inspired by the tutorial '[Making your first Phaser 3 game](https://phaser.io/tutorials/making-your-first-phaser-3-game)'. The template can also be found on [Repl.it](https://repl.it/talk/share/Phaser-Template/22850).
+
+[Play the game.](https://remarkablegames.org/phaser-template/)
 
 ## Prerequisites
 
-- [Node.js](https://nodejs.org/en/download/)
-- [npm](https://www.npmjs.com/get-npm) or [Yarn](https://yarnpkg.com/lang/en/docs/install/)
+- [Node.js >=10](https://nodejs.org/en/download/)
+- [npm >=5.6](https://www.npmjs.com/get-npm) or [Yarn >=1](https://yarnpkg.com/lang/en/docs/install/)
 
 ## Installation
 
-Clone repository:
+Clone the repository:
 
 ```sh
 $ git clone https://github.com/remarkablegames/phaser-template.git
 ```
 
-Rename project:
+Rename the project (replace `phaser-template` and `Phaser Template` with your game name):
 
 ```sh
-$ mv phaser-template my-game
-$ cd my-game
+$ mv phaser-template my-game && cd $_
 $ git grep -l phaser-template | xargs sed -i '' -e 's/phaser-template/my-game/g'
 $ git grep -l 'Phaser Template' | xargs sed -i '' -e 's/Phaser Template/My Game/g'
 ```
 
-Update additional files:
+Update the files:
 
-- [ ] README.md
-- [ ] package.json
-- [ ] public/index.html
-- [ ] public/manifest.json
-- [ ] src/index.js
+- [ ] `README.md`
+- [ ] `package.json`
+- [ ] `public/index.html`
+- [ ] `public/manifest.json`
+- [ ] `src/index.js`
 
-Install dependencies:
+Install the dependencies:
 
 ```sh
 $ npm install
 ```
 
-Initialize new repository:
+Initialize a new repository:
 
 ```sh
 $ rm -rf .git
 $ git init
 ```
 
-Make first commit:
+Make your first commit:
 
 ```sh
 $ git add .
 $ git commit -m "feat: initialize project from phaser-template"
 ```
 
-> Commit messages follow the [Conventional Commits](https://conventionalcommits.org/) format, which is used when releasing a new version.
+> Commit messages follow the [Conventional Commits](https://conventionalcommits.org/) format, which is used during release.
 
-Don't forget to [push the local repository to GitHub](https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/) or to another remote repository:
+Once you're ready, [push the local repository to GitHub](https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/) (or another remote repository):
 
 ```sh
 $ git remote add origin <remote-repository-url>
 $ git push origin -u origin master
+```
+
+## Migration
+
+Migrate your phaser game to use [@descriptive/web-scripts](https://www.npmjs.com/package/@descriptive/web-scripts):
+
+```sh
+npx web-scripts-migration --phaser
 ```
 
 ## Available Scripts
@@ -89,11 +98,11 @@ The build is minified and the filenames include the hashes.
 
 Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+See the section about [deployment](https://create-react-app.dev/docs/deployment/) for more information.
 
 ### `npm run release`
 
-Bumps the `package.json` using [standard-version](https://github.com/conventional-changelog/standard-version).
+Bumps the `package.json` version with [standard-version](https://github.com/conventional-changelog/standard-version).
 
 ### `npm run deploy`
 
@@ -101,59 +110,73 @@ Deploys the app to [GitHub Pages](https://pages.github.com/) by force pushing th
 
 ## Environment Variables
 
-Environment variables work the same as [create-react-app](https://facebook.github.io/create-react-app/docs/adding-custom-environment-variables) except the custom environment variables begin with `WEB_APP_` instead of `REACT_APP_`.
+Environment variables work similarly to [Create React App](https://create-react-app.dev/docs/adding-custom-environment-variables/) except they begin with `WEB_APP_` instead of `REACT_APP_`.
 
-## Test
+For example:
 
-There are no tests, just linting:
-
-```sh
-$ npm run lint
-$ npm run lint:fix
+```
+# .env
+WEB_APP_VERSION=$npm_package_version
+WEB_APP_DOMAIN=www.example.com
+WEB_APP_FOO=$DOMAIN/foo
 ```
 
-Feel free to add a [testing framework](https://github.com/sorrycc/awesome-javascript#testing-frameworks) of your choice.
+## Testing
 
-You can build the production game (to test locally before deploying):
+Tests are run just like [Create React App](https://create-react-app.dev/docs/running-tests):
 
 ```sh
-# git stash
-$ sed -i '' '/homepage/d' package.json
-$ npm run build
-# git checkout -- package.json
-# git stash pop
+npm test
 ```
 
-Start a server:
+## Build
+
+You can build the production app locally:
 
 ```sh
-$ cd build
-$ python -m SimpleHTTPServer
-# press `Ctrl + C` to stop the server
+npm run build
+
+# if your app is hosted at a subdirectory
+mv build $(node -p "require('./package').name") # web-app-template
+
+# if your app is hosted at the root
+cd build
 ```
 
-Play the game:
+Start the server:
 
 ```sh
-$ open http://localhost:8000
+python -m SimpleHTTPServer
+```
+
+Stop the server with `Ctrl + C`.
+
+View the app in a new Terminal tab or window:
+
+```sh
+open http://localhost:8000
+# if your app is hosted at a subdirectory, make sure to open the directory
+```
+
+Don't forget to clean up the build directory after you're done:
+
+```sh
+# if your app is hosted at a subdirectory
+rm -rf $(node -p "require('./package').name") # web-app-template
+
+# if your app is hosted at the root
+rm -rf build
 ```
 
 ## Layout
 
-Directory structure (dotfiles are omitted):
+Directory structure (with dotfiles omitted):
 
 ```sh
-$ tree -I 'build|node_modules'
+tree -I 'build|node_modules'
 .
 ├── LICENSE
 ├── README.md
-├── config
-│   ├── env.js
-│   ├── modules.js
-│   ├── paths.js
-│   ├── pnpTs.js
-│   ├── webpack.config.js
-│   └── webpackDevServer.config.js
 ├── package.json
 ├── public
 │   ├── favicon.ico
@@ -161,9 +184,7 @@ $ tree -I 'build|node_modules'
 │   ├── manifest.json
 │   └── robots.txt
 ├── scripts
-│   ├── build.js
-│   ├── deploy.sh
-│   └── start.js
+│   └── deploy.sh
 └── src
     ├── assets
     │   ├── dude.png
@@ -187,14 +208,8 @@ $ tree -I 'build|node_modules'
         ├── Score.js
         └── index.js
 
-9 directories, 32 files
+8 directories, 24 files
 ```
-
-## Diff
-
-Compared to [`web-app-template`](https://github.com/remarkablemark/web-app-template), the additional dependencies saved to `package.json` are:
-
-- [@babel/plugin-proposal-class-properties](https://babeljs.io/docs/en/babel-preset-env)
 
 ## License
 
