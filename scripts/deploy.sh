@@ -22,4 +22,5 @@ fi
 # return working index to initial state (if applicable)
 if [[ $stash_output != 'No local changes to save' ]]; then
   git stash pop
+  git reset HEAD
 fi
