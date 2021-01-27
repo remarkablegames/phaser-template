@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/phaser-template/static/css/main.ea9424d2.chunk.css",
+    "main.js": "/phaser-template/static/js/main.b59ae559.chunk.js",
+    "main.js.map": "/phaser-template/static/js/main.b59ae559.chunk.js.map",
+    "runtime-main.js": "/phaser-template/static/js/runtime-main.756c052f.js",
+    "runtime-main.js.map": "/phaser-template/static/js/runtime-main.756c052f.js.map",
+    "index.html": "/phaser-template/index.html",
+    "static/css/main.ea9424d2.chunk.css.map": "/phaser-template/static/css/main.ea9424d2.chunk.css.map",
+    "static/media/dude.png": "/phaser-template/static/media/dude.526a78a9.png",
+    "static/media/platform.png": "/phaser-template/static/media/platform.69db09bf.png",
+    "static/media/sky.png": "/phaser-template/static/media/sky.47a86b19.png",
+    "static/media/star.png": "/phaser-template/static/media/star.a7cb585c.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.756c052f.js",
+    "static/css/main.ea9424d2.chunk.css",
+    "static/js/main.b59ae559.chunk.js"
+  ]
+}
