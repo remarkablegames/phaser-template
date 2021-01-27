@@ -1,7 +1,12 @@
-import { ANIMATIONS, TEXTURES } from '../constants';
+import {
+  ANIMATION_LEFT,
+  ANIMATION_RIGHT,
+  ANIMATION_TURN,
+  TEXTURES,
+} from '../constants';
 
-const HORIZONTAL_SPEED = 160;
-const VERTICAL_SPEED = 330;
+const SPEED_HORIZONTAL = 160;
+const SPEED_VERTICAL = 330;
 
 class Player extends Phaser.GameObjects.Sprite {
   constructor(scene, x, y, texture, frame) {
@@ -21,12 +26,10 @@ class Player extends Phaser.GameObjects.Sprite {
   }
 
   init() {
-    const { anims } = this.scene;
-
     // Create left animation.
-    anims.create({
-      key: ANIMATIONS.LEFT,
-      frames: anims.generateFrameNumbers(TEXTURES.DUDE, {
+    this.anims.create({
+      key: ANIMATION_LEFT,
+      frames: this.anims.generateFrameNumbers(TEXTURES.DUDE, {
         start: 0,
         end: 3,
       }),
@@ -35,16 +38,16 @@ class Player extends Phaser.GameObjects.Sprite {
     });
 
     // Create turn animation.
-    anims.create({
-      key: ANIMATIONS.TURN,
+    this.anims.create({
+      key: ANIMATION_TURN,
       frames: [{ key: TEXTURES.DUDE, frame: 4 }],
       frameRate: 20,
     });
 
     // Create right animation.
-    anims.create({
-      key: ANIMATIONS.RIGHT,
-      frames: anims.generateFrameNumbers(TEXTURES.DUDE, {
+    this.anims.create({
+      key: ANIMATION_RIGHT,
+      frames: this.anims.generateFrameNumbers(TEXTURES.DUDE, {
         start: 5,
         end: 8,
       }),
@@ -56,29 +59,27 @@ class Player extends Phaser.GameObjects.Sprite {
   }
 
   update() {
-    const { anims, body, cursors } = this;
-
     switch (true) {
       // Move to the left.
-      case cursors.left.isDown:
-        body.setVelocityX(-HORIZONTAL_SPEED);
-        anims.play(ANIMATIONS.LEFT, true);
+      case this.cursors.left.isDown:
+        this.body.setVelocityX(-SPEED_HORIZONTAL);
+        this.anims.play(ANIMATION_LEFT, true);
         break;
       // Move to the right.
-      case cursors.right.isDown:
-        body.setVelocityX(HORIZONTAL_SPEED);
-        anims.play(ANIMATIONS.RIGHT, true);
+      case this.cursors.right.isDown:
+        this.body.setVelocityX(SPEED_HORIZONTAL);
+        this.anims.play(ANIMATION_RIGHT, true);
         break;
       // Stand still.
       default:
-        body.setVelocityX(0);
-        anims.play(ANIMATIONS.TURN);
+        this.body.setVelocityX(0);
+        this.anims.play(ANIMATION_TURN);
         break;
     }
 
     // Allow player to jump if sprite is touching the ground.
-    if (cursors.up.isDown && body.touching.down) {
-      body.setVelocityY(-VERTICAL_SPEED);
+    if (this.cursors.up.isDown && this.body.touching.down) {
+      this.body.setVelocityY(-SPEED_VERTICAL);
     }
   }
 }
