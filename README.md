@@ -211,12 +211,13 @@ Migrate your project to use [@descriptive/web-scripts](https://www.npmjs.com/pac
 npx web-scripts-migration --phaser
 ```
 
-Update the following so the library doesn't get loaded twice:
+To prevent the library from loading twice, remove the `phaser` import:
 
 ```diff
 -import Phaser from 'phaser';
-+const Phaser = window.Phaser;
 ```
+
+This works because `Phaser` is a global variable.
 
 ## License
 
