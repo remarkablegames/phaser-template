@@ -1,30 +1,29 @@
 # phaser-template
 
-<kbd>phaser-template</kbd> is a template for creating [Phaser 3](https://phaser.io/) games.
+<kbd>phaser-template</kbd> is a template for making [Phaser 3](https://phaser.io/) games.
 
 The template was bootstrapped with [`web-app-template`](https://github.com/remarkablemark/web-app-template).
 
-The template game is inspired by the tutorial '[Making your first Phaser 3 game](https://phaser.io/tutorials/making-your-first-phaser-3-game)'. The template can also be found on [Repl.it](https://repl.it/talk/share/Phaser-Template/22850).
+The game is inspired by the tutorial "[Making your first Phaser 3 game](https://phaser.io/tutorials/making-your-first-phaser-3-game)". The game can be found on [Repl.it](https://repl.it/talk/share/Phaser-Template/22850).
 
 [Play the game.](https://remarkablegames.org/phaser-template/)
 
 ## Prerequisites
 
-- [Node.js >=10](https://nodejs.org/en/download/)
-- [npm >=5.6](https://www.npmjs.com/get-npm) or [Yarn >=1](https://yarnpkg.com/lang/en/docs/install/)
+- [Node.js](https://nodejs.org/en/download/)
 
-## Installation
+## Install
 
 Clone the repository:
 
 ```sh
 git clone https://github.com/remarkablegames/phaser-template.git
+cd phaser-template
 ```
 
-Rename the project (replace `phaser-template` and `Phaser Template` with your game name):
+Rename the project:
 
 ```sh
-mv phaser-template my-game && cd $_
 git grep -l phaser-template | xargs sed -i '' -e 's/phaser-template/my-game/g'
 git grep -l 'Phaser Template' | xargs sed -i '' -e 's/Phaser Template/My Game/g'
 ```
@@ -54,7 +53,7 @@ Make your first commit:
 
 ```sh
 git add .
-git commit -m "feat: initialize project from phaser-template"
+git commit -m 'feat: initialize project from phaser-template'
 ```
 
 > Commit messages follow the [Conventional Commits](https://conventionalcommits.org/) format, which is used during release.
@@ -65,28 +64,6 @@ Once you're ready, [push the local repository to GitHub](https://help.github.com
 git remote add origin <remote-repository-url>
 git push origin -u origin master
 ```
-
-## Migration
-
-Migrate your phaser game to use [@descriptive/web-scripts](https://www.npmjs.com/package/@descriptive/web-scripts):
-
-```sh
-npx web-scripts-migration --phaser
-```
-
-Make sure to replace:
-
-```js
-import Phaser from 'phaser';
-```
-
-With:
-
-```js
-const Phaser = window.Phaser;
-```
-
-Since `@descriptive/web-scripts` does not exclude `phaser` from the build so the library is getting loaded twice (bundle and CDN).
 
 ## Available Scripts
 
@@ -184,7 +161,7 @@ rm -rf build
 
 ## Layout
 
-Directory structure (with dotfiles omitted):
+Directory structure (dotfiles are omitted):
 
 ```sh
 tree -I 'build|node_modules'
@@ -195,6 +172,8 @@ tree -I 'build|node_modules'
 ├── public
 │   ├── favicon.ico
 │   ├── index.html
+│   ├── logo192.png
+│   ├── logo512.png
 │   ├── manifest.json
 │   └── robots.txt
 ├── scripts
@@ -213,7 +192,6 @@ tree -I 'build|node_modules'
     │   ├── Boot.js
     │   ├── Main.js
     │   └── index.js
-    ├── serviceWorker.js
     ├── sprites
     │   ├── Player.js
     │   ├── Star.js
@@ -222,7 +200,22 @@ tree -I 'build|node_modules'
         ├── Score.js
         └── index.js
 
-8 directories, 24 files
+8 directories, 25 files
+```
+
+## Migration
+
+Migrate your project to use [@descriptive/web-scripts](https://www.npmjs.com/package/@descriptive/web-scripts):
+
+```sh
+npx web-scripts-migration --phaser
+```
+
+Update the following so the library doesn't get loaded twice:
+
+```diff
+-import Phaser from 'phaser';
++const Phaser = window.Phaser;
 ```
 
 ## License
