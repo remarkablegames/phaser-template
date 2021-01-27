@@ -2,6 +2,10 @@ import { Player, Star } from '../sprites';
 import { SCENES, TEXTURES } from '../constants';
 import { Score } from '../texts';
 
+const state = {
+  score: 0,
+};
+
 class Main extends Phaser.Scene {
   constructor() {
     super({ key: SCENES.MAIN });
@@ -59,8 +63,7 @@ class Main extends Phaser.Scene {
     this.physics.add.overlap(player, stars, this.collectStar, null, this);
 
     // Display score.
-    this.score = 0;
-    this.scoreText = new Score(this, 16, 16, this.score, {
+    this.score = new Score(this, 16, 16, state.score, {
       fill: '#fff',
       fontFamily: '"Lucida Grande", Helvetica, Arial, sans-serif',
       fontSize: 32,
@@ -72,8 +75,8 @@ class Main extends Phaser.Scene {
     star.disableBody(true, true);
 
     // Add to the score and update the text.
-    this.score += 10;
-    this.scoreText.setScore(this.score);
+    state.score += 10;
+    this.score.setScore(state.score);
   }
 
   update(time, delta) {
