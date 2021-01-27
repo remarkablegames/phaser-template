@@ -1,5 +1,5 @@
 import { Player, Star } from '../sprites';
-import { SCENES, TEXTURES } from '../constants';
+import { SCENE_MAIN, TEXTURES } from '../constants';
 import { Score } from '../texts';
 
 const state = {
@@ -8,7 +8,7 @@ const state = {
 
 class Main extends Phaser.Scene {
   constructor() {
-    super({ key: SCENES.MAIN });
+    super({ key: SCENE_MAIN });
   }
 
   create() {

@@ -1,9 +1,9 @@
-import { SCENES, TEXTURES } from '../constants';
+import { SCENE_BOOT, SCENE_MAIN, TEXTURES } from '../constants';
 import { dude, platform, sky, star } from '../assets';
 
 class Boot extends Phaser.Scene {
   constructor() {
-    super({ key: SCENES.BOOT });
+    super({ key: SCENE_BOOT });
   }
 
   preload() {
@@ -17,7 +17,7 @@ class Boot extends Phaser.Scene {
   }
 
   create() {
-    this.scene.start(SCENES.MAIN);
+    this.scene.start(SCENE_MAIN);
   }
 }
 

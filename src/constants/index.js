@@ -4,10 +4,8 @@ export const ANIMATIONS = {
   TURN: 'TURN',
 };
 
-export const SCENES = {
-  BOOT: 'BOOT',
-  MAIN: 'MAIN',
-};
+export const SCENE_BOOT = 'BOOT';
+export const SCENE_MAIN = 'MAIN';
 
 export const TEXTURES = {
   DUDE: 'DUDE',
