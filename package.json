@@ -7,6 +7,7 @@
     "build": "web-scripts build",
     "clean": "rm -rf build",
     "deploy": "scripts/deploy.sh",
+    "eject": "web-scripts eject",
     "lint": "eslint --ignore-path .gitignore .",
     "lint:fix": "npm run lint -- --fix",
     "release": "standard-version --no-verify",
@@ -28,9 +29,7 @@
     "standard-version": "^9.1.0"
   },
   "engines": {
-    "node": ">=10",
-    "npm": ">=5.6",
-    "yarn": ">=1"
+    "node": "^10.12.0 || >=12.0.0"
   },
   "private": true,
   "license": "MIT"
