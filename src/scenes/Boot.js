@@ -1,4 +1,5 @@
 import { SCENES, TEXTURES } from '../constants';
+import { dude, platform, sky, star } from '../assets';
 
 const { Scene } = window.Phaser;
 
@@ -8,14 +9,13 @@ export default class Boot extends Scene {
   }
 
   preload() {
-    const { load } = this;
-    load.image(TEXTURES.GROUND, require('../assets/platform.png').default);
-    load.image(TEXTURES.SKY, require('../assets/sky.png').default);
-    load.image(TEXTURES.STAR, require('../assets/star.png').default);
-    load.spritesheet(TEXTURES.DUDE, require('../assets/dude.png').default, {
+    this.load.spritesheet(TEXTURES.DUDE, dude, {
       frameWidth: 32,
       frameHeight: 48,
     });
+    this.load.image(TEXTURES.GROUND, platform);
+    this.load.image(TEXTURES.SKY, sky);
+    this.load.image(TEXTURES.STAR, star);
   }
 
   create() {
