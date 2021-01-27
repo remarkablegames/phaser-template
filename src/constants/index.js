@@ -15,9 +15,3 @@ export const TEXTURES = {
   SKY: 'SKY',
   STAR: 'STAR',
 };
-
-export default {
-  ANIMATIONS,
-  SCENES,
-  TEXTURES,
-};
