@@ -2,7 +2,7 @@ import {
   ANIMATION_LEFT,
   ANIMATION_RIGHT,
   ANIMATION_TURN,
-  TEXTURES,
+  TEXTURE_DUDE,
 } from '../constants';
 
 const SPEED_HORIZONTAL = 160;
@@ -10,7 +10,7 @@ const SPEED_VERTICAL = 330;
 
 class Player extends Phaser.GameObjects.Sprite {
   constructor(scene, x, y, texture, frame) {
-    super(scene, x, y, TEXTURES.DUDE);
+    super(scene, x, y, TEXTURE_DUDE);
 
     // Add the sprite to the scene.
     scene.add.existing(this);
@@ -29,7 +29,7 @@ class Player extends Phaser.GameObjects.Sprite {
     // Create left animation.
     this.anims.create({
       key: ANIMATION_LEFT,
-      frames: this.anims.generateFrameNumbers(TEXTURES.DUDE, {
+      frames: this.anims.generateFrameNumbers(TEXTURE_DUDE, {
         start: 0,
         end: 3,
       }),
@@ -40,14 +40,14 @@ class Player extends Phaser.GameObjects.Sprite {
     // Create turn animation.
     this.anims.create({
       key: ANIMATION_TURN,
-      frames: [{ key: TEXTURES.DUDE, frame: 4 }],
+      frames: [{ key: TEXTURE_DUDE, frame: 4 }],
       frameRate: 20,
     });
 
     // Create right animation.
     this.anims.create({
       key: ANIMATION_RIGHT,
-      frames: this.anims.generateFrameNumbers(TEXTURES.DUDE, {
+      frames: this.anims.generateFrameNumbers(TEXTURE_DUDE, {
         start: 5,
         end: 8,
       }),
