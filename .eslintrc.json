@@ -1,5 +1,5 @@
 {
-  "extends": "@descriptive/web-app",
+  "extends": ["@descriptive/web-app", "@descriptive/web-app/jest"],
   "plugins": ["prettier"],
   "rules": {
     "no-debugger": "error",
