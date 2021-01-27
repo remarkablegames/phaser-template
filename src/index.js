@@ -1,10 +1,8 @@
 import './index.css';
 import { Boot, Main } from './scenes';
 
-const { Game, Scale } = window.Phaser;
-
 /**
- * @see {@link https://photonstorm.github.io/phaser3-docs/global.html#GameConfig}
+ * https://photonstorm.github.io/phaser3-docs/global.html#GameConfig
  */
 const config = {
   width: 800,
@@ -24,9 +22,9 @@ const config = {
   disableContextMenu: true,
   backgroundColor: '#000',
   scale: {
-    mode: Scale.FIT,
-    autoCenter: Scale.CENTER_BOTH,
+    mode: Phaser.Scale.FIT,
+    autoCenter: Phaser.Scale.CENTER_BOTH,
   },
 };
 
-new Game(config);
+new Phaser.Game(config);

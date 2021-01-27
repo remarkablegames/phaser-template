@@ -1,11 +1,9 @@
 import { ANIMATIONS, TEXTURES } from '../constants';
 
-const { GameObjects } = window.Phaser;
-
 const HORIZONTAL_SPEED = 160;
 const VERTICAL_SPEED = 330;
 
-export default class Player extends GameObjects.Sprite {
+class Player extends Phaser.GameObjects.Sprite {
   constructor(scene, x, y, texture, frame) {
     super(scene, x, y, TEXTURES.DUDE);
 
@@ -84,3 +82,5 @@ export default class Player extends GameObjects.Sprite {
     }
   }
 }
+
+export default Player;

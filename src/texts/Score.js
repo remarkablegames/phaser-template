@@ -1,5 +1,3 @@
-const { GameObjects } = window.Phaser;
-
 /**
  * Template for displaying the score.
  *
@@ -8,7 +6,7 @@ const { GameObjects } = window.Phaser;
  */
 const scoreTemplate = score => `Score: ${score}`;
 
-export default class Score extends GameObjects.Text {
+class Score extends Phaser.GameObjects.Text {
   constructor(scene, x, y, text, style) {
     super(scene, x, y, scoreTemplate(text), style);
 
@@ -25,3 +23,5 @@ export default class Score extends GameObjects.Text {
     this.text = scoreTemplate(score);
   };
 }
+
+export default Score;

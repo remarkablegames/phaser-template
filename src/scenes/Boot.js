@@ -1,9 +1,7 @@
 import { SCENES, TEXTURES } from '../constants';
 import { dude, platform, sky, star } from '../assets';
 
-const { Scene } = window.Phaser;
-
-export default class Boot extends Scene {
+class Boot extends Phaser.Scene {
   constructor() {
     super({ key: SCENES.BOOT });
   }
@@ -22,3 +20,5 @@ export default class Boot extends Scene {
     this.scene.start(SCENES.MAIN);
   }
 }
+
+export default Boot;

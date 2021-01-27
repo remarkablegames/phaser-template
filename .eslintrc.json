@@ -5,5 +5,8 @@
     "no-debugger": "error",
     "no-console": "error",
     "prettier/prettier": "error"
+  },
+  "globals": {
+    "Phaser": "readonly"
   }
 }

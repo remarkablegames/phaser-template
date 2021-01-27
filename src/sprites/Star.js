@@ -1,8 +1,6 @@
 import { TEXTURES } from '../constants';
 
-const { Math, Physics } = window.Phaser;
-
-export default class Star extends Physics.Arcade.Sprite {
+class Star extends Phaser.Physics.Arcade.Sprite {
   constructor(scene, x, y, texture, frame) {
     super(scene, x, y, TEXTURES.STAR);
 
@@ -12,6 +10,8 @@ export default class Star extends Physics.Arcade.Sprite {
 
   init() {
     // Give the sprite some bounce.
-    this.body.setBounceY(Math.FloatBetween(0.4, 0.8));
+    this.body.setBounceY(Phaser.Math.FloatBetween(0.4, 0.8));
   }
 }
+
+export default Star;

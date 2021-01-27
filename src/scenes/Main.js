@@ -2,9 +2,7 @@ import { Player, Star } from '../sprites';
 import { SCENES, TEXTURES } from '../constants';
 import { Score } from '../texts';
 
-const { Scene } = window.Phaser;
-
-export default class Main extends Scene {
+class Main extends Phaser.Scene {
   constructor() {
     super({ key: SCENES.MAIN });
   }
@@ -82,3 +80,5 @@ export default class Main extends Scene {
     this.player.update();
   }
 }
+
+export default Main;
