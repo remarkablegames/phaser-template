@@ -2,7 +2,7 @@ import './index.css';
 import { Boot, Main } from './scenes';
 
 /**
- * https://photonstorm.github.io/phaser3-docs/global.html#GameConfig
+ * https://photonstorm.github.io/phaser3-docs/Phaser.Types.Core.html#.GameConfig
  */
 const config = {
   width: 800,
@@ -15,7 +15,9 @@ const config = {
   physics: {
     default: 'arcade',
     arcade: {
-      gravity: { y: 300 },
+      gravity: {
+        y: 300,
+      },
       debug: process.env.NODE_ENV === 'development',
     },
   },
