@@ -2,11 +2,14 @@
 
 <kbd>phaser-template</kbd> is a template for making [Phaser 3](https://phaser.io/) games.
 
-The template was bootstrapped with [`web-app-template`](https://github.com/remarkablemark/web-app-template).
+The template was bootstrapped with [`web-app-template`](https://github.com/remarkablemark/web-app-template). The game is inspired by the tutorial "[Making your first Phaser 3 game](https://phaser.io/tutorials/making-your-first-phaser-3-game)".
 
-The game is inspired by the tutorial "[Making your first Phaser 3 game](https://phaser.io/tutorials/making-your-first-phaser-3-game)". The game can be found on [Repl.it](https://repl.it/talk/share/Phaser-Template/22850).
+[Play demo.](https://remarkablegames.org/phaser-template/)
 
-[Play the game.](https://remarkablegames.org/phaser-template/)
+Related templates:
+
+- [Repl.it](https://repl.it/talk/share/Phaser-Template/22850)
+- [CodeSandbox](https://codesandbox.io/s/phaser-template-4fy4y)
 
 ## Prerequisites
 
