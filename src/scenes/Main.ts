@@ -1,6 +1,7 @@
 import Phaser from 'phaser';
-import { Player, Star } from '../sprites';
+
 import { SCENE_MAIN, TEXTURE_GROUND, TEXTURE_SKY } from '../constants';
+import { Player, Star } from '../sprites';
 import { Score } from '../texts';
 
 const state = {

@@ -1,5 +1,7 @@
-import { Game, Scale } from 'phaser';
 import './index.css';
+
+import { Game, Scale } from 'phaser';
+
 import { Boot, Main } from './scenes';
 
 /**

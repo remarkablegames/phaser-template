@@ -1,4 +1,6 @@
 import { Scene } from 'phaser';
+
+import { dude, platform, sky, star } from '../assets';
 import {
   SCENE_BOOT,
   SCENE_MAIN,
@@ -7,7 +9,6 @@ import {
   TEXTURE_SKY,
   TEXTURE_STAR,
 } from '../constants';
-import { dude, platform, sky, star } from '../assets';
 
 export default class Boot extends Scene {
   constructor() {

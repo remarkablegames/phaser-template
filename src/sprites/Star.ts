@@ -1,4 +1,5 @@
 import Phaser from 'phaser';
+
 import { TEXTURE_STAR } from '../constants';
 
 export default class Star extends Phaser.Physics.Arcade.Sprite {
