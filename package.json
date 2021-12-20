@@ -21,7 +21,7 @@
   "devDependencies": {
     "@commitlint/cli": "^15.0.0",
     "@commitlint/config-conventional": "^15.0.0",
-    "@descriptive/web-scripts": "2.1.2",
+    "@descriptive/web-scripts": "3.0.0",
     "eslint-plugin-prettier": "^4.0.0",
     "gitploy": "0.1.0",
     "husky": "^7.0.4",
