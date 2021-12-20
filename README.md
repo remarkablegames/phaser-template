@@ -4,10 +4,9 @@
 
 The template was bootstrapped with [`web-app-template`](https://github.com/remarkablemark/web-app-template). The game is inspired by the tutorial "[Making your first Phaser 3 game](https://phaser.io/tutorials/making-your-first-phaser-3-game)".
 
-[Play demo.](https://remarkablegames.org/phaser-template/)
+Demo:
 
-Related templates:
-
+- [GitHub Pages](https://remarkablegames.org/phaser-template/)
 - [Replit](https://replit.com/talk/share/Phaser-Template/22850)
 - [CodeSandbox](https://codesandbox.io/s/phaser-template-4fy4y)
 
@@ -98,17 +97,13 @@ See the section about [deployment](https://create-react-app.dev/docs/deployment/
 
 Bumps the `package.json` version with [standard-version](https://github.com/conventional-changelog/standard-version).
 
-### `npm run deploy`
-
-Deploys the app to [GitHub Pages](https://pages.github.com/) by force pushing the `build` folder to the remote repository's `gh-pages` branch.
-
 ## Environment Variables
 
 Environment variables work similarly to [Create React App](https://create-react-app.dev/docs/adding-custom-environment-variables/) except they begin with `WEB_APP_` instead of `REACT_APP_`.
 
 For example:
 
-```
+```sh
 # .env
 WEB_APP_VERSION=$npm_package_version
 WEB_APP_DOMAIN=www.example.com
@@ -179,11 +174,10 @@ tree -I 'build|node_modules'
 │   ├── logo512.png
 │   ├── manifest.json
 │   └── robots.txt
-├── scripts
-│   └── deploy.sh
 └── src
     ├── assets
     │   ├── dude.png
+    │   ├── index.js
     │   ├── platform.png
     │   ├── sky.png
     │   └── star.png
@@ -203,7 +197,7 @@ tree -I 'build|node_modules'
         ├── Score.js
         └── index.js
 
-8 directories, 25 files
+7 directories, 25 files
 ```
 
 ## Migration
