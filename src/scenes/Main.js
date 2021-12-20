@@ -36,7 +36,7 @@ export default class Main extends Scene {
       [600, 400],
       [50, 250],
       [750, 220],
-    ].forEach(coordinates => {
+    ].forEach((coordinates) => {
       platforms.get(...coordinates);
     });
 
