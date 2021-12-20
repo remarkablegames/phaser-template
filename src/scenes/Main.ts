@@ -1,4 +1,4 @@
-import { Scene } from 'phaser';
+import Phaser from 'phaser';
 import { Player, Star } from '../sprites';
 import { SCENE_MAIN, TEXTURE_GROUND, TEXTURE_SKY } from '../constants';
 import { Score } from '../texts';
@@ -7,7 +7,10 @@ const state = {
   score: 0,
 };
 
-export default class Main extends Scene {
+let player: Player;
+let score: Score;
+
+export default class Main extends Phaser.Scene {
   constructor() {
     super({ key: SCENE_MAIN });
   }
@@ -26,7 +29,7 @@ export default class Main extends Scene {
     // Create the ground (scale it to fit the widt of the game and scale it to
     // fit the width of the game). The original sprite is 400x32 in size.
     platforms
-      .get(0, this.game.config.height - 64)
+      .get(0, Number(this.game.config.height) - 64)
       .setOrigin(0)
       .setScale(2)
       .refreshBody();
@@ -54,33 +57,36 @@ export default class Main extends Scene {
     this.physics.add.collider(stars, platforms);
 
     // Create player.
-    const player = new Player(this, 32, this.game.config.height - 150).init();
-    this.player = player;
+    player = new Player(this, 32, Number(this.game.config.height) - 150).init();
 
     // Collide the player with the platform or else the player will fall through.
     this.physics.add.collider(player, platforms);
 
     // Check for overlap between the player and the star.
-    this.physics.add.overlap(player, stars, this.collectStar, null, this);
+    this.physics.add.overlap(
+      player,
+      stars,
+      (player, star) => {
+        // Make the star inactive and invisible.
+        (star as Phaser.Physics.Arcade.Sprite).disableBody(true, true);
+
+        // Add to the score and update the text.
+        state.score += 10;
+        score.setScore(state.score);
+      },
+      undefined,
+      this
+    );
 
     // Display score.
-    this.score = new Score(this, 16, 16, state.score, {
-      fill: '#fff',
+    score = new Score(this, 16, 16, state.score, {
+      // fill: '#fff',
       fontFamily: '"Lucida Grande", Helvetica, Arial, sans-serif',
-      fontSize: 32,
+      fontSize: '32px',
     });
   }
 
-  collectStar(player, star) {
-    // Make the star inactive and invisible.
-    star.disableBody(true, true);
-
-    // Add to the score and update the text.
-    state.score += 10;
-    this.score.setScore(state.score);
-  }
-
-  update(time, delta) {
-    this.player.update();
+  update(time: number, delta: number) {
+    player.update();
   }
 }

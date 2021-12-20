@@ -1,4 +1,4 @@
-import { GameObjects } from 'phaser';
+import Phaser from 'phaser';
 import {
   ANIMATION_LEFT,
   ANIMATION_RIGHT,
@@ -9,8 +9,16 @@ import {
 const SPEED_HORIZONTAL = 160;
 const SPEED_VERTICAL = 330;
 
-export default class Player extends GameObjects.Sprite {
-  constructor(scene, x, y, texture, frame) {
+let cursors: Phaser.Types.Input.Keyboard.CursorKeys;
+
+export default class Player extends Phaser.Physics.Arcade.Sprite {
+  constructor(
+    scene: Phaser.Scene,
+    x: number,
+    y: number,
+    texture?: string,
+    frame?: string | number
+  ) {
     super(scene, x, y, TEXTURE_DUDE);
 
     // Add the sprite to the scene.
@@ -19,11 +27,13 @@ export default class Player extends GameObjects.Sprite {
     // Enable physics for the sprite.
     scene.physics.world.enable(this);
 
-    // Player physics properties. Give the little guy some bounce.
-    this.body.setBounceY(0.2).setCollideWorldBounds(true);
-
     // Add cursor keys.
-    this.cursors = scene.input.keyboard.createCursorKeys();
+    cursors = scene.input.keyboard.createCursorKeys();
+
+    if (this.body instanceof Phaser.Physics.Arcade.Body) {
+      // Player physics properties. Give the little guy some bounce.
+      this.body.setBounceY(0.2).setCollideWorldBounds(true);
+    }
   }
 
   init() {
@@ -60,14 +70,18 @@ export default class Player extends GameObjects.Sprite {
   }
 
   update() {
+    if (!(this.body instanceof Phaser.Physics.Arcade.Body)) {
+      return;
+    }
+
     switch (true) {
       // Move to the left.
-      case this.cursors.left.isDown:
+      case cursors.left.isDown:
         this.body.setVelocityX(-SPEED_HORIZONTAL);
         this.anims.play(ANIMATION_LEFT, true);
         break;
       // Move to the right.
-      case this.cursors.right.isDown:
+      case cursors.right.isDown:
         this.body.setVelocityX(SPEED_HORIZONTAL);
         this.anims.play(ANIMATION_RIGHT, true);
         break;
@@ -79,7 +93,7 @@ export default class Player extends GameObjects.Sprite {
     }
 
     // Allow player to jump if sprite is touching the ground.
-    if (this.cursors.up.isDown && this.body.touching.down) {
+    if (cursors.up.isDown && this.body.touching.down) {
       this.body.setVelocityY(-SPEED_VERTICAL);
     }
   }
