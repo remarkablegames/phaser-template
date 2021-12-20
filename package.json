@@ -15,6 +15,7 @@
     "test": "web-scripts test --passWithNoTests",
     "postinstall": "husky install"
   },
+  "homepage": "https://remarkablegames.org/phaser-template/",
   "dependencies": {
     "phaser": "3.55.2"
   },
