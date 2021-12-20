@@ -1,3 +1,4 @@
+import { Game, Scale } from 'phaser';
 import './index.css';
 import { Boot, Main } from './scenes';
 
@@ -24,9 +25,9 @@ const config = {
   disableContextMenu: true,
   backgroundColor: '#000',
   scale: {
-    mode: Phaser.Scale.FIT,
-    autoCenter: Phaser.Scale.CENTER_BOTH,
+    mode: Scale.FIT,
+    autoCenter: Scale.CENTER_BOTH,
   },
 };
 
-new Phaser.Game(config);
+new Game(config);

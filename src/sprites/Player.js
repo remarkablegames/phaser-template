@@ -1,3 +1,4 @@
+import { GameObjects } from 'phaser';
 import {
   ANIMATION_LEFT,
   ANIMATION_RIGHT,
@@ -8,7 +9,7 @@ import {
 const SPEED_HORIZONTAL = 160;
 const SPEED_VERTICAL = 330;
 
-class Player extends Phaser.GameObjects.Sprite {
+export default class Player extends GameObjects.Sprite {
   constructor(scene, x, y, texture, frame) {
     super(scene, x, y, TEXTURE_DUDE);
 
@@ -83,5 +84,3 @@ class Player extends Phaser.GameObjects.Sprite {
     }
   }
 }
-
-export default Player;

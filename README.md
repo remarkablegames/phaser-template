@@ -8,7 +8,7 @@ The template was bootstrapped with [`web-app-template`](https://github.com/remar
 
 Related templates:
 
-- [Repl.it](https://repl.it/talk/share/Phaser-Template/22850)
+- [Replit](https://replit.com/talk/share/Phaser-Template/22850)
 - [CodeSandbox](https://codesandbox.io/s/phaser-template-4fy4y)
 
 ## Prerequisites
@@ -213,14 +213,6 @@ Migrate your project to use [@descriptive/web-scripts](https://www.npmjs.com/pac
 ```sh
 npx web-scripts-migration --phaser
 ```
-
-To prevent the library from loading twice, remove the `phaser` import:
-
-```diff
--import Phaser from 'phaser';
-```
-
-This works because `Phaser` is a global variable.
 
 ## License
 

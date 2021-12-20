@@ -1,3 +1,4 @@
+import { Scene } from 'phaser';
 import {
   SCENE_BOOT,
   SCENE_MAIN,
@@ -8,7 +9,7 @@ import {
 } from '../constants';
 import { dude, platform, sky, star } from '../assets';
 
-class Boot extends Phaser.Scene {
+export default class Boot extends Scene {
   constructor() {
     super({ key: SCENE_BOOT });
   }
@@ -27,5 +28,3 @@ class Boot extends Phaser.Scene {
     this.scene.start(SCENE_MAIN);
   }
 }
-
-export default Boot;

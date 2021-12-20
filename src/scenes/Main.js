@@ -1,3 +1,4 @@
+import { Scene } from 'phaser';
 import { Player, Star } from '../sprites';
 import { SCENE_MAIN, TEXTURE_GROUND, TEXTURE_SKY } from '../constants';
 import { Score } from '../texts';
@@ -6,7 +7,7 @@ const state = {
   score: 0,
 };
 
-class Main extends Phaser.Scene {
+export default class Main extends Scene {
   constructor() {
     super({ key: SCENE_MAIN });
   }
@@ -83,5 +84,3 @@ class Main extends Phaser.Scene {
     this.player.update();
   }
 }
-
-export default Main;

@@ -1,3 +1,5 @@
+import { GameObjects } from 'phaser';
+
 /**
  * Template for displaying the score.
  *
@@ -6,7 +8,7 @@
  */
 const scoreTemplate = score => `Score: ${score}`;
 
-class Score extends Phaser.GameObjects.Text {
+export default class Score extends GameObjects.Text {
   constructor(scene, x, y, text, style) {
     super(scene, x, y, scoreTemplate(text), style);
 
@@ -23,5 +25,3 @@ class Score extends Phaser.GameObjects.Text {
     this.text = scoreTemplate(score);
   };
 }
-
-export default Score;
