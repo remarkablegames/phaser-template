@@ -8,8 +8,8 @@ const config = {
   width: 800,
   height: 600,
   title: 'Phaser Template',
+  url: 'https://remarkablegames.org/phaser-template/',
   // see `.env` and `package.json`
-  url: process.env.WEB_APP_HOMEPAGE,
   version: process.env.WEB_APP_VERSION,
   scene: [Boot, Main],
   physics: {

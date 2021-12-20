@@ -1,5 +1,8 @@
 {
-  "extends": ["@descriptive/web-app", "@descriptive/web-app/jest"],
+  "extends": [
+    "@descriptive/eslint-config-web-app",
+    "@descriptive/eslint-config-web-app/jest"
+  ],
   "plugins": ["prettier"],
   "rules": {
     "no-debugger": "error",
