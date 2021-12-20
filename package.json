@@ -12,8 +12,7 @@
     "lint:fix": "npm run lint -- --fix",
     "release": "standard-version --no-verify",
     "start": "web-scripts start",
-    "test": "web-scripts test",
-    "test:ci": "CI=true npm test -- --passWithNoTests",
+    "test": "web-scripts test --passWithNoTests",
     "postinstall": "husky install"
   },
   "dependencies": {
