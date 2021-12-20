@@ -174,30 +174,32 @@ tree -I 'build|node_modules'
 │   ├── logo512.png
 │   ├── manifest.json
 │   └── robots.txt
-└── src
-    ├── assets
-    │   ├── dude.png
-    │   ├── index.js
-    │   ├── platform.png
-    │   ├── sky.png
-    │   └── star.png
-    ├── constants
-    │   └── index.js
-    ├── index.css
-    ├── index.js
-    ├── scenes
-    │   ├── Boot.js
-    │   ├── Main.js
-    │   └── index.js
-    ├── sprites
-    │   ├── Player.js
-    │   ├── Star.js
-    │   └── index.js
-    └── texts
-        ├── Score.js
-        └── index.js
+├── src
+│   ├── assets
+│   │   ├── dude.png
+│   │   ├── index.ts
+│   │   ├── platform.png
+│   │   ├── sky.png
+│   │   └── star.png
+│   ├── constants
+│   │   └── index.ts
+│   ├── index.css
+│   ├── index.ts
+│   ├── scenes
+│   │   ├── Boot.ts
+│   │   ├── Main.ts
+│   │   └── index.ts
+│   ├── sprites
+│   │   ├── Player.ts
+│   │   ├── Star.ts
+│   │   └── index.ts
+│   ├── texts
+│   │   ├── Score.ts
+│   │   └── index.ts
+│   └── web-app-env.d.ts
+└── tsconfig.json
 
-7 directories, 25 files
+7 directories, 27 files
 ```
 
 ## Migration
