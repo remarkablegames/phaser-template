@@ -37,11 +37,9 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Configure Git user
-        run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-
       - name: Deploy
         if: github.ref == 'refs/heads/master'
-        run: npx gitploy build gh-pages
+        uses: JamesIves/github-pages-deploy-action@4.1.7
+        with:
+          branch: gh-pages
+          folder: build
