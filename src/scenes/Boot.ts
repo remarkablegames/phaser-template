@@ -1,12 +1,7 @@
 import Phaser from 'phaser';
 
 import { dude, platform, sky, star } from '../assets';
-import {
-  TEXTURE_DUDE,
-  TEXTURE_GROUND,
-  TEXTURE_SKY,
-  TEXTURE_STAR,
-} from '../constants';
+import { Texture } from '../types';
 import { Main } from '.';
 
 export default class Boot extends Phaser.Scene {
@@ -17,13 +12,13 @@ export default class Boot extends Phaser.Scene {
   }
 
   preload() {
-    this.load.spritesheet(TEXTURE_DUDE, dude, {
+    this.load.spritesheet(Texture.Dude, dude, {
       frameWidth: 32,
       frameHeight: 48,
     });
-    this.load.image(TEXTURE_GROUND, platform);
-    this.load.image(TEXTURE_SKY, sky);
-    this.load.image(TEXTURE_STAR, star);
+    this.load.image(Texture.Ground, platform);
+    this.load.image(Texture.Sky, sky);
+    this.load.image(Texture.Star, star);
   }
 
   create() {

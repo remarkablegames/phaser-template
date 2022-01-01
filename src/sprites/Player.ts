@@ -1,11 +1,7 @@
 import Phaser from 'phaser';
 
-import {
-  ANIMATION_LEFT,
-  ANIMATION_RIGHT,
-  ANIMATION_TURN,
-  TEXTURE_DUDE,
-} from '../constants';
+import { ANIMATION_LEFT, ANIMATION_RIGHT, ANIMATION_TURN } from '../constants';
+import { Texture } from '../types';
 
 const SPEED_HORIZONTAL = 160;
 const SPEED_VERTICAL = 330;
@@ -13,6 +9,8 @@ const SPEED_VERTICAL = 330;
 let cursors: Phaser.Types.Input.Keyboard.CursorKeys;
 
 export default class Player extends Phaser.Physics.Arcade.Sprite {
+  static key = 'PlayerSprite';
+
   constructor(
     scene: Phaser.Scene,
     x: number,
@@ -20,7 +18,7 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
     texture?: string,
     frame?: string | number
   ) {
-    super(scene, x, y, TEXTURE_DUDE);
+    super(scene, x, y, Texture.Dude);
 
     // Add the sprite to the scene.
     scene.add.existing(this);
@@ -41,7 +39,7 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
     // Create left animation.
     this.anims.create({
       key: ANIMATION_LEFT,
-      frames: this.anims.generateFrameNumbers(TEXTURE_DUDE, {
+      frames: this.anims.generateFrameNumbers(Texture.Dude, {
         start: 0,
         end: 3,
       }),
@@ -52,14 +50,14 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
     // Create turn animation.
     this.anims.create({
       key: ANIMATION_TURN,
-      frames: [{ key: TEXTURE_DUDE, frame: 4 }],
+      frames: [{ key: Texture.Dude, frame: 4 }],
       frameRate: 20,
     });
 
     // Create right animation.
     this.anims.create({
       key: ANIMATION_RIGHT,
-      frames: this.anims.generateFrameNumbers(TEXTURE_DUDE, {
+      frames: this.anims.generateFrameNumbers(Texture.Dude, {
         start: 5,
         end: 8,
       }),
