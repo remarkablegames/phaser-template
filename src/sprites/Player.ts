@@ -1,10 +1,17 @@
 import Phaser from 'phaser';
 
-import { ANIMATION_LEFT, ANIMATION_RIGHT, ANIMATION_TURN } from '../constants';
 import { Texture } from '../types';
 
-const SPEED_HORIZONTAL = 160;
-const SPEED_VERTICAL = 330;
+enum Animation {
+  Left = 'Left',
+  Right = 'Right',
+  Turn = 'Turn',
+}
+
+enum Speed {
+  Horizontal = 160,
+  Vertical = 330,
+}
 
 let cursors: Phaser.Types.Input.Keyboard.CursorKeys;
 
@@ -38,7 +45,7 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
   init() {
     // Create left animation.
     this.anims.create({
-      key: ANIMATION_LEFT,
+      key: Animation.Left,
       frames: this.anims.generateFrameNumbers(Texture.Dude, {
         start: 0,
         end: 3,
@@ -49,14 +56,14 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
 
     // Create turn animation.
     this.anims.create({
-      key: ANIMATION_TURN,
+      key: Animation.Turn,
       frames: [{ key: Texture.Dude, frame: 4 }],
       frameRate: 20,
     });
 
     // Create right animation.
     this.anims.create({
-      key: ANIMATION_RIGHT,
+      key: Animation.Right,
       frames: this.anims.generateFrameNumbers(Texture.Dude, {
         start: 5,
         end: 8,
@@ -76,24 +83,24 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
     switch (true) {
       // Move to the left.
       case cursors.left.isDown:
-        this.body.setVelocityX(-SPEED_HORIZONTAL);
-        this.anims.play(ANIMATION_LEFT, true);
+        this.body.setVelocityX(-Speed.Horizontal);
+        this.anims.play(Animation.Left, true);
         break;
       // Move to the right.
       case cursors.right.isDown:
-        this.body.setVelocityX(SPEED_HORIZONTAL);
-        this.anims.play(ANIMATION_RIGHT, true);
+        this.body.setVelocityX(Speed.Horizontal);
+        this.anims.play(Animation.Right, true);
         break;
       // Stand still.
       default:
         this.body.setVelocityX(0);
-        this.anims.play(ANIMATION_TURN);
+        this.anims.play(Animation.Turn);
         break;
     }
 
     // Allow player to jump if sprite is touching the ground.
     if (cursors.up.isDown && this.body.touching.down) {
-      this.body.setVelocityY(-SPEED_VERTICAL);
+      this.body.setVelocityY(-Speed.Vertical);
     }
   }
 }
