@@ -1,6 +1,6 @@
 import Phaser from 'phaser';
 
-import { SCENE_MAIN, TEXTURE_GROUND, TEXTURE_SKY } from '../constants';
+import { TEXTURE_GROUND, TEXTURE_SKY } from '../constants';
 import { Player, Star } from '../sprites';
 import { Score } from '../texts';
 
@@ -12,8 +12,10 @@ let player: Player;
 let score: Score;
 
 export default class Main extends Phaser.Scene {
+  static key = 'MainScene';
+
   constructor() {
-    super({ key: SCENE_MAIN });
+    super({ key: Main.key });
   }
 
   create() {
