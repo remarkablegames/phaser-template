@@ -2,7 +2,7 @@ import Phaser from 'phaser';
 
 import { Player, Star } from '../sprites';
 import { Score } from '../texts';
-import { Texture } from '../types';
+import { Scene, Texture } from '../types';
 
 const state = {
   score: 0,
@@ -12,10 +12,8 @@ let player: Player;
 let score: Score;
 
 export default class Main extends Phaser.Scene {
-  static key = 'MainScene';
-
   constructor() {
-    super({ key: Main.key });
+    super({ key: Scene.Main });
   }
 
   create() {

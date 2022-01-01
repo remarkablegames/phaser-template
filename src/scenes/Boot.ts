@@ -1,14 +1,11 @@
 import Phaser from 'phaser';
 
 import { dude, platform, sky, star } from '../assets';
-import { Texture } from '../types';
-import { Main } from '.';
+import { Scene, Texture } from '../types';
 
 export default class Boot extends Phaser.Scene {
-  static key = 'BootScene';
-
   constructor() {
-    super({ key: Boot.key });
+    super({ key: Scene.Boot });
   }
 
   preload() {
@@ -22,6 +19,6 @@ export default class Boot extends Phaser.Scene {
   }
 
   create() {
-    this.scene.start(Main.key);
+    this.scene.start(Scene.Main);
   }
 }

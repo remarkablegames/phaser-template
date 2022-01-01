@@ -4,3 +4,8 @@ export enum Texture {
   Sky = 'Sky',
   Star = 'Star',
 }
+
+export enum Scene {
+  Boot = 'Boot',
+  Main = 'Main',
+}
