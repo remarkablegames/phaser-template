@@ -40,9 +40,7 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
       // Player physics properties. Give the little guy some bounce.
       this.body.setBounceY(0.2).setCollideWorldBounds(true);
     }
-  }
 
-  init() {
     // Create left animation.
     this.anims.create({
       key: Animation.Left,
@@ -71,8 +69,6 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
       frameRate: 10,
       repeat: -1,
     });
-
-    return this;
   }
 
   update() {
