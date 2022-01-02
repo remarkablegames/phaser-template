@@ -27,8 +27,8 @@ export default class Main extends Phaser.Scene {
       defaultKey: Texture.Ground,
     });
 
-    // Create the ground (scale it to fit the widt of the game and scale it to
-    // fit the width of the game). The original sprite is 400x32 in size.
+    // Create the ground (scale it to fit the width of the game).
+    // The original sprite is 400x32 in size.
     platforms
       .get(0, Number(this.game.config.height) - 64)
       .setOrigin(0)
