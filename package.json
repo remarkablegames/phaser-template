@@ -20,14 +20,14 @@
     "phaser": "3.55.2"
   },
   "devDependencies": {
-    "@commitlint/cli": "^16.0.0",
+    "@commitlint/cli": "^16.0.1",
     "@commitlint/config-conventional": "^16.0.0",
     "@descriptive/web-scripts": "3.0.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
     "gitploy": "0.1.0",
     "husky": "^7.0.4",
-    "lint-staged": "^12.1.4",
+    "lint-staged": "^12.1.5",
     "prettier": "^2.5.1",
     "standard-version": "^9.3.2",
     "typescript": "^4.5.4"
