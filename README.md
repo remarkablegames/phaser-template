@@ -114,7 +114,7 @@ WEB_APP_FOO=$DOMAIN/foo
 
 ## Testing
 
-Tests are run just like [Create React App](https://create-react-app.dev/docs/running-tests):
+Run tests similar to [Create React App](https://create-react-app.dev/docs/running-tests):
 
 ```sh
 npm test
@@ -122,7 +122,7 @@ npm test
 
 ## Build
 
-You can build the production app locally:
+Build the production app locally:
 
 ```sh
 npm run build
