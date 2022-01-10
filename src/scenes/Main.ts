@@ -51,7 +51,10 @@ export default class Main extends Phaser.Scene {
 
     // Here we'll create 12 of them evenly spaced apart.
     for (let i = 0; i < 12; i++) {
-      stars.get(i * 70, 0);
+      const star = stars.get(i * 70, 0);
+
+      // Give the star some bounce.
+      star.body.setBounceY(Phaser.Math.FloatBetween(0.4, 0.8));
     }
 
     // Collide the star with the platform or else the star will fall through.

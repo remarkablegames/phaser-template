@@ -14,10 +14,5 @@ export default class Star extends Phaser.Physics.Arcade.Sprite {
 
     // Reset drawing position of image to the top-left.
     this.setOrigin(0);
-
-    if (this.body instanceof Phaser.Physics.Arcade.Body) {
-      // Give the sprite some bounce.
-      this.body.setBounceY(Phaser.Math.FloatBetween(0.4, 0.8));
-    }
   }
 }
