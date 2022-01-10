@@ -1,6 +1,6 @@
 import Phaser from 'phaser';
 
-import { Texture } from '../types';
+import { Image } from '../types';
 
 enum Animation {
   Left = 'Left',
@@ -16,16 +16,14 @@ enum Speed {
 let cursors: Phaser.Types.Input.Keyboard.CursorKeys;
 
 export default class Player extends Phaser.Physics.Arcade.Sprite {
-  static key = 'PlayerSprite';
-
   constructor(
     scene: Phaser.Scene,
     x: number,
     y: number,
-    texture?: string,
-    frame?: string | number
+    texture = Image.Dude,
+    frame = 0
   ) {
-    super(scene, x, y, Texture.Dude);
+    super(scene, x, y, texture, frame);
 
     // Add the sprite to the scene.
     scene.add.existing(this);
@@ -44,7 +42,7 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
     // Create left animation.
     this.anims.create({
       key: Animation.Left,
-      frames: this.anims.generateFrameNumbers(Texture.Dude, {
+      frames: this.anims.generateFrameNumbers(Image.Dude, {
         start: 0,
         end: 3,
       }),
@@ -55,14 +53,14 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
     // Create turn animation.
     this.anims.create({
       key: Animation.Turn,
-      frames: [{ key: Texture.Dude, frame: 4 }],
+      frames: [{ key: Image.Dude, frame: 4 }],
       frameRate: 20,
     });
 
     // Create right animation.
     this.anims.create({
       key: Animation.Right,
-      frames: this.anims.generateFrameNumbers(Texture.Dude, {
+      frames: this.anims.generateFrameNumbers(Image.Dude, {
         start: 5,
         end: 8,
       }),
