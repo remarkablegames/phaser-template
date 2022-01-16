@@ -204,14 +204,6 @@ tree -I 'build|node_modules'
 7 directories, 27 files
 ```
 
-## Migration
-
-Migrate your project to use [@descriptive/web-scripts](https://www.npmjs.com/package/@descriptive/web-scripts):
-
-```sh
-npx web-scripts-migration --phaser
-```
-
 ## License
 
 [MIT](LICENSE)
