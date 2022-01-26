@@ -90,7 +90,7 @@ export default class Main extends Phaser.Scene {
     });
   }
 
-  update(time: number, delta: number) {
+  update() {
     player.update();
   }
 }
