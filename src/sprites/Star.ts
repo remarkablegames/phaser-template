@@ -7,10 +7,10 @@ export default class Star extends Phaser.Physics.Arcade.Sprite {
     scene: Phaser.Scene,
     x: number,
     y: number,
-    texture: string,
+    texture = Image.Star,
     frame: string | number
   ) {
-    super(scene, x, y, Image.Star);
+    super(scene, x, y, texture || Image.Star, frame);
 
     // Reset drawing position of image to the top-left.
     this.setOrigin(0);
