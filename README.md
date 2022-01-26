@@ -95,10 +95,6 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://create-react-app.dev/docs/deployment/) for more information.
 
-### `npm run release`
-
-Bumps the `package.json` version with [standard-version](https://github.com/conventional-changelog/standard-version).
-
 ## Environment Variables
 
 Environment variables work similarly to [Create React App](https://create-react-app.dev/docs/adding-custom-environment-variables/) except they begin with `WEB_APP_` instead of `REACT_APP_`.
