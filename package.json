@@ -9,9 +9,9 @@
     "clean": "rm -rf dist/",
     "lint": "eslint --ignore-path .gitignore .",
     "lint:fix": "npm run lint -- --fix",
-    "tsc": "tsc --noEmit",
+    "postinstall": "husky install",
     "start": "parcel --open",
-    "postinstall": "husky install"
+    "tsc": "tsc --noEmit"
   },
   "dependencies": {
     "phaser": "3.55.2"

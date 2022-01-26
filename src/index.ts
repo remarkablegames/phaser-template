@@ -12,6 +12,7 @@ const config = {
   height: 600,
   title: 'Phaser Template',
   url: 'https://remarkablegames.org/phaser-template/',
+  version: process.env.VERSION,
   scene: [Boot, Main],
   physics: {
     default: 'arcade',
