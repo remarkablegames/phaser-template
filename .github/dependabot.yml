@@ -10,3 +10,11 @@ updates:
     directory: '/'
     schedule:
       interval: 'daily'
+
+    # Optional
+    # assignees:
+    #   - 'remarkablemark'
+    labels:
+      - 'dependencies'
+    # reviewers:
+    #   - 'remarkablemark'
