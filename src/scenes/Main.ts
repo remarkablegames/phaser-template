@@ -4,14 +4,13 @@ import { Player, Star } from '../sprites';
 import { Score } from '../texts';
 import { Image, Scene } from '../types';
 
-const state = {
-  score: 0,
-};
-
-let player: Player;
-let score: Score;
-
 export default class Main extends Phaser.Scene {
+  private player!: Player;
+  private score!: Score;
+  private state = {
+    score: 0,
+  };
+
   constructor() {
     super({ key: Scene.Main });
   }
@@ -61,29 +60,29 @@ export default class Main extends Phaser.Scene {
     this.physics.add.collider(stars, platforms);
 
     // Create player.
-    player = new Player(this, 32, Number(this.game.config.height) - 150);
+    this.player = new Player(this, 32, Number(this.game.config.height) - 150);
 
     // Collide the player with the platform or else the player will fall through.
-    this.physics.add.collider(player, platforms);
+    this.physics.add.collider(this.player, platforms);
 
     // Check for overlap between the player and the star.
     this.physics.add.overlap(
-      player,
+      this.player,
       stars,
       (player, star) => {
         // Make the star inactive and invisible.
         (star as Phaser.Physics.Arcade.Sprite).disableBody(true, true);
 
         // Add to the score and update the text.
-        state.score += 10;
-        score.setScore(state.score);
+        this.state.score += 10;
+        this.score.setScore(this.state.score);
       },
       undefined,
       this
     );
 
     // Display score.
-    score = new Score(this, 16, 16, state.score, {
+    this.score = new Score(this, 16, 16, this.state.score, {
       // fill: '#fff',
       fontFamily: '"Lucida Grande", Helvetica, Arial, sans-serif',
       fontSize: '32px',
@@ -91,6 +90,6 @@ export default class Main extends Phaser.Scene {
   }
 
   update() {
-    player.update();
+    this.player.update();
   }
 }

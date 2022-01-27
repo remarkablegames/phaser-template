@@ -10,8 +10,8 @@ const isProduction = process.env.NODE_ENV === 'production';
  * https://photonstorm.github.io/phaser3-docs/Phaser.Types.Core.html#.GameConfig
  */
 const config = {
-  width: 800,
-  height: 600,
+  width: 800, // 1024
+  height: 600, // 768
   title: 'Phaser Template',
   url: 'https://remarkablegames.org/phaser-template/',
   version: process.env.VERSION,
@@ -26,7 +26,7 @@ const config = {
     },
   },
   disableContextMenu: isProduction,
-  backgroundColor: '#000',
+  backgroundColor: '#fff',
   scale: {
     mode: Scale.FIT,
     autoCenter: Scale.CENTER_BOTH,
