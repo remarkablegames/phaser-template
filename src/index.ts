@@ -2,7 +2,7 @@ import './style.css';
 
 import Phaser from 'phaser';
 
-import * as scenes from './scenes';
+import scenes from './scenes';
 
 const isProduction = process.env.NODE_ENV === 'production';
 
@@ -15,7 +15,7 @@ new Phaser.Game({
   title: 'Phaser Template',
   url: 'https://remarkablegames.org/phaser-template/',
   version: process.env.VERSION,
-  scene: Object.values(scenes),
+  scene: scenes,
   physics: {
     default: 'arcade',
     arcade: {
