@@ -1,6 +1,6 @@
 import Phaser from 'phaser';
 
-import { Image } from '../types';
+import { key } from '../data';
 
 enum Animation {
   Left = 'Left',
@@ -14,13 +14,14 @@ enum Speed {
 }
 
 export default class Player extends Phaser.Physics.Arcade.Sprite {
+  body!: Phaser.Physics.Arcade.Body;
   private cursors: Phaser.Types.Input.Keyboard.CursorKeys;
 
   constructor(
     scene: Phaser.Scene,
     x: number,
     y: number,
-    texture = Image.Dude,
+    texture = key.image.dude,
     frame = 0
   ) {
     super(scene, x, y, texture, frame);
@@ -37,18 +38,16 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
     // Create sprite animations
     this.createAnimations();
 
-    if (this.body instanceof Phaser.Physics.Arcade.Body) {
-      // Player physics properties
-      // Give the little guy some bounce
-      this.body.setBounceY(0.2).setCollideWorldBounds(true);
-    }
+    // Player physics properties
+    // Give the little guy some bounce
+    this.body.setBounceY(0.2).setCollideWorldBounds(true);
   }
 
   private createAnimations() {
     // Create left animation
     this.anims.create({
       key: Animation.Left,
-      frames: this.anims.generateFrameNumbers(Image.Dude, {
+      frames: this.anims.generateFrameNumbers(key.image.dude, {
         start: 0,
         end: 3,
       }),
@@ -59,14 +58,14 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
     // Create turn animation
     this.anims.create({
       key: Animation.Turn,
-      frames: [{ key: Image.Dude, frame: 4 }],
+      frames: [{ key: key.image.dude, frame: 4 }],
       frameRate: 20,
     });
 
     // Create right animation
     this.anims.create({
       key: Animation.Right,
-      frames: this.anims.generateFrameNumbers(Image.Dude, {
+      frames: this.anims.generateFrameNumbers(key.image.dude, {
         start: 5,
         end: 8,
       }),
@@ -76,10 +75,6 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
   }
 
   update() {
-    if (!(this.body instanceof Phaser.Physics.Arcade.Body)) {
-      return;
-    }
-
     switch (true) {
       // Move to the left
       case this.cursors.left.isDown:

@@ -1,24 +1,24 @@
 import Phaser from 'phaser';
 
 import { dude, platform, sky, star } from '../assets';
-import { Image, Scene } from '../types';
+import { key } from '../data';
 
 export default class Boot extends Phaser.Scene {
   constructor() {
-    super({ key: Scene.Boot });
+    super({ key: key.scene.boot });
   }
 
   preload() {
-    this.load.spritesheet(Image.Dude, dude, {
+    this.load.spritesheet(key.image.dude, dude, {
       frameWidth: 32,
       frameHeight: 48,
     });
-    this.load.image(Image.Ground, platform);
-    this.load.image(Image.Sky, sky);
-    this.load.image(Image.Star, star);
+    this.load.image(key.image.ground, platform);
+    this.load.image(key.image.sky, sky);
+    this.load.image(key.image.star, star);
   }
 
   create() {
-    this.scene.start(Scene.Main);
+    this.scene.start(key.scene.main);
   }
 }
