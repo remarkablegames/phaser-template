@@ -15,24 +15,15 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version-file: .nvmrc
-
-      # - name: Cache dependencies
-      #   uses: actions/cache@v3
-      #   with:
-      #     path: |
-      #       node_modules
-      #       */*/node_modules
-      #     key: ${{ runner.os }}-${{ hashFiles('**/package.json', './package.json') }}
-      #   id: cache
+          # cache: npm
 
       - name: Install dependencies
-        if: steps.cache.outputs.cache-hit != 'true'
-        run: npm install --prefer-offline
+        run: npm install
 
       - name: Lint commit message
         run: npx commitlint --from=HEAD~1
 
-      - name: ESLint
+      - name: Run ESLint
         run: npm run lint
 
       - name: Type check
