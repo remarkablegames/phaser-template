@@ -35,7 +35,6 @@ jobs:
           echo "URL=$(jq -r .homepage package.json)" >> $GITHUB_ENV
 
       - name: Build
-        # run: npm run build -- --public-url https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}
         run: npm run build -- --public-url ${{ env.URL }}
         env:
           GOOGLE_ANALYTICS_ID: ${{ secrets.GOOGLE_ANALYTICS_ID }}
