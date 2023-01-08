@@ -11,7 +11,7 @@ new Phaser.Game({
   width: 800, // 1024
   height: 600, // 768
   title: 'Phaser Template',
-  url: 'https://remarkablegames.org/phaser-template/',
+  url: process.env.URL,
   version: process.env.VERSION,
   scene: scenes,
   physics: {
