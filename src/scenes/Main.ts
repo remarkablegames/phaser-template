@@ -2,14 +2,12 @@ import Phaser from 'phaser';
 
 import { key } from '../data';
 import { Player, Star } from '../sprites';
+import { state } from '../store';
 import { Score } from '../texts';
 
 export default class Main extends Phaser.Scene {
   private player!: Player;
   private score!: Score;
-  private state = {
-    score: 0,
-  };
 
   constructor() {
     super({ key: key.scene.main });
@@ -74,16 +72,15 @@ export default class Main extends Phaser.Scene {
         (star as Phaser.Physics.Arcade.Sprite).disableBody(true, true);
 
         // Add to the score and update the text.
-        this.state.score += 10;
-        this.score.setScore(this.state.score);
+        state.score += 10;
+        this.score.setScore(state.score);
       },
       undefined,
       this
     );
 
     // Display score.
-    this.score = new Score(this, 16, 16, this.state.score, {
-      // fill: '#fff',
+    this.score = new Score(this, 16, 16, state.score, {
       fontFamily: '"Lucida Grande", Helvetica, Arial, sans-serif',
       fontSize: '32px',
     });
