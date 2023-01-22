@@ -1,13 +1,16 @@
-export const key = {
-  image: {
-    dude: 'dude',
-    ground: 'ground',
-    sky: 'sky',
-    star: 'star',
-  },
+const image = {
+  dude: 'dude',
+  ground: 'ground',
+  sky: 'sky',
+  star: 'star',
+};
 
-  scene: {
-    boot: 'boot',
-    main: 'main',
-  },
-} as const;
+const scene = {
+  boot: 'boot',
+  main: 'main',
+};
+
+export const key = {
+  image,
+  scene,
+};
