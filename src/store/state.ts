@@ -1,11 +1,5 @@
-import { makeAutoObservable } from 'mobx';
+import { observable } from 'mobx';
 
-class State {
-  score = 0;
-
-  constructor() {
-    makeAutoObservable(this);
-  }
-}
-
-export const state = new State();
+export const state = observable({
+  score: 0,
+});
