@@ -1,6 +1,6 @@
 {
   "name": "phaser-template",
-  "version": "1.0.0-alpha",
+  "version": "1.0.0",
   "description": "A template for building Phaser games.",
   "author": "Mark <mark@remarkablemark.org>",
   "source": "public/index.html",
