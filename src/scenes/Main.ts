@@ -76,7 +76,7 @@ export default class Main extends Phaser.Scene {
         this.score.setScore(state.score);
       },
       undefined,
-      this
+      this,
     );
 
     // Display score.

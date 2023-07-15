@@ -8,7 +8,7 @@ export default class Star extends Phaser.Physics.Arcade.Sprite {
     x: number,
     y: number,
     texture = key.image.star,
-    frame: string | number
+    frame: string | number,
   ) {
     super(scene, x, y, texture || key.image.star, frame);
 

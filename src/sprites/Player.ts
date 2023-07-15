@@ -22,7 +22,7 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
     x: number,
     y: number,
     texture = key.image.dude,
-    frame = 0
+    frame = 0,
   ) {
     super(scene, x, y, texture, frame);
 

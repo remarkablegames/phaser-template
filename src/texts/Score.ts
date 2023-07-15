@@ -6,7 +6,7 @@ export default class Score extends Phaser.GameObjects.Text {
     x: number,
     y: number,
     text: number,
-    style: Phaser.Types.GameObjects.Text.TextStyle
+    style: Phaser.Types.GameObjects.Text.TextStyle,
   ) {
     super(scene, x, y, getScore(text), style);
     scene.add.existing(this);
