@@ -18,10 +18,10 @@ new Phaser.Game({
       gravity: {
         y: 300,
       },
-      debug: import.meta.env.PROD,
+      debug: import.meta.env.DEV,
     },
   },
-  disableContextMenu: import.meta.env.DEV,
+  disableContextMenu: import.meta.env.PROD,
   backgroundColor: '#fff',
   scale: {
     mode: Phaser.Scale.FIT,
