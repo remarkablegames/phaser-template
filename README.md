@@ -4,15 +4,20 @@
 
 The game was inspired by the tutorial "[Making your first Phaser 3 game](https://phaser.io/tutorials/making-your-first-phaser-3-game)".
 
-Demo:
+Play the demo:
 
 - [GitHub Pages](https://remarkablegames.org/phaser-template/)
 - [Replit](https://replit.com/talk/share/Phaser-Template/22850)
 - [CodeSandbox](https://codesandbox.io/s/phaser-template-4fy4y)
 
+The template is built with:
+
+- [GitHub Pages](https://pages.github.com/)
+- [Vite](https://vitejs.dev/)
+
 ## Prerequisites
 
-- [Node.js](https://nodejs.org/en/download/)
+- [nvm](https://github.com/nvm-sh/nvm#readme)
 
 ## Install
 
@@ -85,7 +90,7 @@ In the project directory, you can run:
 
 Runs the game in the development mode.
 
-Open [http://localhost:1234](http://localhost:1234) to view it in the browser.
+Open [http://localhost:5173](http://localhost:5173) to view it in the browser.
 
 The page will reload if you make edits.
 
