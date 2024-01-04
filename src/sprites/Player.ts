@@ -44,34 +44,42 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
   }
 
   private createAnimations() {
+    const anims = this.scene.anims;
+
     // Create left animation
-    this.anims.create({
-      key: Animation.Left,
-      frames: this.anims.generateFrameNumbers(key.image.dude, {
-        start: 0,
-        end: 3,
-      }),
-      frameRate: 10,
-      repeat: -1,
-    });
+    if (!anims.exists(Animation.Left)) {
+      anims.create({
+        key: Animation.Left,
+        frames: anims.generateFrameNumbers(key.image.dude, {
+          start: 0,
+          end: 3,
+        }),
+        frameRate: 10,
+        repeat: -1,
+      });
+    }
 
     // Create turn animation
-    this.anims.create({
-      key: Animation.Turn,
-      frames: [{ key: key.image.dude, frame: 4 }],
-      frameRate: 20,
-    });
+    if (!anims.exists(Animation.Turn)) {
+      anims.create({
+        key: Animation.Turn,
+        frames: [{ key: key.image.dude, frame: 4 }],
+        frameRate: 20,
+      });
+    }
 
     // Create right animation
-    this.anims.create({
-      key: Animation.Right,
-      frames: this.anims.generateFrameNumbers(key.image.dude, {
-        start: 5,
-        end: 8,
-      }),
-      frameRate: 10,
-      repeat: -1,
-    });
+    if (!anims.exists(Animation.Right)) {
+      anims.create({
+        key: Animation.Right,
+        frames: anims.generateFrameNumbers(key.image.dude, {
+          start: 5,
+          end: 8,
+        }),
+        frameRate: 10,
+        repeat: -1,
+      });
+    }
   }
 
   update() {
