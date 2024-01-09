@@ -1,13 +1,13 @@
 import Phaser from 'phaser';
+import { render, Text } from 'phaser-jsx';
 
 import { key } from '../data';
 import { Player, Star } from '../sprites';
 import { state } from '../store';
-import { Score } from '../texts';
 
 export default class Main extends Phaser.Scene {
   private player!: Player;
-  private score!: Score;
+  private text!: Phaser.GameObjects.Text;
 
   constructor() {
     super(key.scene.main);
@@ -73,17 +73,30 @@ export default class Main extends Phaser.Scene {
 
         // Add to the score and update the text.
         state.score += 10;
-        this.score.setScore(state.score);
+        this.text.text = this.getScore(state.score);
       },
       undefined,
       this,
     );
 
     // Display score.
-    this.score = new Score(this, 16, 16, state.score, {
-      fontFamily: '"Lucida Grande", Helvetica, Arial, sans-serif',
-      fontSize: '32px',
-    });
+    render(
+      <Text
+        x={16}
+        y={16}
+        text={this.getScore(state.score)}
+        style={{
+          fontFamily: '"Lucida Grande", Helvetica, Arial, sans-serif',
+          fontSize: '32px',
+        }}
+        ref={(text) => (this.text = text)}
+      />,
+      this,
+    );
+  }
+
+  private getScore(score: number) {
+    return `Score: ${score}`;
   }
 
   update() {
