@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-npm run build
+BUNDLE=true npm run build
 
 # replace absolute URLs with relative URLs
 if [ "$(uname)" == 'Darwin' ]; then
