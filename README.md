@@ -2,18 +2,19 @@
 
 <kbd>phaser-template</kbd> is a template for making [Phaser](https://phaser.io/) games.
 
-The game was inspired by the tutorial "[Making your first Phaser 3 game](https://phaser.io/tutorials/making-your-first-phaser-3-game)".
+Inspired by the tutorial "[Making your first Phaser 3 game](https://phaser.io/tutorials/making-your-first-phaser-3-game)".
 
-Play the demo:
+Demo:
 
 - [GitHub Pages](https://remarkablegames.org/phaser-template/)
 - [Replit](https://replit.com/talk/share/Phaser-Template/22850)
 - [CodeSandbox](https://codesandbox.io/s/phaser-template-4fy4y)
 
-The template is built with:
+Stack:
 
-- [GitHub Pages](https://pages.github.com/)
+- [Phaser](https://phaser.io/)
 - [Vite](https://vitejs.dev/)
+- [GitHub Pages](https://pages.github.com/)
 
 ## Prerequisites
 
@@ -39,9 +40,9 @@ Update the files:
 
 - [ ] `README.md`
 - [ ] `package.json`
-- [ ] `public/index.html`
+- [ ] `index.html`
 - [ ] `public/manifest.json`
-- [ ] `src/index.js`
+- [ ] `src/index.ts`
 
 Install the dependencies:
 
