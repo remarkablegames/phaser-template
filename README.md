@@ -107,7 +107,7 @@ The build is minified and the filenames include the hashes.
 
 Your game is ready to be deployed!
 
-## `npm run bundle`
+### `npm run bundle`
 
 Build your game and package it into a Zip file:
 
