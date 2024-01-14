@@ -109,19 +109,9 @@ Your game is ready to be deployed!
 
 ### `npm run bundle`
 
-Build your game and package it into a Zip file:
+Builds the game and packages it into a Zip file in the `dist` folder.
 
-```sh
-npm run bundle
-```
-
-The Zip file can be found in the `dist` folder:
-
-```sh
-find dist -name '*.zip'
-```
-
-Upload the Zip file to your server, [Itch.io](https://itch.io/), [Newgrounds](https://www.newgrounds.com/), etc.
+Your game can be uploaded to your server, [Itch.io](https://itch.io/), [Newgrounds](https://www.newgrounds.com/), etc.
 
 ## License
 
