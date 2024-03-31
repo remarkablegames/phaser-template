@@ -64,7 +64,8 @@ git add .
 git commit -m 'feat: initialize project from phaser-template'
 ```
 
-> Commit messages follow the [Conventional Commits](https://conventionalcommits.org/) format, which is used during release.
+> [!NOTE]
+> Commit messages follow [Conventional Commits](https://conventionalcommits.org/), which helps with release.
 
 Once you're ready, [push the local repository to GitHub](https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/) (or another remote repository):
 
