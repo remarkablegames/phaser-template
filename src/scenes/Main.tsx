@@ -1,6 +1,7 @@
 import Phaser from 'phaser';
-import { render, Text } from 'phaser-jsx';
+import { render } from 'phaser-jsx';
 
+import { Score } from '../components';
 import { key } from '../data';
 import { Player, Star } from '../sprites';
 import { state } from '../store';
@@ -81,14 +82,8 @@ export default class Main extends Phaser.Scene {
 
     // Display score.
     render(
-      <Text
-        x={16}
-        y={16}
+      <Score
         text={this.getScore(state.score)}
-        style={{
-          fontFamily: '"Lucida Grande", Helvetica, Arial, sans-serif',
-          fontSize: '32px',
-        }}
         ref={(text) => (this.text = text)}
       />,
       this,
