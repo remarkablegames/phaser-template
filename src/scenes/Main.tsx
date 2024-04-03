@@ -74,7 +74,7 @@ export default class Main extends Phaser.Scene {
 
         // Add to the score and update the text.
         state.score += 10;
-        this.text.text = this.getScore(state.score);
+        this.text.setText(this.score);
       },
       undefined,
       this,
@@ -82,16 +82,13 @@ export default class Main extends Phaser.Scene {
 
     // Display score.
     render(
-      <Score
-        text={this.getScore(state.score)}
-        ref={(text) => (this.text = text)}
-      />,
+      <Score text={this.score} ref={(text) => (this.text = text)} />,
       this,
     );
   }
 
-  private getScore(score: number) {
-    return `Score: ${score}`;
+  private get score() {
+    return `Score: ${state.score}`;
   }
 
   update() {
