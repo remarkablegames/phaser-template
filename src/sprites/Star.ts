@@ -1,6 +1,6 @@
 import Phaser from 'phaser';
 
-import { key } from '../data';
+import { key } from '../constants';
 
 export default class Star extends Phaser.Physics.Arcade.Sprite {
   constructor(

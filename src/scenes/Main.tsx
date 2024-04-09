@@ -2,7 +2,7 @@ import Phaser from 'phaser';
 import { render } from 'phaser-jsx';
 
 import { Score } from '../components';
-import { key } from '../data';
+import { key } from '../constants';
 import { Player, Star } from '../sprites';
 import { state } from '../store';
 
