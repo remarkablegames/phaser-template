@@ -3,7 +3,7 @@ import Phaser from 'phaser';
 import { dude, platform, sky, star } from '../assets';
 import { key } from '../data';
 
-export default class Boot extends Phaser.Scene {
+export class Boot extends Phaser.Scene {
   constructor() {
     super(key.scene.boot);
   }

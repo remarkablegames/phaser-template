@@ -6,7 +6,7 @@ import { key } from '../data';
 import { Player, Star } from '../sprites';
 import { state } from '../store';
 
-export default class Main extends Phaser.Scene {
+export class Main extends Phaser.Scene {
   private player!: Player;
   private text!: Phaser.GameObjects.Text;
 
