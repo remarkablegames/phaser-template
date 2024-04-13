@@ -13,7 +13,7 @@ enum Speed {
   Vertical = 330,
 }
 
-export default class Player extends Phaser.Physics.Arcade.Sprite {
+export class Player extends Phaser.Physics.Arcade.Sprite {
   body!: Phaser.Physics.Arcade.Body;
   private cursors: Phaser.Types.Input.Keyboard.CursorKeys;
 
