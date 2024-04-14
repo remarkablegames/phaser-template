@@ -4,7 +4,6 @@ import { render } from 'phaser-jsx';
 import { Score } from '../components';
 import { key } from '../constants';
 import { Player, Star } from '../sprites';
-import { state } from '../state';
 
 export class Main extends Phaser.Scene {
   private player!: Player;
@@ -73,8 +72,8 @@ export class Main extends Phaser.Scene {
         (star as Phaser.Physics.Arcade.Sprite).disableBody(true, true);
 
         // Add to the score and update the text.
-        state.score += 10;
-        this.text.setText(this.score);
+        this.text.data.set('score', this.text.getData('score') + 10);
+        this.text.setText(this.renderScoreText());
       },
       undefined,
       this,
@@ -82,13 +81,19 @@ export class Main extends Phaser.Scene {
 
     // Display score.
     render(
-      <Score text={this.score} ref={(text) => (this.text = text)} />,
+      <Score
+        text={this.renderScoreText()}
+        ref={(text) => {
+          text.setData('score', 0);
+          this.text = text;
+        }}
+      />,
       this,
     );
   }
 
-  private get score() {
-    return `Score: ${state.score}`;
+  private renderScoreText() {
+    return `Score: ${this.text?.getData('score') || 0}`;
   }
 
   update() {
