@@ -3,9 +3,9 @@ import Phaser from 'phaser';
 import { key } from '../constants';
 
 enum Animation {
-  Left = 'Left',
-  Right = 'Right',
-  Turn = 'Turn',
+  Left = 'PlayerLeft',
+  Right = 'PlayerRight',
+  Turn = 'PlayerTurn',
 }
 
 enum Speed {
