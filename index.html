@@ -16,10 +16,10 @@
 
     <link rel="stylesheet" href="src/style.css" />
 
+    <% if (process.env.BUNDLE !== 'true') { %>
     <!--
       GitHub Corners. See https://github.com/remarkablemark/github-corners
     -->
-    <% if (process.env.BUNDLE !== 'true') { %>
     <script
       src="https://unpkg.com/github-corners/dist/embed.min.js"
       data-href="https://github.com/remarkablegames/phaser-template"
@@ -36,7 +36,6 @@
         opacity: 1;
       }
     </style>
-    <link rel="stylesheet" href="src/github-corners.css" />
     <% } %>
 
     <title>Phaser Template | remarkablegames</title>
