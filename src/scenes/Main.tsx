@@ -3,7 +3,7 @@ import { render } from 'phaser-jsx';
 
 import { Score } from '../components';
 import { key } from '../constants';
-import { Player, Star } from '../sprites';
+import { Player, Star } from '../gameobjects';
 
 export class Main extends Phaser.Scene {
   private player!: Player;
