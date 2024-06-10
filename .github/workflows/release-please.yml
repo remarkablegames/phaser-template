@@ -21,7 +21,7 @@ jobs:
         with:
           release-type: node
 
-  publish:
+  distribute:
     needs: release-please
     runs-on: ubuntu-latest
     if: ${{ needs.release-please.outputs.release_created }}
