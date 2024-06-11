@@ -22,7 +22,7 @@ jobs:
         with:
           release-type: node
 
-  distribute:
+  deploy:
     needs: release
     runs-on: ubuntu-latest
     if: ${{ needs.release.outputs.release_created }}
