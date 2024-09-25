@@ -7,7 +7,6 @@ Inspired by the tutorial "[Making your first Phaser 3 game](https://phaser.io/tu
 Demo:
 
 - [remarkablegames](https://remarkablegames.org/phaser-template/)
-- [Replit](https://replit.com/talk/share/Phaser-Template/22850)
 - [CodeSandbox](https://codesandbox.io/s/phaser-template-4fy4y)
 
 Stack:
