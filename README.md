@@ -4,16 +4,10 @@
 
 Inspired by the tutorial "[Making your first Phaser 3 game](https://phaser.io/tutorials/making-your-first-phaser-3-game)".
 
-Demo:
+Play the game on:
 
 - [remarkablegames](https://remarkablegames.org/phaser-template/)
 - [CodeSandbox](https://codesandbox.io/s/phaser-template-4fy4y)
-
-Stack:
-
-- [Phaser](https://phaser.io/)
-- [Vite](https://vitejs.dev/)
-- [GitHub Pages](https://pages.github.com/)
 
 ## Prerequisites
 
@@ -26,6 +20,12 @@ Clone the repository:
 ```sh
 git clone https://github.com/remarkablegames/phaser-template.git
 cd phaser-template
+```
+
+Install the dependencies:
+
+```sh
+npm install
 ```
 
 Rename the project:
@@ -42,12 +42,6 @@ Update the files:
 - [ ] `index.html`
 - [ ] `public/manifest.json`
 - [ ] `src/index.ts`
-
-Install the dependencies:
-
-```sh
-npm install
-```
 
 Initialize a new repository:
 
