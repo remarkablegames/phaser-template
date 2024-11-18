@@ -1,4 +1,11 @@
-# phaser-template
+<p align="center">
+  <img src="https://github.com/remarkablegames/phaser-template/blob/master/public/logo192.png" alt="Phaser Template">
+</p>
+
+# Phaser Template
+
+![release](https://img.shields.io/github/v/release/remarkablegames/phaser-template)
+[![build](https://github.com/remarkablegames/phaser-template/actions/workflows/build.yml/badge.svg)](https://github.com/remarkablegames/phaser-template/actions/workflows/build.yml)
 
 <kbd>phaser-template</kbd> is a template for making [Phaser](https://phaser.io/) games.
 
