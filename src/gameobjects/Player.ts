@@ -1,6 +1,6 @@
 import Phaser from 'phaser';
 
-import { key } from '../constants';
+import { Image } from '../constants';
 
 enum Animation {
   Left = 'PlayerLeft',
@@ -21,7 +21,7 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
     scene: Phaser.Scene,
     x: number,
     y: number,
-    texture = key.image.dude,
+    texture = Image.Dude,
     frame = 0,
   ) {
     super(scene, x, y, texture, frame);
@@ -50,7 +50,7 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
     if (!anims.exists(Animation.Left)) {
       anims.create({
         key: Animation.Left,
-        frames: anims.generateFrameNumbers(key.image.dude, {
+        frames: anims.generateFrameNumbers(Image.Dude, {
           start: 0,
           end: 3,
         }),
@@ -63,7 +63,7 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
     if (!anims.exists(Animation.Turn)) {
       anims.create({
         key: Animation.Turn,
-        frames: [{ key: key.image.dude, frame: 4 }],
+        frames: [{ key: Image.Dude, frame: 4 }],
         frameRate: 20,
       });
     }
@@ -72,7 +72,7 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
     if (!anims.exists(Animation.Right)) {
       anims.create({
         key: Animation.Right,
-        frames: anims.generateFrameNumbers(key.image.dude, {
+        frames: anims.generateFrameNumbers(Image.Dude, {
           start: 5,
           end: 8,
         }),
