@@ -1,16 +1,10 @@
 import Phaser from 'phaser';
 
-import { Image } from '../constants';
+import { Texture } from '../constants';
 
 export class Star extends Phaser.Physics.Arcade.Sprite {
-  constructor(
-    scene: Phaser.Scene,
-    x: number,
-    y: number,
-    texture = Image.Star,
-    frame: string | number,
-  ) {
-    super(scene, x, y, texture || Image.Star, frame);
+  constructor(scene: Phaser.Scene, x: number, y: number) {
+    super(scene, x, y, Texture.Star);
 
     // Reset drawing position of image to the top-left
     this.setOrigin(0);

@@ -1,4 +1,4 @@
-export enum Image {
+export enum Texture {
   Dude = 'Dude',
   Ground = 'Ground',
   Sky = 'Sky',
