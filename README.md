@@ -4,7 +4,7 @@
 
 # Phaser Template
 
-![release](https://img.shields.io/github/v/release/remarkablegames/phaser-template)
+[![release](https://img.shields.io/github/v/release/remarkablegames/phaser-template)](https://github.com/remarkablegames/phaser-template/releases)
 [![build](https://github.com/remarkablegames/phaser-template/actions/workflows/build.yml/badge.svg)](https://github.com/remarkablegames/phaser-template/actions/workflows/build.yml)
 
 <kbd>phaser-template</kbd> is a template for making [Phaser](https://phaser.io/) games. The template is inspired by the tutorial "[Making your first Phaser 3 game](https://phaser.io/tutorials/making-your-first-phaser-3-game)".
