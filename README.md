@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/remarkablegames/phaser-template/blob/master/public/logo192.png" alt="Phaser Template">
+  <img src="public/logo192.png" alt="Phaser Template">
 </p>
 
 # Phaser Template
