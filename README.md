@@ -36,14 +36,17 @@ Rename the project:
 
 ```sh
 git grep -l phaser-template | xargs sed -i '' -e 's/phaser-template/my-game/g'
+```
+
+```sh
 git grep -l 'Phaser Template' | xargs sed -i '' -e 's/Phaser Template/My Game/g'
 ```
 
 Update the files:
 
 - [ ] `README.md`
-- [ ] `package.json`
 - [ ] `index.html`
+- [ ] `package.json`
 - [ ] `public/manifest.json`
 - [ ] `src/index.ts`
 
@@ -83,9 +86,9 @@ Your game is ready to be deployed!
 
 ### `npm run bundle`
 
-Builds the game and packages it into a Zip file in the `dist` folder.
+Builds the game and compresses the contents into a ZIP archive in the `dist` folder.
 
-Your game can be uploaded to your server, [Itch.io](https://itch.io/), [Newgrounds](https://www.newgrounds.com/), etc.
+Your game can be uploaded to your server, [itch.io](https://itch.io/), [newgrounds](https://www.newgrounds.com/), etc.
 
 ## License
 
