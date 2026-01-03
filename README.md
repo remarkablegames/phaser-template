@@ -47,7 +47,7 @@ Update the files:
 - [ ] `README.md`
 - [ ] `index.html`
 - [ ] `package.json`
-- [ ] `public/app-icon.png`
+- [ ] `public/*.png`
 - [ ] `public/manifest.json`
 - [ ] `src/index.ts`
 
