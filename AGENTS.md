@@ -16,7 +16,7 @@ description: Expert technical engineer for this Phaser game
   - TypeScript 5 (strict mode)
   - Vite 7 (build tool)
   - Node.js 24
-  - Local storage
+  - localStorage
 - **File Structure:**
   - `src/` – game code
   - `public/` – game assets
