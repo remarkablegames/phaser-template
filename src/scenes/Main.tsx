@@ -1,13 +1,13 @@
 import Phaser from 'phaser';
 import { render } from 'phaser-jsx';
 
-import { Score } from '../components';
+import { Score, type SetScore } from '../components';
 import { Scene, Texture } from '../constants';
 import { Player, Star } from '../gameobjects';
 
 export class Main extends Phaser.Scene {
   private player!: Player;
-  private text!: Phaser.GameObjects.Text;
+  private setScore!: SetScore;
 
   constructor() {
     super({ key: Scene.Main });
@@ -71,9 +71,8 @@ export class Main extends Phaser.Scene {
         // Make the star inactive and invisible.
         (star as Phaser.Physics.Arcade.Sprite).disableBody(true, true);
 
-        // Add to the score and update the text.
-        this.text.data.set('score', this.text.getData('score') + 10);
-        this.text.setText(this.renderScoreText());
+        // Add to the score.
+        this.setScore((previousScore) => previousScore + 10);
       },
       undefined,
       this,
@@ -82,18 +81,12 @@ export class Main extends Phaser.Scene {
     // Display score.
     render(
       <Score
-        text={this.renderScoreText()}
-        ref={(text) => {
-          text.setData('score', 0);
-          this.text = text;
+        onReady={(setScore) => {
+          this.setScore = setScore;
         }}
       />,
       this,
     );
-  }
-
-  private renderScoreText() {
-    return `Score: ${this.text?.getData('score') || 0}`;
   }
 
   update() {

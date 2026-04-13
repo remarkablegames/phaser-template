@@ -1,22 +1,21 @@
-import type Phaser from 'phaser';
-import { Text } from 'phaser-jsx';
+import { Text, useState } from 'phaser-jsx';
+import type { Dispatch, SetStateAction } from 'react';
 
-interface Props {
-  text: string;
-  ref: (gameObject: Phaser.GameObjects.Text) => void;
-}
+export type SetScore = Dispatch<SetStateAction<number>>;
 
-export function Score(props: Props) {
+export function Score({ onReady }: { onReady: (setScore: SetScore) => void }) {
+  const [score, setScore] = useState(0);
+  onReady(setScore);
+
   return (
     <Text
       x={16}
       y={16}
-      text={props.text}
+      text={`Score: ${score}`}
       style={{
         fontFamily: '"Lucida Grande", Helvetica, Arial, sans-serif',
-        fontSize: '32px',
+        fontSize: 32,
       }}
-      ref={props.ref}
     />
   );
 }
