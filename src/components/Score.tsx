@@ -11,7 +11,7 @@ export function Score({ onReady }: { onReady: (setScore: SetScore) => void }) {
     <Text
       x={16}
       y={16}
-      text={`Score: ${score}`}
+      text={`Score: ${String(score)}`}
       style={{
         fontFamily: '"Lucida Grande", Helvetica, Arial, sans-serif',
         fontSize: 32,

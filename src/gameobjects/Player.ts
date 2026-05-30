@@ -33,7 +33,10 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
     scene.physics.world.enable(this);
 
     // Add cursor keys
-    this.cursors = scene.input.keyboard!.createCursorKeys();
+    if (!scene.input.keyboard) {
+      throw new Error('Keyboard input not available');
+    }
+    this.cursors = scene.input.keyboard.createCursorKeys();
 
     // Create sprite animations
     this.createAnimations();

@@ -26,8 +26,12 @@ export class Main extends Phaser.Scene {
 
     // Create the ground (scale it to fit the width of the game).
     // The original sprite is 400x32 in size.
-    platforms
-      .get(0, Number(this.game.config.height) - 64)
+    (
+      platforms.get(
+        0,
+        Number(this.game.config.height) - 64,
+      ) as Phaser.Physics.Arcade.Sprite
+    )
       .setOrigin(0)
       .setScale(2)
       .refreshBody();
@@ -37,8 +41,8 @@ export class Main extends Phaser.Scene {
       [600, 400],
       [50, 250],
       [750, 220],
-    ].forEach((coordinates) => {
-      platforms.get(...coordinates);
+    ].forEach(([x, y]) => {
+      platforms.get(x, y) as Phaser.Physics.Arcade.Sprite;
     });
 
     // Create stars group.
@@ -48,7 +52,7 @@ export class Main extends Phaser.Scene {
 
     // Here we'll create 12 of them evenly spaced apart.
     for (let i = 0; i < 12; i++) {
-      const star = stars.get(i * 70, 0);
+      const star = stars.get(i * 70, 0) as Star;
 
       // Give the star some bounce.
       star.body.setBounceY(Phaser.Math.FloatBetween(0.4, 0.8));

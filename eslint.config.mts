@@ -1,8 +1,7 @@
 import { fileURLToPath } from 'node:url';
 
-import { includeIgnoreFile } from '@eslint/compat';
-import eslint from '@eslint/js';
-import { defineConfig } from 'eslint/config';
+import js from '@eslint/js';
+import { defineConfig, includeIgnoreFile } from 'eslint/config';
 import prettier from 'eslint-plugin-prettier';
 import simpleImportSort from 'eslint-plugin-simple-import-sort';
 import globals from 'globals';
@@ -18,16 +17,28 @@ export default defineConfig([
 
     plugins: {
       'simple-import-sort': simpleImportSort,
-      eslint,
+      js,
       prettier,
     },
 
-    extends: ['eslint/recommended'],
+    extends: [
+      js.configs.recommended,
+      tseslint.configs.recommended,
+      tseslint.configs.recommendedTypeChecked,
+      tseslint.configs.strictTypeChecked,
+      tseslint.configs.stylisticTypeChecked,
+    ],
 
     languageOptions: {
       globals: {
         ...globals.browser,
         ...globals.node,
+      },
+      parserOptions: {
+        projectService: {
+          allowDefaultProject: ['*.mts'],
+        },
+        tsconfigRootDir: fileURLToPath(new URL('.', import.meta.url)),
       },
     },
 
@@ -42,5 +53,16 @@ export default defineConfig([
     },
   },
 
-  tseslint.configs.recommended,
+  {
+    files: ['**/*.tsx'],
+    rules: {
+      '@typescript-eslint/no-unsafe-argument': 'off',
+      '@typescript-eslint/no-unsafe-return': 'off',
+    },
+  },
+
+  {
+    files: ['*.mts'],
+    extends: [tseslint.configs.disableTypeChecked],
+  },
 ]);
