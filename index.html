@@ -41,6 +41,18 @@
   </head>
   <body>
     <noscript>You need to enable JavaScript to play this game.</noscript>
+    <script type="module" src="/src/index.ts"></script>
+
+    <!--
+      Wavedash. See https://docs.wavedash.com/engines/javascript
+    -->
+    <% if (process.env.WAVEDASH == 'true') { %>
+    <script type="module">
+      import Wavedash from 'https://esm.sh/@wvdsh/sdk-js@1.3.12';
+      Wavedash.updateLoadProgressZeroToOne(1);
+      Wavedash.init();
+    </script>
+    <% } %>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script>
@@ -50,7 +62,5 @@
       };
       gtag('js', new Date());
     </script>
-
-    <script type="module" src="src/index.ts"></script>
   </body>
 </html>
