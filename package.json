@@ -1,7 +1,7 @@
 {
   "name": "phaser-template",
   "version": "1.0.0-alpha",
-  "description": "A template for building Phaser games.",
+  "description": "Phaser Template",
   "author": "Mark <mark@remarkablemark.org>",
   "scripts": {
     "build": "npm run clean && vite build",

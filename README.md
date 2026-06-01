@@ -52,7 +52,7 @@ Update the files:
 - [ ] `index.html`
 - [ ] `package.json`
 - [ ] `public/*.png`
-- [ ] `public/manifest.json`
+- [ ] `public/manifest.webmanifest`
 - [ ] `src/index.ts`
 
 ## Environment Variables

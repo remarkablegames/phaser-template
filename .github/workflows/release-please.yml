@@ -53,8 +53,8 @@ jobs:
         id: vars
         shell: bash
         run: |
-          echo "app_name=$(jq -r .short_name public/manifest.json)" >> $GITHUB_OUTPUT
-          echo "window_title=$(jq -r .name public/manifest.json)" >> $GITHUB_OUTPUT
+          echo "app_name=$(jq -r .short_name public/manifest.webmanifest)" >> $GITHUB_OUTPUT
+          echo "window_title=$(jq -r .name public/manifest.webmanifest)" >> $GITHUB_OUTPUT
           echo "CHANNEL=$(echo $RUNNER_OS | tr '[:upper:]' '[:lower:]')" >> $GITHUB_ENV
           echo "VERSION=$(jq -r .version package.json)" >> $GITHUB_ENV
 
