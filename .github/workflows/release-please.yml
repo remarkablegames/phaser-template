@@ -22,7 +22,7 @@ jobs:
         with:
           release-type: node
 
-  itchio:
+  itch:
     needs: release
     if: ${{ needs.release.outputs.release_created }}
     runs-on: ${{ matrix.os }}
