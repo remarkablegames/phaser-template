@@ -44,19 +44,16 @@ jobs:
         run: npm ci --prefer-offline --ignore-scripts
 
       - name: Build game
-        shell: bash
         run: npm run bundle
-        env:
-          VITE_GOOGLE_ANALYTICS_ID: ${{ secrets.GOOGLE_ANALYTICS_ID }}
 
       - name: Get variables
         id: vars
         shell: bash
         run: |
-          echo "app_name=$(jq -r .short_name public/manifest.webmanifest)" >> $GITHUB_OUTPUT
-          echo "window_title=$(jq -r .name public/manifest.webmanifest)" >> $GITHUB_OUTPUT
-          echo "CHANNEL=$(echo $RUNNER_OS | tr '[:upper:]' '[:lower:]')" >> $GITHUB_ENV
-          echo "VERSION=$(jq -r .version package.json)" >> $GITHUB_ENV
+          echo "app_name=$(jq -r .short_name public/manifest.webmanifest)" >> "$GITHUB_OUTPUT"
+          echo "window_title=$(jq -r .name public/manifest.webmanifest)" >> "$GITHUB_OUTPUT"
+          echo "version=$(jq -r .version package.json)" >> "$GITHUB_OUTPUT"
+          echo "platform=$(echo $RUNNER_OS | tr '[:upper:]' '[:lower:]')" >> "$GITHUB_OUTPUT"
 
       - name: Setup butler
         uses: remarkablegames/setup-butler@v3
@@ -65,7 +62,7 @@ jobs:
         if: runner.os == 'Linux'
         working-directory: dist
         run: |
-          butler push . $GITHUB_REPOSITORY:html5 --userversion $VERSION
+          butler push . $GITHUB_REPOSITORY:html5 --userversion ${{ steps.vars.outputs.version }}
           zip -r web.zip .
           gh release upload ${{ needs.release.outputs.tag_name }} web.zip
         env:
@@ -77,10 +74,8 @@ jobs:
         id: tauri
         with:
           app-name: ${{ steps.vars.outputs.app_name }}
-          app-version: ${{ env.VERSION }}
+          app-version: ${{ steps.vars.outputs.version }}
           window-title: ${{ steps.vars.outputs.window_title }}
-          window-width: 800
-          window-height: 600
           icon-path: public/app-icon.png
         env:
           APPLE_SIGNING_IDENTITY: '-'
@@ -89,8 +84,8 @@ jobs:
         run: >
           butler push
           ${{ steps.tauri.outputs.bundle-path }}
-          ${{ github.repository }}:${{ env.CHANNEL }}
-          --userversion ${{ env.VERSION }}
+          ${{ github.repository }}:${{ steps.vars.outputs.platform }}
+          --userversion ${{ steps.vars.outputs.version }}
         env:
           BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
 
@@ -99,12 +94,13 @@ jobs:
         shell: bash
         run: |
           if [[ $RUNNER_OS == 'Windows' ]]; then
-            7z a -r $CHANNEL.zip ./*
+            7z a -r $PLATFORM.zip ./*
           else
-            zip -r $CHANNEL.zip .
+            zip -r $PLATFORM.zip .
           fi
-          gh release upload ${{ needs.release.outputs.tag_name }} $CHANNEL.zip
+          gh release upload ${{ needs.release.outputs.tag_name }} $PLATFORM.zip
         env:
+          PLATFORM: ${{ steps.vars.outputs.platform }}
           GH_TOKEN: ${{ github.token }}
 
   wavedash:
@@ -126,21 +122,11 @@ jobs:
         run: npm ci --prefer-offline --ignore-scripts
 
       - name: Build game
-        run: WAVEDASH=true npm run bundle
+        run: npm run bundle
 
-      - name: Install Wavedash CLI
-        run: curl -fsSL https://wavedash.com/cli/install.sh | sh
-
-      # TODO: replace `<GAME_ID>`
-      - name: Create wavedash.toml
-        run: |
-          cat > wavedash.toml << 'EOF'
-          game_id = "<GAME_ID>"
-          upload_dir = "./dist"
-          entrypoint = "index.html"
-          EOF
-
-      - name: Push build
-        run: wavedash build push -m "${{ needs.release.outputs.tag_name }}"
-        env:
-          WAVEDASH_TOKEN: ${{ secrets.WAVEDASH_TOKEN }}
+      - name: Upload to Wavedash
+        uses: remarkablegames/wavedash-action@v1
+        with:
+          token: ${{ secrets.WAVEDASH_TOKEN }}
+          game-id: ${{ secrets.WAVEDASH_GAME_ID }}
+          build-message: ${{ needs.release.outputs.tag_name }}
