@@ -9,7 +9,7 @@
 
 <kbd>phaser-template</kbd> is a template for making [Phaser](https://phaser.io/) games. The template is inspired by the tutorial "[Making your first Phaser 3 game](https://phaser.io/tutorials/making-your-first-phaser-3-game)".
 
-Play the game on:
+Play in your browser:
 
 - [remarkablegames](https://remarkablegames.org/phaser-template/)
 
