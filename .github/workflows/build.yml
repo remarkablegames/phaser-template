@@ -44,12 +44,12 @@ jobs:
           echo "VITE_APP_HOMEPAGE=$(jq -r .homepage package.json)" >> $GITHUB_ENV
           echo "VITE_APP_VERSION=$(jq -r .version package.json)" >> $GITHUB_ENV
 
-      - name: Build for deploy
+      - name: Build for GitHub Pages
         run: npm run build -- --base /${{ github.event.repository.name }}/
         env:
           VITE_GOOGLE_ANALYTICS_ID: ${{ secrets.GOOGLE_ANALYTICS_ID }}
 
-      - name: Deploy
+      - name: Deploy to GitHub Pages
         if: github.ref_name == 'master'
         uses: remarkablemark/gitploy-action@v1
         with:
