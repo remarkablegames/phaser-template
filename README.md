@@ -13,6 +13,12 @@ Play in your browser:
 
 - [remarkablegames](https://remarkablegames.org/phaser-template/)
 
+Or download for desktop:
+
+- [Windows](https://github.com/remarkablegames/phaser-template/releases/latest/download/windows.zip)
+- [macOS](https://github.com/remarkablegames/phaser-template/releases/latest/download/macos.zip)
+- [Linux](https://github.com/remarkablegames/phaser-template/releases/latest/download/linux.zip)
+
 ## Prerequisites
 
 [nvm](https://github.com/nvm-sh/nvm#installing-and-updating):
@@ -93,7 +99,7 @@ Your game is ready to be deployed!
 
 Builds the game and compresses the contents into a ZIP archive in the `dist` folder.
 
-Your game can be uploaded to your server, [itch.io](https://itch.io/), [newgrounds](https://www.newgrounds.com/), etc.
+Your game can be uploaded to your server, [itch.io](https://itch.io/), etc.
 
 ## License
 
