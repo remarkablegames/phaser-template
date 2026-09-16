@@ -15,14 +15,11 @@ updates:
           - '@commitlint/*'
       eslint:
         patterns:
-          - '@eslint/*'
-      prettier:
-        patterns:
+          - '*eslint*'
           - prettier
-          - eslint-plugin-prettier
-      typescript-eslint:
+      phaser:
         patterns:
-          - '@typescript-eslint/*'
+          - 'phaser*'
 
   - package-ecosystem: 'github-actions'
     directory: '/'
