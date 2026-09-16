@@ -59,7 +59,7 @@ Update the files:
 - [ ] `package.json`
 - [ ] `public/*.png`
 - [ ] `public/manifest.webmanifest`
-- [ ] `src/index.ts`
+- [ ] `src/main.ts`
 
 ## Environment Variables
 

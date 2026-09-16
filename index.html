@@ -5,15 +5,15 @@
     <link rel="icon" href="favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
-    <meta name="description" content="Game created using Phaser Template" />
+    <meta name="description" content="Phaser Template" />
     <link rel="apple-touch-icon" href="logo192.png" />
 
     <!--
       manifest.webmanifest provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
-    <link rel="manifest" href="/manifest.webmanifest" />
-    <link rel="stylesheet" href="/src/style.css" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="stylesheet" href="src/style.css" />
 
     <% if (process.env.BUNDLE !== 'true') { %>
     <!--
@@ -41,18 +41,7 @@
   </head>
   <body>
     <noscript>You need to enable JavaScript to play this game.</noscript>
-    <script type="module" src="/src/index.ts"></script>
-
-    <!--
-      Wavedash. See https://docs.wavedash.com/engines/javascript
-    -->
-    <% if (process.env.WAVEDASH == 'true') { %>
-    <script type="module">
-      import Wavedash from 'https://esm.sh/@wvdsh/sdk-js@1.3.12';
-      Wavedash.updateLoadProgressZeroToOne(1);
-      Wavedash.init();
-    </script>
-    <% } %>
+    <script type="module" src="src/main.ts"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script>
