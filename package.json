@@ -17,7 +17,7 @@
   "homepage": "https://remarkablegames.org/phaser-template/",
   "dependencies": {
     "phaser": "4.2.1",
-    "phaser-jsx": "1.0.1"
+    "phaser-jsx": "1.0.2"
   },
   "devDependencies": {
     "@commitlint/cli": "21.2.2",
