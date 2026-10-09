@@ -1,11 +1,11 @@
-export enum Texture {
-  Dude = 'Dude',
-  Ground = 'Ground',
-  Sky = 'Sky',
-  Star = 'Star',
-}
+export const TEXTURE = {
+  DUDE: 'Dude',
+  GROUND: 'Ground',
+  SKY: 'Sky',
+  STAR: 'Star',
+} as const;
 
-export enum Scene {
-  Boot = 'Boot',
-  Main = 'Main',
-}
+export const SCENE = {
+  BOOT: 'Boot',
+  MAIN: 'Main',
+} as const;

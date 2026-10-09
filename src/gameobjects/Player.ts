@@ -1,27 +1,27 @@
 import Phaser from 'phaser';
 
-import { Texture } from '../constants';
+import { TEXTURE } from '../constants';
 
-enum Animation {
-  Left = 'PlayerLeft',
-  Right = 'PlayerRight',
-  Turn = 'PlayerTurn',
-}
+const ANIMATION = {
+  LEFT: 'PlayerLeft',
+  RIGHT: 'PlayerRight',
+  TURN: 'PlayerTurn',
+} as const;
 
-enum Speed {
-  Horizontal = 160,
-  Vertical = 330,
-}
+const SPEED = {
+  HORIZONTAL: 160,
+  VERTICAL: 330,
+} as const;
 
 export class Player extends Phaser.Physics.Arcade.Sprite {
-  body!: Phaser.Physics.Arcade.Body;
+  declare body: Phaser.Physics.Arcade.Body;
   private cursors: Phaser.Types.Input.Keyboard.CursorKeys;
 
   constructor(
     scene: Phaser.Scene,
     x: number,
     y: number,
-    texture = Texture.Dude,
+    texture = TEXTURE.DUDE,
     frame = 0,
   ) {
     super(scene, x, y, texture, frame);
@@ -50,10 +50,10 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
     const anims = this.scene.anims;
 
     // Create left animation
-    if (!anims.exists(Animation.Left)) {
+    if (!anims.exists(ANIMATION.LEFT)) {
       anims.create({
-        key: Animation.Left,
-        frames: anims.generateFrameNumbers(Texture.Dude, {
+        key: ANIMATION.LEFT,
+        frames: anims.generateFrameNumbers(TEXTURE.DUDE, {
           start: 0,
           end: 3,
         }),
@@ -63,19 +63,19 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
     }
 
     // Create turn animation
-    if (!anims.exists(Animation.Turn)) {
+    if (!anims.exists(ANIMATION.TURN)) {
       anims.create({
-        key: Animation.Turn,
-        frames: [{ key: Texture.Dude, frame: 4 }],
+        key: ANIMATION.TURN,
+        frames: [{ key: TEXTURE.DUDE, frame: 4 }],
         frameRate: 20,
       });
     }
 
     // Create right animation
-    if (!anims.exists(Animation.Right)) {
+    if (!anims.exists(ANIMATION.RIGHT)) {
       anims.create({
-        key: Animation.Right,
-        frames: anims.generateFrameNumbers(Texture.Dude, {
+        key: ANIMATION.RIGHT,
+        frames: anims.generateFrameNumbers(TEXTURE.DUDE, {
           start: 5,
           end: 8,
         }),
@@ -89,26 +89,26 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
     switch (true) {
       // Move to the left
       case this.cursors.left.isDown:
-        this.body.setVelocityX(-Speed.Horizontal);
-        this.anims.play(Animation.Left, true);
+        this.body.setVelocityX(-SPEED.HORIZONTAL);
+        this.anims.play(ANIMATION.LEFT, true);
         break;
 
       // Move to the right
       case this.cursors.right.isDown:
-        this.body.setVelocityX(Speed.Horizontal);
-        this.anims.play(Animation.Right, true);
+        this.body.setVelocityX(SPEED.HORIZONTAL);
+        this.anims.play(ANIMATION.RIGHT, true);
         break;
 
       // Stand still
       default:
         this.body.setVelocityX(0);
-        this.anims.play(Animation.Turn);
+        this.anims.play(ANIMATION.TURN);
         break;
     }
 
     // Allow player to jump if sprite is touching the ground
     if (this.cursors.up.isDown && this.body.touching.down) {
-      this.body.setVelocityY(-Speed.Vertical);
+      this.body.setVelocityY(-SPEED.VERTICAL);
     }
   }
 }

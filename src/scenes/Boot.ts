@@ -5,24 +5,24 @@ import ground from '/images/platform.png';
 import star from '/images/star.png';
 import dude from '/sprites/dude.png';
 
-import { Scene, Texture } from '../constants';
+import { SCENE, TEXTURE } from '../constants';
 
 export class Boot extends Phaser.Scene {
   constructor() {
-    super({ key: Scene.Boot });
+    super({ key: SCENE.BOOT });
   }
 
   preload() {
-    this.load.spritesheet(Texture.Dude, dude, {
+    this.load.spritesheet(TEXTURE.DUDE, dude, {
       frameWidth: 32,
       frameHeight: 48,
     });
-    this.load.image(Texture.Ground, ground);
-    this.load.image(Texture.Sky, sky);
-    this.load.image(Texture.Star, star);
+    this.load.image(TEXTURE.GROUND, ground);
+    this.load.image(TEXTURE.SKY, sky);
+    this.load.image(TEXTURE.STAR, star);
   }
 
   create() {
-    this.scene.start(Scene.Main);
+    this.scene.start(SCENE.MAIN);
   }
 }
