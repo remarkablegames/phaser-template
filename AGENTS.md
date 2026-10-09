@@ -49,7 +49,7 @@ class Player extends Phaser.Physics.Arcade.Sprite {
     scene: Phaser.Scene,
     x: number,
     y: number,
-    texture = Texture.Player,
+    texture = TEXTURE.DUDE,
     frame = 0,
   ) {
     super(scene, x, y, texture, frame);
