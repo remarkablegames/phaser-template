@@ -3,6 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="favicon.ico" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta name="description" content="Phaser Template" />
@@ -15,10 +17,10 @@
     <link rel="manifest" href="manifest.webmanifest" />
     <link rel="stylesheet" href="src/style.css" />
 
-    <% if (process.env.BUNDLE !== 'true') { %>
     <!--
       GitHub Corners. See https://github.com/remarkablemark/github-corners
     -->
+    <% if (process.env.BUNDLE !== 'true') { %>
     <script
       src="https://unpkg.com/github-corners/dist/embed.min.js"
       data-href="https://github.com/remarkablegames/phaser-template"
