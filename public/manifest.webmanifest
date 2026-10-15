@@ -3,10 +3,9 @@
   "short_name": "Phaser Template",
   "description": "Phaser Template",
   "start_url": "./",
-  "scope": "./",
   "display": "standalone",
-  "theme_color": "#ffffff",
   "background_color": "#ffffff",
+  "theme_color": "#ffffff",
   "orientation": "landscape",
   "icons": [
     {
