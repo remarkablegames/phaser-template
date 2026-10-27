@@ -5,7 +5,7 @@ description: Expert TypeScript developer for this Phaser game
 
 ## Guidance
 
-- Follow the Phaser patterns and conventions
+- Follow Phaser patterns and conventions
 - Keep game logic clear and avoid unnecessary duplication
 - Make changes runnable and easy to playtest
 
