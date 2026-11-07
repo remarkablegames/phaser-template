@@ -7,5 +7,5 @@ export const TEXTURE = {
 
 export const SCENE = {
   BOOT: 'Boot',
-  MAIN: 'Main',
+  GAME: 'Game',
 } as const;

@@ -5,12 +5,12 @@ import { Score, type SetScore } from '../components';
 import { SCENE, TEXTURE } from '../constants';
 import { Player, Star } from '../gameobjects';
 
-export class Main extends Phaser.Scene {
+export class Game extends Phaser.Scene {
   private player!: Player;
   private setScore!: SetScore;
 
   constructor() {
-    super({ key: SCENE.MAIN });
+    super({ key: SCENE.GAME });
   }
 
   create() {
