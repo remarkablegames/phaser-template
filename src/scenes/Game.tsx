@@ -2,7 +2,7 @@ import Phaser from 'phaser';
 import { render } from 'phaser-jsx';
 
 import { Score, type SetScore } from '../components';
-import { SCENE, TEXTURE } from '../constants';
+import { KEY } from '../constants';
 import { Player, Star } from '../gameobjects';
 
 export class Game extends Phaser.Scene {
@@ -10,18 +10,18 @@ export class Game extends Phaser.Scene {
   private setScore!: SetScore;
 
   constructor() {
-    super({ key: SCENE.GAME });
+    super(KEY.SCENE.GAME);
   }
 
   create() {
     // A simple background for our game.
-    this.add.image(0, 0, TEXTURE.SKY).setOrigin(0);
+    this.add.image(0, 0, KEY.TEXTURE.SKY).setOrigin(0);
 
     // The platforms group contains the ground and the 2 ledges we can jump on.
     // It's created after the background so the order of layers (z-depth) is
     // maintained (otherwise, the platforms will be hidden by the background).
     const platforms = this.physics.add.staticGroup({
-      defaultKey: TEXTURE.GROUND,
+      defaultKey: KEY.TEXTURE.GROUND,
     });
 
     // Create the ground (scale it to fit the width of the game).

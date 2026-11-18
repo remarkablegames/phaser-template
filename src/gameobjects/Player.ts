@@ -1,6 +1,6 @@
 import Phaser from 'phaser';
 
-import { TEXTURE } from '../constants';
+import { KEY } from '../constants';
 
 const ANIMATION = {
   LEFT: 'PlayerLeft',
@@ -21,10 +21,9 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
     scene: Phaser.Scene,
     x: number,
     y: number,
-    texture = TEXTURE.DUDE,
-    frame = 0,
+    texture = KEY.TEXTURE.DUDE,
   ) {
-    super(scene, x, y, texture, frame);
+    super(scene, x, y, texture);
 
     // Add the sprite to the scene
     scene.add.existing(this);
@@ -53,7 +52,7 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
     if (!anims.exists(ANIMATION.LEFT)) {
       anims.create({
         key: ANIMATION.LEFT,
-        frames: anims.generateFrameNumbers(TEXTURE.DUDE, {
+        frames: anims.generateFrameNumbers(KEY.TEXTURE.DUDE, {
           start: 0,
           end: 3,
         }),
@@ -66,7 +65,7 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
     if (!anims.exists(ANIMATION.TURN)) {
       anims.create({
         key: ANIMATION.TURN,
-        frames: [{ key: TEXTURE.DUDE, frame: 4 }],
+        frames: [{ key: KEY.TEXTURE.DUDE, frame: 4 }],
         frameRate: 20,
       });
     }
@@ -75,7 +74,7 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
     if (!anims.exists(ANIMATION.RIGHT)) {
       anims.create({
         key: ANIMATION.RIGHT,
-        frames: anims.generateFrameNumbers(TEXTURE.DUDE, {
+        frames: anims.generateFrameNumbers(KEY.TEXTURE.DUDE, {
           start: 5,
           end: 8,
         }),

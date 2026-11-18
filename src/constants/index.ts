@@ -1,1 +1,1 @@
-export * from './keys';
+export * as KEY from './key';
